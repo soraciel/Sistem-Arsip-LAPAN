@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class arsip extends CI_Controller {
+class user extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,27 +18,16 @@ class arsip extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function view()
-	{
-		$this->load->view('header');	
-		$this->load->view('view_arsip');
-	}
-
-	public function plain()
-	{
-		$this->load->view('view_plain');
-	}
-
-	public function tambah_arsip()
+	public function tambah_user()
 	{
 		$this->load->view('form_header');
-		$this->load->view('tambah_arsip');
+		$this->load->view('tambah_user');
 		$this->load->view('form_footer');
 	}
 
-	public function jenis_detail(){
-		$this->load->view('header');	
-		$this->load->view('view_jenis_detail');
+	public function view(){
+		$this->load->view('header');
+		$this->load->view('view_user');
 	}
 
 

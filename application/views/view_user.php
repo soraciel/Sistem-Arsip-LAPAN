@@ -2,7 +2,7 @@
    
       <!-- End Site Navbar Seach -->
 <div class="page-header">
-      <h1 class="page-title">Lihat Arsip</h1>
+      <h1 class="page-title">Lihat User</h1>
       <div class="page-header-actions">
         <form>
           <div class="input-search input-search-dark">
@@ -16,52 +16,12 @@
     <div class="page-content">
 
       <div class="panel">
-        <div class="panel-heading">
+       
       
                       
                       
-
-                      <div><!-- Example Quick Menu Small -->
-        <div class="example">
-          <ul class="nav-quick nav-quick-sm row">
-            <li class="col-sm-2 col-xs-4">
-           <div class="dropdown" >
-                        <button type="button" class="btn btn-info dropdown-toggle" id="exampleColorDropdown4"
-                        data-toggle="dropdown" aria-expanded="false">Arsip terbaru
-                          <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
-                        role="menu">
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by jenis</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by date</a></li>
-                          <li class="active" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
-                        </ul>
-                      </div>
-            </li>
-            <li class="col-sm-2 col-xs-4">
-            <form>
-            </form>
-
-            </li>
-            <li class="col-sm-2 col-xs-4">
-             
-            </li>
-            <li class="col-sm-2 col-xs-4">
-            
-            </li>
-            <li class="col-sm-2 col-xs-4">
-             
-            </li>
-            <li class="col-sm-2 col-xs-5">
-              <div>
-            <button type="button" class="btn btn-raised btn-primary btn-block">Tambah Arsip</button>
-</div>
-            </li>
-          </ul>
-        </div>
-        <!-- End Example Quick Menu Small --></div>
-                    
-        </div>
+<button type="button" class="btn btn-raised btn-sm btn-primary"> Tambah User</button>
+        
         <div class="panel-body">
          <!-- Example Bordered Table -->
               <div class="example-wrap"> <!--ganti kolom searching-->
@@ -70,23 +30,16 @@
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>no. surat</th>
-                        <th>judul surat</th>
-                        <th>jenis surat</th>
-                        <th>tanggal surat</th>
-                        <th>isi surat</th>
+                        <th>NIP</th>
+                        <th>Nama</th>
                         <th class="text-nowrap">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>A.001/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                          dokumen abadi
-                        </td>
-                        <td>May 15, 2015</td>
-                        <td>file</td>
+                        <td>19850331</td>
+                        <td> Lorem Ipsum</td>
+                    
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit">
@@ -99,14 +52,9 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>A.002/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                          koran
-                          </div>
-                        </td>
-                        <td>July 1, 2015</td>
-                        <td>file</td>
+                        <td>19850335</td>
+                        <td> Lorem Ipsum</td>
+                        
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit">
@@ -119,14 +67,9 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>A.003/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                         undangan rapat
-                          </div>
-                        </td>
-                        <td>Apr 12, 2015</td>
-                        <td>file</td>
+                        <td>19850330 </td>
+                        <td> Lorem Ipsum</td>
+                        
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit">
@@ -139,14 +82,9 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>A.004/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                         Surat Kantor
-                          </div>
-                        </td>
-                        <td>Aug 9, 2015</td>
-                        <td>file</td>
+                        <td>19850332</td>
+                        <td> Lorem Ipsum</td>
+                       
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit">

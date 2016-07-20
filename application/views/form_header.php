@@ -1,4 +1,5 @@
-    
+<!DOCTYPE html>
+<html class="no-js before-run" lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +29,14 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/web-icons/web-icons.min.css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/brand-icons/brand-icons.min.css">
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-
+  
+ <!-- Inline -->
+        <style>
+          @import url(http://fonts.googleapis.com/css?family=Roboto+Mono);
+          [data-plugin="formatter"] {
+            font-family: 'Roboto Mono', Menlo, Monaco, Consolas, "Courier New", monospace;
+          }
+        </style>
 
   <!--[if lt IE 9]>
     <script src="<?php echo base_url();?>assets/vendor/html5shiv/html5shiv.min.js"></script>
@@ -42,9 +50,8 @@
   <!-- Scripts -->
   <script src="<?php echo base_url();?>assets/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo base_url();?>assets/vendor/breakpoints/breakpoints.js"></script>
-  </head>
-
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -52,66 +59,4 @@ $(document).ready(function(){
         $(this).datepicker();
     });
 });</script>
-
-
- <div>
-                  <h4 class="example-title">Tanggal</h4>
-                 <input type="text" class="datepicker"/>
-                <br>
-                </div>
-
-                
- <div class="page-content">
-      <div class="panel">            
-            <div class="panel-body container-fluid" style="padding: 0px 350px">
-              <form autocomplete="off">
-                
-                <div >
-                  <br>
-                  <h4 class="example-title">Nomor Surat</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="placeholder">
-                  <br>
-                </div>
-
-                <div>
-                  <h4 class="example-title">Judul</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="placeholder">
-                  <br>
-                </div>
-            
-               <div> 
-                <h4 class="example-title">File Upload</h4>
-                <div class="form-group">
-                  <div class="input-group input-group-file">
-                    <input type="text" class="form-control" readonly="">
-                    <span class="input-group-btn">
-                      <span class="btn btn-success btn-file">
-                        <i class="icon wb-upload" aria-hidden="true"></i>
-                        <input type="file" name="" multiple="">
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                
-              </div>
-                
-                <div>
-                  <h4 class="example-title">Tanggal</h4>
-                 <input type="text" class="datepicker"/>
-                <br>
-                </div>
-                
-                <div>
-                  <h4 class="example-title">Jenis Surat</h4>
-                  <select class="form-control">
-                    <option>&nbsp;</option>
-                    <option>Dokumen Abadi</option>
-                    <option>Surat Perjanjian/Keuangan</option>
-                    <option>Surat Kantor/Dinas/SK</option>
-                    <option>Undangan Rapat</option>
-                    <option>Koran</option>
-                  </select>
-                </div>
-        </div> 
-      </div>
-     </div>
+</head>

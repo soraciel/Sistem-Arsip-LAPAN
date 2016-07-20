@@ -2,7 +2,7 @@
    
       <!-- End Site Navbar Seach -->
 <div class="page-header">
-      <h1 class="page-title">Lihat Arsip</h1>
+      <h1 class="page-title">Arsip X</h1>
       <div class="page-header-actions">
         <form>
           <div class="input-search input-search-dark">
@@ -27,14 +27,16 @@
             <li class="col-sm-2 col-xs-4">
            <div class="dropdown" >
                         <button type="button" class="btn btn-info dropdown-toggle" id="exampleColorDropdown4"
-                        data-toggle="dropdown" aria-expanded="false">Arsip terbaru
+                        data-toggle="dropdown" aria-expanded="false">Dokumen Abadi
                           <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
                         role="menu">
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by jenis</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by date</a></li>
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat Perjanjian/keuangan</a></li>
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat kantor/dinas/sk</a></li>
                           <li class="active" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">undangan rapat</a></li>
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">koran</a></li>
                         </ul>
                       </div>
             </li>
