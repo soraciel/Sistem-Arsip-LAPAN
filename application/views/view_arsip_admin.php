@@ -65,10 +65,17 @@
             <li class="site-menu-item has-sub">
               <a href="javascript:void(0)" data-slug="page">
                 <i class="site-menu-icon wb-file" aria-hidden="true"></i>
-                <span class="site-menu-title">Pages</span>
+                <span class="site-menu-title">Arsip</span>
                 <span class="site-menu-arrow"></span>
               </a>            
-            </li>                                                                     
+            </li>     
+            <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)" data-slug="page">
+                <i class="site-menu-icon wb-user" aria-hidden="true"></i>
+                <span class="site-menu-title">User</span>
+                <span class="site-menu-arrow"></span>
+              </a>            
+            </li>                                                                
           </ul>
         </div>
       </div>
