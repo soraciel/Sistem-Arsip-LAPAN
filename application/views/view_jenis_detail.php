@@ -2,7 +2,7 @@
    
       <!-- End Site Navbar Seach -->
 <div class="page-header">
-      <h1 class="page-title">Arsip X</h1>
+      <h1 class="page-title">Arsip Dokumen Abadi</h1>
       <div class="page-header-actions">
         <form>
           <div class="input-search input-search-dark">
@@ -56,7 +56,9 @@
             </li>
             <li class="col-sm-2 col-xs-5">
               <div>
-            <button type="button" class="btn btn-raised btn-primary btn-block">Tambah Arsip</button>
+            <div class="col-md-9">
+                  <button type="button" class="btn btn-block btn-info">Tambah Arsip</button>            
+              </div>
 </div>
             </li>
           </ul>
