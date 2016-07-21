@@ -1,9 +1,9 @@
-<body>
+
   <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+ <!--  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
@@ -20,7 +20,7 @@
         <span class="navbar-brand-text"> LAPAN</span>
       </div>
     </div>
-
+ -->
     <div class="navbar-container container-fluid">
       <!-- Navbar Collapse -->
       <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
