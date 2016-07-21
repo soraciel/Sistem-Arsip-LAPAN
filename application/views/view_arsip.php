@@ -1,6 +1,9 @@
 
-   
+
+
+
       <!-- End Site Navbar Seach -->
+<body class="warna">
 <div class="page-header">
       <h1 class="page-title">Lihat Arsip</h1>
       <div class="page-header-actions">
@@ -14,7 +17,6 @@
     </div>
 
     <div class="page-content">
-
       <div class="panel">
         <div class="panel-heading">
       
@@ -214,10 +216,10 @@
   <script src="<?php echo base_url();?>assets/js/configs/config-tour.js"></script>
 
   <script src="<?php echo base_url();?>assets/js/components/asscrollable.js"></script>
-  <script src="<?php echo base_url();?>assets/js/components/animsition.js"></script>
+<!--  <script src="<?php echo base_url();?>assets/js/components/animsition.js"></script>-->
   <script src="<?php echo base_url();?>assets/js/components/slidepanel.js"></script>
   <script src="<?php echo base_url();?>assets/js/components/switchery.js"></script>
-
+<!--
 
   <script>
     (function(document, window, $) {
@@ -228,8 +230,8 @@
         Site.run();
       });
     })(document, window, jQuery);
-  </script>
+  </script>-->
+
 
 </body>
-
 </html>

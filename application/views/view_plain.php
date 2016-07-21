@@ -52,6 +52,7 @@ $(document).ready(function(){
         $(this).datepicker();
     });
 });</script>
+<body bgcolor="#e4eaec">
 
 
  <div>
@@ -115,3 +116,4 @@ $(document).ready(function(){
         </div> 
       </div>
      </div>
+     </body>

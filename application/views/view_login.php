@@ -7,7 +7,7 @@
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
 
-  <title>Login | Remark Admin Template</title>
+  <title>Login | Sistem Arsip Lapan</title>
 
   <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/images/apple-touch-icon.png">
   <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/favicon.ico">
@@ -61,19 +61,16 @@
   data-animsition-out="fade-out">>
     <div class="page-content vertical-align-middle">
       <div class="brand">
-        <img class="brand-img" src="<?php echo base_url();?>assets/images/logo.png" alt="...">
-        <h2 class="brand-text">Remark</h2>
+       <img class="brand-img" src="<?php echo base_url();?>assets/images/logolapan.png" width="100" length="100" alt="...">
+        <h2 class="brand-text">LAPAN</h2>
       </div>
       <p>Sign into your pages account</p>
       <form method="post" action="login.html">
         <div class="form-group">
-          <label class="sr-only" for="inputName">Name</label>
-          <input type="text" class="form-control" id="inputName" placeholder="Name">
+          <label class="sr-only" for="inputName">NIM</label>
+          <input type="text" class="form-control" id="inputName" placeholder="NIM">
         </div>
-        <div class="form-group">
-          <label class="sr-only" for="inputEmail">Email</label>
-          <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
-        </div>
+   
         <div class="form-group">
           <label class="sr-only" for="inputPassword">Password</label>
           <input type="password" class="form-control" id="inputPassword" name="password"

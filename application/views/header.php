@@ -7,7 +7,7 @@
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
 
-  <title>Nav | Remark Admin Template</title>
+  <title>Arsip LAPAN</title>
 
   <link rel="apple-touch-icon" href="<?php echo base_url();?>/assets/images/apple-touch-icon.png">
   <link rel="shortcut icon" href="<?php echo base_url();?>/assets/images/favicon.ico">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-extend.min.css">
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/site.min.css">
 
-  <link rel="stylesheet" href="<?php echo base_url();?>/assets/vendor/animsition/animsition.css">
+  <!--<link rel="stylesheet" href="<?php echo base_url();?>/assets/vendor/animsition/animsition.css">-->
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/vendor/asscrollable/asScrollable.css">
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/vendor/switchery/switchery.css">
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/vendor/intro-js/introjs.css">

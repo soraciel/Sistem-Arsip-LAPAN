@@ -22,6 +22,7 @@ class arsip extends CI_Controller {
 	{
 		$this->load->view('header');	
 		$this->load->view('view_arsip');
+		// $this->load->view('view_arsip_admin');
 	}
 
 	public function plain()
