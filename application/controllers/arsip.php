@@ -41,5 +41,18 @@ class arsip extends CI_Controller {
 		$this->load->view('view_jenis_detail');
 	}
 
+	public function view_admin()
+	{
+		$this->load->view('header');	
+		$this->load->view('view_arsip_admin');
+	}
+
+	public function edit_arsip(){
+		$this->load->view('form_header');
+		$this->load->view('edit_arsip');
+		$this->load->view('form_footer');
+	}
+
+
 
 }

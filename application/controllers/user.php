@@ -29,6 +29,11 @@ class user extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('view_user');
 	}
-
+	public function edit_user()
+	{
+		$this->load->view('form_header');
+		$this->load->view('edit_user');
+		$this->load->view('form_footer');
+	}
 
 }
