@@ -3,7 +3,7 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
- <!--  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
@@ -20,7 +20,7 @@
         <span class="navbar-brand-text"> LAPAN</span>
       </div>
     </div>
- -->
+
     <div class="navbar-container container-fluid">
       <!-- Navbar Collapse -->
       <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
@@ -35,9 +35,14 @@
             </a>
           </li>
                 </ul>
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                  <li role="presentation">
+                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
+                  </li>    
+                </ul>
                     </div>
                     
-                    </div>
+    </div>
                   </div>
                 </div>
               </li>
@@ -123,9 +128,8 @@
               
             </li>
             <li class="col-sm-2 col-xs-5">
-             <div class="col-md-9">
-                  <button type="button" class="btn btn-block btn-info">Tambah Arsip</button>            
-              </div>
+             <div class="col-md-9">                
+            <button type="button" class="btn btn-raised btn-primary btn-block">Tambah Arsip</button>
 </div>
             </li>
           </ul>
