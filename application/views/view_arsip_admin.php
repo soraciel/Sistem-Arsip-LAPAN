@@ -129,7 +129,7 @@
             </li>
             <li class="col-sm-2 col-xs-5">
              <div class="col-md-9">                
-            <button type="button" class="btn btn-raised btn-primary btn-block">Tambah Arsip</button>
+                <button type="button" class="btn btn-block btn-info">Tambah Arsip</button>
 </div>
             </li>
           </ul>
