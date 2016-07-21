@@ -1,9 +1,5 @@
-
-
-
-
       <!-- End Site Navbar Seach -->
-<body class="warna">
+<!-- <body class="warna"> -->
 <div class="page-header">
       <h1 class="page-title">Lihat Arsip</h1>
       <div class="page-header-actions">
@@ -15,16 +11,11 @@
         </form>
       </div>
     </div>
-
-    <div class="page-content">
-      <div class="panel">
-        <div class="panel-heading">
-      
-                      
-                      
-
-                      <div><!-- Example Quick Menu Small -->
-        <div class="example">
+<div class="page-content">
+  <div class="panel-body" style="padding:0px 30px; background-color:white">    
+      <div class="panel-heading" style="padding:10px;">                                        
+        <!-- Example Quick Menu Small -->
+        <!-- <div class="example" > -->
           <ul class="nav-quick nav-quick-sm row">
             <li class="col-sm-2 col-xs-4">
            <div class="dropdown" >
@@ -40,7 +31,7 @@
                         </ul>
                       </div>
             </li>
-            <li class="col-sm-2 col-xs-4">
+            <li class="col-sm-2 col-xs-4" style="borde:none;">
             <form>
             </form>
 
@@ -55,20 +46,15 @@
              
             </li>
             <li class="col-sm-2 col-xs-5">
-              <div>
-            <button type="button" class="btn btn-raised btn-primary btn-block">Tambah Arsip</button>
-</div>
+              <div class="col-md-9">
+                  <button type="button" class="btn btn-block btn-info">Tambah Arsip</button>            
+              </div>
             </li>
           </ul>
-        </div>
-        <!-- End Example Quick Menu Small --></div>
-                    
-        </div>
-        <div class="panel-body">
-         <!-- Example Bordered Table -->
-              <div class="example-wrap"> <!--ganti kolom searching-->
-                
-                <div class="example table-responsive">
+      </div>
+        <!-- End Example Quick Menu Small -->
+      <div class="example-wrap"> <!-- ganti kolom searching                 -->
+        <div class="example table-responsive" style="margin-top:5px;">
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
@@ -103,10 +89,7 @@
                       <tr>
                         <td>A.002/Pan-Pel/AKB/I/2014 </td>
                         <td> surat keputusan</td>
-                        <td>
-                          koran
-                          </div>
-                        </td>
+                        <td>koran</td>
                         <td>July 1, 2015</td>
                         <td>file</td>
                         <td class="text-nowrap">
@@ -163,13 +146,11 @@
                       
                     </tbody>
                   </table>
-                </div>
-              </div>
-             
         </div>
-      </div>
-    </div>
-  </div>
+      </div>             
+  </div>     
+</div>
+           
   <!-- End Page -->
 
    <!-- Site Navbar Seach -->
