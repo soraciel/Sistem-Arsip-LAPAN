@@ -61,18 +61,18 @@
         <div>
           <ul class="site-menu">
             <li class="site-menu-category">Halaman Admin</li>
-            <li class="site-menu-item has-sub">
-              <a href="<?php echo base_url(); ?>arsip/view_admin" data-slug="page">
+            <li class="site-menu-item">
+              <a class="animsition-link" href="<?php echo base_url(); ?>index.php/arsip/view_admin" data-slug="uikit-buttons">
                 <i class="site-menu-icon wb-file" aria-hidden="true"></i>
                 <span class="site-menu-title">Arsip</span>
-                <span class="site-menu-arrow"></span>
+                <!-- <span class="site-menu-arrow"></span> -->
               </a>            
             </li>     
-            <li class="site-menu-item has-sub">
-              <a href="<?php echo base_url(); ?>user/view" data-slug="page">
+            <li class="site-menu-item">
+              <a class="animsition-link" href="<?php echo base_url(); ?>index.php/user/view" data-slug="uikit-buttons">
                 <i class="site-menu-icon wb-user" aria-hidden="true"></i>
                 <span class="site-menu-title">User</span>
-                <span class="site-menu-arrow"></span>
+                <!-- <span class="site-menu-arrow"></span> -->
               </a>            
             </li>                                                                
           </ul>
@@ -124,7 +124,7 @@
             </li>
             <li class="col-sm-2 col-xs-5">
              <div class="col-md-9">                
-                <button type="button" class="btn btn-block btn-info">Tambah User</button>
+                <button type="button" class="btn btn-block btn-info" onclick="location.href='<?php echo base_url();?>index.php/user/tambah_user'">Tambah User</button>
 </div>
             </li>
           </ul>
