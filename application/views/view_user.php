@@ -1,27 +1,136 @@
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-   
-      <!-- End Site Navbar Seach -->
-<div class="page-header">
-      <h1 class="page-title">Lihat User</h1>
-      <div class="page-header-actions">
-        <form>
-          <div class="input-search input-search-dark">
-            <i class="input-search-icon wb-search" aria-hidden="true"></i>
-            <input type="text" class="form-control" name="" placeholder="Search...">
-          </div>
-        </form>
+  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+      data-toggle="menubar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse"
+      data-toggle="collapse">
+        <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+      </button>      
+      <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">        
+        <img class="navbar-brand-logo" src="<?php echo base_url();?>assets/images/logolapan.png" width="50" length="50" alt="...">        
+        <span class="navbar-brand-text"> LAPAN</span>
       </div>
     </div>
 
-    <div class="page-content">
+    <div class="navbar-container container-fluid">
+      <!-- Navbar Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+        <!-- Navbar Toolbar -->
+        <ul class="nav navbar-toolbar">
+          <li class="hidden-float" id="toggleMenubar">
+            <a data-toggle="menubar" href="#" role="button">
+              <i class="icon hamburger hamburger-arrow-left">
+                  <span class="sr-only">Toggle menubar</span>
+                  <span class="hamburger-bar"></span>
+                </i>
+            </a>
+          </li>
+                </ul>
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                  <li role="presentation">
+                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
+                  </li>    
+                </ul>
+                    </div>
+                    
+    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- End Navbar Toolbar -->
 
-      <div class="panel">
-       
+      </div>
+      <!-- End Navbar Collapse -->
+
       
+    </div>
+  </nav>
+  <div class="site-menubar">
+    <div class="site-menubar-body">      
+        <div>
+          <ul class="site-menu">
+            <li class="site-menu-category">Halaman Admin</li>
+            <li class="site-menu-item has-sub">
+              <a href="<?php echo base_url(); ?>arsip/view_admin" data-slug="page">
+                <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                <span class="site-menu-title">Arsip</span>
+                <span class="site-menu-arrow"></span>
+              </a>            
+            </li>     
+            <li class="site-menu-item has-sub">
+              <a href="<?php echo base_url(); ?>user/view" data-slug="page">
+                <i class="site-menu-icon wb-user" aria-hidden="true"></i>
+                <span class="site-menu-title">User</span>
+                <span class="site-menu-arrow"></span>
+              </a>            
+            </li>                                                                
+          </ul>
+        </div>
+      </div>
+
+  </div>
+
+  
+
+  <!-- Page -->
+  <div class="page">
+    <div class="page-content">
+      <!-- Judul -->
+      <div class="page-header">
+        <h1 class="page-title">Lihat User</h1>
+        <div class="page-header-actions">
+          <form>
+            <div class="input-search input-search-light">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" name="" placeholder="Search...">
+            </div>
+          </form>
+        </div>
+      </div>
+<!-- end judul -->
+      <div class="panel">
+        <div class="panel-heading">                    
                       
-                      
-<button type="button" class="btn btn-raised btn-sm btn-primary"> Tambah User</button>
+<!-- Example Quick Menu Small -->
         
+          <ul class="nav-quick nav-quick-sm row">
+            <li class="col-sm-2 col-xs-4">
+           
+            </li>
+            <li class="col-sm-2 col-xs-4">
+            <form>
+            </form>
+
+            </li>
+            <li class="col-sm-2 col-xs-4">
+             
+            </li>
+            <li class="col-sm-2 col-xs-4">
+            
+            </li>
+            <li class="col-sm-2 col-xs-4">
+              
+            </li>
+            <li class="col-sm-2 col-xs-5">
+             <div class="col-md-9">                
+                <button type="button" class="btn btn-block btn-info">Tambah User</button>
+</div>
+            </li>
+          </ul>
+        <!-- End Example Quick Menu Small -->
+                    
+        </div>
         <div class="panel-body">
          <!-- Example Bordered Table -->
               <div class="example-wrap"> <!--ganti kolom searching-->
@@ -108,21 +217,14 @@
   </div>
   <!-- End Page -->
 
-   <!-- Site Navbar Seach -->
-      <div class="collapse navbar-search-overlap" id="site-navbar-search">
-        <form role="search">
-          <div class="form-group">
-            <div class="input-search">
-              <i class="input-search-icon wb-search" aria-hidden="true"></i>
-              <input type="text" class="form-control" name="site-search" placeholder="Search...">
-              <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
-              data-toggle="collapse" aria-label="Close"></button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- End Site Navbar Seach -->
 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span class="site-footer-legal">© 2015 Remark</span>
+    <div class="site-footer-right">
+      Crafted with <i class="red-600 wb wb-heart"></i> by <a href="http://themeforest.net/user/amazingSurge">amazingSurge</a>
+    </div>
+  </footer>
 
   <!-- Core  -->
   <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.js"></script>
