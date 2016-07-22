@@ -57,16 +57,37 @@
       </div>
     </div>
 
-    <div class="navbar-container container-fluid" color="blue">
+    <!-- <div class="navbar-container container-fluid">
       <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">      
         <div class="nav navbar-toolbar navbar-right navbar-toolbar-right">
           <li role="presentation">
-            <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
-            <!-- <a href="<?php  echo base_url(); ?>login/login_pegawai" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a> -->
-            <!-- <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a> -->
+            <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>            
           </li>    
       </div>
      </div>
+    </div> -->
+
+    <div class="navbar-container container-fluid">
+      <!-- Navbar Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+        <!-- Navbar Toolbar -->
+        <ul class="nav navbar-toolbar">
+          <li class="hidden-float" id="toggleMenubar">
+            <a data-toggle="menubar" href="<?php echo base_url(); ?>arsip/view" role="button">
+              <i class="icon fa-home">
+                  <span class="sr-only">Beranda</span>
+                  <!-- <span class="hamburger-bar"></span> -->
+                </i>
+            </a>
+          </li>
+                </ul>
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                  <li role="presentation">
+                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
+                  </li>    
+                </ul>
+                    </div>
+                    
     </div>
 
   </nav>
