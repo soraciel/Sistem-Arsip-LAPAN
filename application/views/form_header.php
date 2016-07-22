@@ -60,3 +60,27 @@ $(document).ready(function(){
     });
 });</script>
 </head>
+
+<body style="background-color:#e4eaec;">
+
+  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+    <div class="navbar-header">
+      <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="">
+        <img class="navbar-brand-logo" src="<?php echo base_url();?>assets/images/logolapan.png" width="50" length="50" alt="...">        
+        <span class="navbar-brand-text">LAPAN</span>
+      </div>
+    </div>
+
+    <div class="navbar-container container-fluid" color="blue">
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">      
+        <div class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+          <li role="presentation">
+            <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
+            <!-- <a href="<?php  echo base_url(); ?>login/login_pegawai" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a> -->
+            <!-- <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a> -->
+          </li>    
+      </div>
+     </div>
+    </div>
+
+  </nav>

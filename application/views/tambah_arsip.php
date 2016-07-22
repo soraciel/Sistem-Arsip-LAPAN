@@ -1,9 +1,9 @@
 <body>
                 
  <div class="page-content">
-      <div class="panel">            
+      <div class="panel">      
         <h1 class="page-title" style="text-align: center">Tambah Arsip</h1>
-            <div class="panel-body container-fluid" style="padding: 0px 350px">
+            <div class="panel-body container-fluid" style="padding: 0px 350px;">
               <form autocomplete="off">
                 
                 <div >

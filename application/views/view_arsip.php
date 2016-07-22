@@ -25,9 +25,17 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
                         role="menu">
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by jenis</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by date</a></li>
                           <li class="active" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
+
+                        <li role="presentation"><a href="javascript:void(0)" role="menuitem">Dokumen Abadi</a></li>
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat Perjanjian/keuangan</a></li>
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat kantor/dinas/sk</a></li>
+                          
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">undangan rapat</a></li>
+                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">koran</a></li>
+                        <!--<li role="presentation"><a href="<?php echo base_url();?>index.php/arsip/jenis_detail" role="menuitem">Filter by jenis</a></li>-->
+                       <!--   <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by date</a></li>-->
+                
                         </ul>
                       </div>
             </li>
@@ -47,7 +55,7 @@
             </li>
             <li class="col-sm-2 col-xs-5">
               <div class="col-md-9">
-                  <button type="button" class="btn btn-block btn-info">Tambah Arsip</button>            
+                  <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
               </div>
             </li>
           </ul>
