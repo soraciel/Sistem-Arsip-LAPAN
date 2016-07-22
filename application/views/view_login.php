@@ -62,7 +62,7 @@
     <div class="page-content vertical-align-middle">
       <div class="brand">
        <img class="brand-img" src="<?php echo base_url();?>assets/images/logolapan.png" width="100" length="100" alt="...">
-        <h2 class="brand-text">LAPAN</h2>
+        <h2 class="brand-text">Sistem Arsip LAPAN</h2>
       </div>
       <p>Sign into your pages account</p>
       <form method="post" action="login.html">
@@ -85,11 +85,11 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block">Sign in</button>
       </form>
-      <p>Still no account? Please go to <a href="register.html">Register</a></p>
+      <p>Still no account? Please contact the IT administrator</p>
 
       <footer class="page-copyright">
-        <p>WEBSITE BY amazingSurge</p>
-        <p>© 2015. All RIGHT RESERVED.</p>
+        
+        <p>© 2016. All RIGHT RESERVED.</p>
         <div class="social">
           <a href="javascript:void(0)">
             <i class="icon bd-twitter" aria-hidden="true"></i>
