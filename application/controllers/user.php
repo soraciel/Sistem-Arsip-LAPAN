@@ -18,6 +18,13 @@ class user extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+ function __construct(){
+		parent::__construct();
+		$this->load->model("model_user"); //constructor yang dipanggil ketika memanggil products.php untuk melakukan pemanggilan pada model : products_model.php yang ada di folder models
+	}
+
+
 	public function tambah_user()
 	{
 		$this->load->view('form_header');
@@ -27,7 +34,8 @@ class user extends CI_Controller {
 
 	public function view(){
 		$this->load->view('header');
-		$this->load->view('view_user');
+		$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
+		$this->load->view('view_user',$data);
 	}
 	public function edit_user()
 	{
@@ -35,5 +43,28 @@ class user extends CI_Controller {
 		$this->load->view('edit_user');
 		$this->load->view('form_footer');
 	}
+
+	public function addUserDb()
+	{
+		//Function yang dipanggil ketika ingin memasukan produk ke dalam database
+		$data = array(
+				'ID_PEG' => $this->input->post('ID_PEG'),
+				'NAMA_PEG' => $this->input->post('NAMA_PEG'),
+				'PASSWORD' => $this->input->post('PASSWORD'),
+				'KET' => $this->input->post('KET'),
+				);
+		$this->model_user->addUser($data); //passing variable $data ke products_model
+
+		redirect('user/view'); //redirect page ke halaman utama controller products
+	}
+
+	public function deleteUserDb($nip)
+	{
+		//Function yang dipanggil ketika ingin melakukan delete produk dari database
+        $this->model_user->deleteUser($nip); //Memanggil fungsi deleteProduct yang ada pada model products_model dan mengirimkan parameter yaitu productId yang akan di delete
+        
+        redirect('user/view'); //redirect page ke halaman utama controller products
+	}
+
 
 }

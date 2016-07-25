@@ -84,6 +84,12 @@
   
 
   <!-- Page -->
+  <?php
+      $jumlahUser = $listUser->num_rows(); //$listProduct berasal dari data yang dilempar dari controller, yaitu $data['listProducts']. num_rows() digunakan untuk menghitung jumlah baris yang dimiliki ketika kita melakukan select dari database
+
+      
+    ?>
+
   <div class="page">
     <div class="page-content">
       <!-- Judul -->
@@ -145,9 +151,15 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>19850331</td>
-                        <td> Lorem Ipsum</td>
+
+                      <?php
+            //Kita akan melakukan looping sesuai dengan data yang dimiliki
+            $i = 0; //nantinya akan digunakan untuk pengisian Nomor
+            foreach ($listUser->result() as $row) {
+          ?>
+                     <tr>
+                        <td> <?= $row->ID_PEG ?> </td>
+                      <td> <?=  $row->NAMA_PEG ?> </td>
                     
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
@@ -155,57 +167,15 @@
                             <i class="icon wb-wrench" aria-hidden="true"></i>
                           </button>
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
+                          data-original-title="Delete" onclick="location.href='<?php echo base_url();?>index.php/user/deleteUserdb/<?= $row->ID_PEG ?>'">
                             <i class="icon wb-close" aria-hidden="true"></i>
                           </button>
                         </td>
                       </tr>
-                      <tr>
-                        <td>19850335</td>
-                        <td> Lorem Ipsum</td>
-                        
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>19850330 </td>
-                        <td> Lorem Ipsum</td>
-                        
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>19850332</td>
-                        <td> Lorem Ipsum</td>
-                       
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      
+                      <?php
+            }
+          ?>
+
                     </tbody>
                   </table>
                 </div>
