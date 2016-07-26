@@ -18,7 +18,10 @@ class arsip extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-
+	function __construct() {
+        parent::__construct();
+        $this->load->model('arsip_model');        
+       }
 
 	public function view()
 	{
@@ -30,12 +33,16 @@ class arsip extends CI_Controller {
 	public function plain()
 	{
 		$this->load->view('view_plain');
+
 	}
 
 	public function tambah_arsip()
-	{
+	{		
 		$this->load->view('form_header');
-		$this->load->view('tambah_arsip');
+		$data['h'] = $this->arsip_model->jenis_arsip();
+		// print_r($data['h']);
+		// echo $data['h'][0]['id_jenis_arsip'];
+		$this->load->view('tambah_arsip', $data);
 		$this->load->view('form_footer');
 	}
 
@@ -56,6 +63,17 @@ class arsip extends CI_Controller {
 		$this->load->view('form_footer');
 	}
 
+	public function insert_arsip(){
+		$NO_SURAT=$this->input->post('NO_SURAT');
+        $JUDUL= $this->input->post('JUDUL');
+        $TANGGAL= $this->input->post('TANGGAL');
+        $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
+        $ISI= $this->input->post('ISI');
 
+        $this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI);
+
+        // $data['h'] = $this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI);
+        // print_r($data['h']);
+	}
 
 }
