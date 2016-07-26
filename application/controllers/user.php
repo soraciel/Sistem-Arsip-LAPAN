@@ -37,10 +37,12 @@ class user extends CI_Controller {
 		$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
 		$this->load->view('view_user',$data);
 	}
-	public function edit_user()
+	public function edit_user($nip)
 	{
+		$data['user'] = $this->model_user->getUser($nip); //Melakukan pemanggilan fungsi getProduct yang ada di dalam products_model untuk mendapatkan informasi / data mengenai produk berdasarkan productId yang dikirimkan
+
 		$this->load->view('form_header');
-		$this->load->view('edit_user');
+		$this->load->view('edit_user',$data);
 		$this->load->view('form_footer');
 	}
 
@@ -64,6 +66,26 @@ class user extends CI_Controller {
         $this->model_user->deleteUser($nip); //Memanggil fungsi deleteProduct yang ada pada model products_model dan mengirimkan parameter yaitu productId yang akan di delete
         
         redirect('user/view'); //redirect page ke halaman utama controller products
+	}
+
+	public function updateUserDb($id)
+	{
+		//Function yang dipanggil ketika ingin melakukan update terhadap produk yang ada di dalam database
+    $data = array(
+				'ID_PEG' => $this->input->post('ID_PEG'),
+				'NAMA_PEG' => $this->input->post('NAMA_PEG'),
+				'PASSWORD' => $this->input->post('PASSWORD'),
+				'KET' => $this->input->post('KET'),
+				);
+      //  $id = $data->ID_PEG ; //Digunakan untuk melakukan validasi terhadap produk mana yang akan diupdate nantinya
+       // print $data['ID_PEG'];
+    //print "yhshhs";
+    //print  $this->input->post('ID_PEG');
+
+        //$condition['ID_PEG'] = $this->input->post('ID_PEG'); //Digunakan untuk melakukan validasi terhadap produk mana yang akan diupdate nantinya
+		$this->model_user->updateUser($data, $id); //passing variable $data ke products_model
+
+		redirect('user/view'); //redirect page ke halaman utama controller products
 	}
 
 

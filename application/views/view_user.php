@@ -163,10 +163,10 @@
                     
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
+                          data-original-title="Edit" onclick="location.href='<?php echo base_url();?>index.php/user/edit_user/<?= $row->ID_PEG ?>'">
                             <i class="icon wb-wrench" aria-hidden="true"></i>
                           </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"  
                           data-original-title="Delete" onclick="location.href='<?php echo base_url();?>index.php/user/deleteUserdb/<?= $row->ID_PEG ?>'">
                             <i class="icon wb-close" aria-hidden="true"></i>
                           </button>
