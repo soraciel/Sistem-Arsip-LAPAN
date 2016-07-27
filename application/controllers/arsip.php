@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//session_start(); 
 
 class arsip extends CI_Controller {
 
@@ -22,9 +23,21 @@ class arsip extends CI_Controller {
 
 	public function view()
 	{
-		$this->load->view('header');	
-		$this->load->view('view_arsip');
-		// $this->load->view('view_arsip_admin');
+		 if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+     $this->load->view('header',$data);	
+	 $this->load->view('view_arsip');
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+	
+		
 	}
 
 	public function plain()
@@ -56,6 +69,12 @@ class arsip extends CI_Controller {
 		$this->load->view('form_footer');
 	}
 
+ function logout()
+ {
+   $this->session->unset_userdata('logged_in');
+   session_destroy();
+   redirect('login', 'refresh');
+ }
 
 
 }
