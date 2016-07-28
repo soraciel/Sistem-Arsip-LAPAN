@@ -55,7 +55,7 @@
             </li>
             <li class="col-sm-2 col-xs-5">
               <div class="col-md-9">
-                  <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
+                  <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>/index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
               </div>
             </li>
           </ul>
@@ -75,83 +75,35 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>A.001/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                          dokumen abadi
-                        </td>
-                        <td>May 15, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>A.002/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>koran</td>
-                        <td>July 1, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>A.003/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                         undangan rapat
-                          </div>
-                        </td>
-                        <td>Apr 12, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>A.004/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                         Surat Kantor
-                          </div>
-                        </td>
-                        <td>Aug 9, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
                       
+                      <?php foreach ($h as $row){?>
+                        <tr>
+                         <td><?php echo $row->NO_SURAT;?></td>
+                         <td><?php echo $row->JUDUL;?></td>
+                         <?php foreach ($i as $row1) {
+                           if($row1->id_jenis_arsip == $row->ID_JENIS_ARSIP){?>
+                           <td><?php echo $row1->jenis_arsip;?></td>
+                           <?php }}?>
+                         
+                         <td><?php echo $row->TANGGAL;?></td>                         
+                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>">Lihat surat</a></td>
+
+                         <td class="text-nowrap">
+                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          data-original-title="Edit"><a href="<?php echo base_url(); ?>index.php/arsip/edit_arsip/<?php echo $row->ID_ARSIP;?>">
+                            <i class="icon wb-wrench" aria-hidden="true"></i>
+                          </button>
+                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          data-original-title="Delete"><a href="<?php echo base_url(); ?>index.php/arsip/delete_arsip/<?php echo $row->ID_ARSIP;?>">
+                            <i class="icon wb-close" aria-hidden="true"></i>
+                          </button>  
+                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          data-original-title="Download"><a href="<?php echo base_url(); ?>index.php/arsip/download/<?php echo $row->ID_ARSIP;?>">
+                            <i class="icon wb-download" aria-hidden="true"></i>
+                          </button>                         
+                        </td>                      
+                        </tr>
+                      <?php }?>                        
                     </tbody>
                   </table>
         </div>
