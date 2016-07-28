@@ -32,77 +32,26 @@ $this->load->library('form_validation');
 
 }
 
-/*
-// Load database
-$this->load->model('login_database');
-}*/
-
-// Check for user login process
-/*public function user_login_process() {
-
-$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-
-if ($this->form_validation->run() == FALSE) {
-if(isset($this->session->userdata['logged_in'])){
-$this->load->view('admin_page');
-}else{
-$this->load->view('login_form');
-}
-} else {
-$data = array(
-'username' => $this->input->post('username'),
-'password' => $this->input->post('password')
-);
-$result = $this->login_database->login($data);
-if ($result == TRUE) {
-
-$username = $this->input->post('username');
-$result = $this->login_database->read_user_information($username);
-if ($result != false) {
-$session_data = array(
-'username' => $result[0]->user_name,
-'email' => $result[0]->user_email,
-);
-// Add user data in session
-$this->session->set_userdata('logged_in', $session_data);
-$this->load->view('admin_page');
-}
-} else {
-$data = array(
-'error_message' => 'Invalid Username or Password'
-);
-$this->load->view('login_form', $data);
-}
-}
-}*/
-
-// Logout from admin page
-/**public function logout() {
-
-// Removing session data
-$sess_array = array(
-'username' => ''
-);
-$this->session->unset_userdata('logged_in', $sess_array);
-$data['message_display'] = 'Successfully Logout';
-$this->load->view('login_form', $data);
-}
-
-}*/
 
 	public function index()
 	{
+		$data['pesan']="";
+		if(isset($data)){ $this->load->view('view_login',$data); }
+		else
 		$this->load->view('view_login');
+
+	/*	if ($this->form_validation->run() == FALSE)
+                {
+                        $this->load->view('view_login');
+                }
+                else
+                {
+                        $this->load->view('formsuccess');
+                }*/
 	}
 
 	public function veriflogin(){
 		   
- 
- echo "veriflogin start";
-   //$this->form_validation->set_rules('nip', 'Username', 'trim|required|xss_clean');
-  // $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
- 
   $username = $this->input->post('NIP');
   $password = $this->input->post('password');
 
@@ -110,7 +59,7 @@ $this->load->view('login_form', $data);
    //query the database
    $result = $this->model_user->login($username, $password);
  
-//echo "<br> result= ";
+
 if ($result) {
 	 $sess_array = array();
 foreach($result as $row)
@@ -128,6 +77,7 @@ if( $row->KET == 'User'){
 }
 else{
 	//go to admin page
+	redirect('arsip/view_admin','refresh');
 }
 
 
@@ -135,38 +85,13 @@ else{
 }
 
 else{
-	echo "0";
+	//echo "0";
+	$data['pesan'] = "NIP dan Password salah." ;
+	//redirect('login',$pesan);
+
+	$this->load->view('view_login',$data);
+
 }
-
-/*
-     if ($row->KET == 'user') {
-     	//redirect('arsip/view','refresh');
-     	echo "ke halaman user";
-     }
-     else{
-     	//redirect('arsip/view_admin','refresh');
-     	echo "kehalaman admin";
-     }
-   }
-   else
-   {
-     //$this->form_validation->set_message('check_database', 'Invalid username or password');
-     return false;
-     
-   }*/
- 
-
-   /*if($this->form_validation->run() == FALSE)
-   {
-     //Field validation failed.  User redirected to login page
-     $this->load->view('view_login');
-   }
-   else
-   {
-     //Go to private area
-     redirect('home', 'refresh');
-   }*/
-
    
 	}
 
