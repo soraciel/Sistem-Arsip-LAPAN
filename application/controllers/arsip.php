@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//session_start(); 
 
 class arsip extends CI_Controller {
 
@@ -25,6 +26,7 @@ class arsip extends CI_Controller {
        }
 
 	public function view()
+
 	{		
 		$this->load->view('header');	
 		$data['h'] = $this->arsip_model->view_arsip();
@@ -32,6 +34,24 @@ class arsip extends CI_Controller {
 		// print_r($data['h']);
 		$this->load->view('view_arsip', $data);
 		// $this->load->view('view_arsip_admin');
+
+	{
+		 if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+     $this->load->view('header',$data);	
+	 $this->load->view('view_arsip');
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+	
+		
+
 	}
 
 	public function plain()
@@ -69,11 +89,20 @@ class arsip extends CI_Controller {
 		$this->load->view('form_footer');
 	}
 
+
+ function logout()
+ {
+   $this->session->unset_userdata('logged_in');
+   session_destroy();
+   redirect('login', 'refresh');
+ }
+
 	public function insert_arsip(){
 		$NO_SURAT=$this->input->post('NO_SURAT');
         $JUDUL= $this->input->post('JUDUL');
         $TANGGAL= $this->input->post('TANGGAL');
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
+
       
         $ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));                      
 
@@ -110,6 +139,8 @@ class arsip extends CI_Controller {
 	public function download($ID_ARSIP)
 	{		
 		$this->load->helper('download');   
+
+        $ISI= $this->input->post('ISI');
 
 		$data['h']= $this->arsip_model->download_arsip($ID_ARSIP);
 		$filename= $data['h']['ISI'];

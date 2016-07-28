@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html class="no-js before-run" lang="en">
 <head>
+<?php
+/*
+if (isset($logout_message)) {
+echo "<div class='message'>";
+echo $logout_message;
+echo "</div>";
+}
+?>
+<?php
+if (isset($message_display)) {
+echo "<div class='message'>";
+echo $message_display;
+echo "</div>";
+}
+?>
+<div id="main">
+<div id="login">
+<h2>Login Form</h2>
+<hr/>
+<?php echo form_open('user_authentication/user_login_process'); ?>
+<?php
+echo "<div class='error_msg'>";
+if (isset($error_message)) {
+echo $error_message;
+}
+echo validation_errors();
+echo "</div>";
+*/ ?>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -65,10 +94,10 @@
         <h2 class="brand-text">Sistem Arsip LAPAN</h2>
       </div>
       <p>Sign into your pages account</p>
-      <form method="post" action="login.html">
+      <form method="post" action="<?= base_url() ?>index.php/login/veriflogin">
         <div class="form-group">
-          <label class="sr-only" for="inputName">NIM</label>
-          <input type="text" class="form-control" id="inputName" placeholder="NIM">
+          <label class="sr-only" for="inputName">NIP</label>
+          <input type="text" class="form-control" id="inputName" placeholder="NIP" name="NIP">
         </div>
    
         <div class="form-group">

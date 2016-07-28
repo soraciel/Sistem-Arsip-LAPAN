@@ -24,6 +24,8 @@ class user extends CI_Controller {
 		$this->load->model("model_user"); //constructor yang dipanggil ketika memanggil products.php untuk melakukan pemanggilan pada model : products_model.php yang ada di folder models
 	}
 
+	
+
 
 	public function tambah_user()
 	{
