@@ -1,58 +1,54 @@
-<body>
-  
-                
+<body>               
  <div class="page-content">
-      <div class="panel">            
+      <div class="panel">      
         <h1 class="page-title" style="text-align: center">Edit Arsip</h1>
-            <div class="panel-body container-fluid" style="padding: 0px 350px">
-              <form autocomplete="off">
-                
+            <div class="panel-body container-fluid" style="padding: 0px 350px;">
+              <?php foreach ($h as $row){?>    
+              <form action="<?php echo base_url();?>/index.php/arsip/editing_arsip/<?php echo $row->ID_ARSIP;?>" method="post" enctype="multipart/form-data">
+                                                                                     
                 <div >
                   <br>
                   <h4 class="example-title">Nomor Surat</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Nomor Surat" value="12345">
+                  <input type="text" value="<?php echo $row->NO_SURAT;?>" class="form-control" id="inputPlaceholder" placeholder="Nomor Surat" name="NO_SURAT">
                   <br>
                 </div>
 
                 <div>
                   <h4 class="example-title">Judul</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Judul Surat" value="Undangan laporan KP">
+                  <input type="text" value="<?php echo $row->JUDUL;?>" class="form-control" id="inputPlaceholder" placeholder="Judul Surat" name="JUDUL">
                   <br>
                 </div>
            
                 
                 <div class="form-group">
-                  <h4 class="example-title">Tanggal</h4>
-                  <div>
-                    <input type="text" class="form-control" id="inputDate2" data-plugin="formatter"
-                    data-pattern="[[99]]/[[99]]/[[9999]]" value="12/03/2015"/>
+                  <h4 class="example-title">Tanggal</h4>                  
+                    <input type="date" name="TANGGAL" value="<?php echo $row->TANGGAL;?>" class="form-control" id="inputDate2" data-plugin="formatter"
+                    data-pattern="[[99]]/[[99]]/[[9999]]" />
                     <p class="help-block">01/01/2015</p>
                   </div>
-                </div>
                 
-                <div>
-                  <h4 class="example-title">Jenis Surat</h4>
-                  <select class="form-control" value="Dokumen Abadi">
-                    <option>&nbsp;</option>
-                    <option>Dokumen Abadi</option>
-                    <option selected="selected">Surat Perjanjian/Keuangan</option>
-                    <option>Surat Kantor/Dinas/SK</option>
-                    <option>Undangan Rapat</option>
-                    <option>Koran</option>
-
+                <div class="form-group">
+                  <h4 class="example-title">Jenis Arsip</h4>                  
+                  <select class="form-control" name="JENIS_ARSIP">
+                    <option></option>                    
+                      <?php foreach ($i as $row1) 
+                        { if ($row1->id_jenis_arsip == $row->ID_JENIS_ARSIP) {?>
+                        <option selected="selected" value="<?php echo $row1->id_jenis_arsip;?>"><?php echo $row1->jenis_arsip;?></option>
+                        <?php } else {?> <option value="<?php echo $row1->id_jenis_arsip;?>"><?php echo $row1->jenis_arsip;?></option>
+                      <?php }}} ?>
                   </select>
                   <br>
-                </div>
+                </div>                
 
                <div> 
-                <h4 class="example-title">File Upload</h4>
+                <h4 class="example-title">Upload Arsip</h4>
                 <div class="form-group">
                   <div class="input-group input-group-file">
-                    <input type="text" class="form-control" readonly="">
+                    <input type="text" name="name" class="form-control" readonly="readonly">
                     <span class="input-group-btn">
                       <span class="btn btn-success btn-file">
                         <i class="icon wb-upload" aria-hidden="true"></i>
-                        <input type="file" name="" multiple="">
+                        <input type="file" name="ISI">
                       </span>
                     </span>
                   </div>
@@ -60,9 +56,10 @@
               </div>
 
               <div style="text-align: center">
-                    <button type="button" class="btn-primary btn">Tambah</button>
+                    <button type="submit" class="btn-primary btn">Tambah</button>
               </div>
 
+            </form>
         </div> 
       </div>
      </div>
