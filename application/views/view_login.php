@@ -94,7 +94,14 @@ echo "</div>";
         <h2 class="brand-text">Sistem Arsip LAPAN</h2>
       </div>
       <p>Sign into your pages account</p>
-      <form method="post" action="<?= base_url() ?>index.php/login/veriflogin">
+      <br>
+      <?php if(isset($pesan))?> <p> <?php echo $pesan; ?> </p>
+      <?php echo validation_errors(); ?>
+        <?php //echo form_open('veriflogin2'); ?>
+
+<?php //echo form_open('login/veriflogin'); ?>
+
+      <form method="post" < action="<?= base_url() ?>index.php/login/veriflogin">
         <div class="form-group">
           <label class="sr-only" for="inputName">NIP</label>
           <input type="text" class="form-control" id="inputName" placeholder="NIP" name="NIP">
@@ -112,7 +119,7 @@ echo "</div>";
           </div>
           <a class="pull-right" href="forgot-password.html">Forgot password?</a>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        <button type="submit" class="btn btn-primary btn-block"  value="Login" >Sign in</button>
       </form>
       <p>Still no account? Please contact the IT administrator</p>
 

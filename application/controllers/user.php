@@ -22,9 +22,38 @@ class user extends CI_Controller {
  function __construct(){
 		parent::__construct();
 		$this->load->model("model_user"); //constructor yang dipanggil ketika memanggil products.php untuk melakukan pemanggilan pada model : products_model.php yang ada di folder models
+		if($this->session->userdata('logged_in'))
+   {
+
+
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='Administrator')
+    {
+	//kalau ini user
+     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+     $this->load->view('header',$data);	
+	 $this->load->view('view_arsip_admin');
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+
+
+
 	}
 
 	
+
 
 
 	public function tambah_user()

@@ -34,6 +34,30 @@ class arsip extends CI_Controller {
 		$this->load->view('view_arsip', $data);
 		// $this->load->view('view_arsip_admin');
 	
+		if($this->session->userdata('logged_in'))
+	   {
+
+
+	     $session_data = $this->session->userdata('logged_in');
+	    
+	    if($session_data['KET']=='User')
+	    {
+		//kalau ini user
+	     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+	     //$this->load->view('home_view', $data);
+	     $this->load->view('header',$data);	
+		 $this->load->view('view_arsip');
+		 }
+		 else{
+		 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+		 }
+	   }
+	   else
+	   {
+	     //If no session, redirect to login page
+	     redirect('login', 'refresh');
+	   }
+	
 		 // if($this->session->userdata('logged_in'))
 	  //  {
 	  //    $session_data = $this->session->userdata('logged_in');
@@ -72,8 +96,33 @@ class arsip extends CI_Controller {
 
 	public function view_admin()
 	{
-		$this->load->view('header');	
-		$this->load->view('view_arsip_admin');
+		if($this->session->userdata('logged_in'))
+   {
+
+
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='Administrator')
+    {
+	//kalau ini user
+     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+     $this->load->view('header',$data);	
+	 $this->load->view('view_arsip_admin');
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+
+
 	}
 
 	public function edit_arsip($ID_ARSIP){
@@ -83,6 +132,7 @@ class arsip extends CI_Controller {
 		$this->load->view('edit_arsip', $data);
 		$this->load->view('form_footer');
 	}
+
 
 
 	 public function logout()
@@ -210,6 +260,7 @@ class arsip extends CI_Controller {
 		$this->arsip_model->delete_arsip($ID_ARSIP);
 		redirect(base_url()."index.php/arsip/view"); 
 	}
+	
 
 
 }
