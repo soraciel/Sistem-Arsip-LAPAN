@@ -51,18 +51,12 @@ class arsip_model extends CI_Model
 
         $this->db->where("ID_ARSIP",$ID_ARSIP);
         $this->db->update('arsip', $data);
-    }
+    }    
 
     function delete_arsip($ID_ARSIP)
-    {
-         $files = glob(base_url().'uploads/'.'5113100037.jpg'); // get all file names
-        foreach($files as $file){ // iterate files
-        if(is_file($file))
-            unlink($file); // delete file
-        //echo $file.'file deleted';
-    }   
-        // $this->db->where("ID_ARSIP",$ID_ARSIP);
-        // $this->db->delete('arsip');
+    {   
+        $this->db->where("ID_ARSIP",$ID_ARSIP);
+        $this->db->delete('arsip');
     }
 
     function download_arsip($ID_ARSIP)
@@ -85,25 +79,11 @@ class arsip_model extends CI_Model
         // $this->db->where("JUDUL",$search_input);
         // $query = $this->db->get('arsip');
         // return $query->result();
-
-        $sql=$this->db->query('SELECT * FROM arsip where judul like %(".$search_input.")% or no_surat like %(".$search_input.")%');
-        return $sql->result();
-    }
-        
-    function search1($table_name, $column_name,$criteria = null, $id = null)
-    {
-        $this->db->select($column_name);
-        $this->db->from($table_name);
-     
-        if (!is_null($id)){
-            $this->db->where('id', $id);
-        }
-     
-        $this->db->order_by('id', 'desc');
-     
-        return $this->db->get()->result();
-
-    }
+        $this->db->like("JUDUL",$search_input);
+        $this->db->or_like("no_surat",$search_input);
+        $query = $this->db->get('arsip');
+        return $query->result();                             
+    }        
 
  }
   
