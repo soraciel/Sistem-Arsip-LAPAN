@@ -21,8 +21,7 @@ class arsip extends CI_Controller {
 	 */
 	function __construct() {
         parent::__construct();
-        $this->load->model('arsip_model');    
-         
+        $this->load->model('arsip_model');            
        }
 
 
@@ -30,7 +29,6 @@ class arsip extends CI_Controller {
 	
 	if($this->session->userdata('logged_in'))
    {
-
 
      $session_data = $this->session->userdata('logged_in');
     
@@ -95,8 +93,11 @@ class arsip extends CI_Controller {
 	//kalau ini user
      $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
      //$this->load->view('home_view', $data);
-     $this->load->view('header',$data);	
-	 $this->load->view('view_arsip_admin');
+
+     $data['h'] = $this->arsip_model->view_arsip();
+	 $data['i'] = $this->arsip_model->jenis_arsip();
+     $this->load->view('header_admin',$data);	
+	 $this->load->view('view_arsip');
 	 }
 	 else{
 	 
@@ -245,14 +246,22 @@ class arsip extends CI_Controller {
 
 	public function delete_arsip($ID_ARSIP)
 	{		
+		$this->load->helper("file");
+		$data['h']=$this->arsip_model->download_arsip($ID_ARSIP);
+		$filename=$data['h']['ISI'];            
+        unlink(realpath("uploads").DIRECTORY_SEPARATOR.$filename);                                
+            // echo realpath("uploads").DIRECTORY_SEPARATOR.$filename;
 		$this->arsip_model->delete_arsip($ID_ARSIP);
 		redirect(base_url()."index.php/arsip/view"); 
 	}
 
 	public function search()
-	{
+	{	
+     	$session_data = $this->session->userdata('logged_in');
+     	$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+
 		$search_input=$this->input->post('search_input');
-		$this->load->view('header');	
+		$this->load->view('header',$data);	
 		$data['h']=$this->arsip_model->search($search_input);
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		$this->load->view('view_arsip',$data);		

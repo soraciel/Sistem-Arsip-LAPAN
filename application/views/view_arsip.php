@@ -1,9 +1,10 @@
       <!-- End Site Navbar Seach -->
 <!-- <body class="warna"> -->
+
 <div class="page-header">
       <h1 class="page-title">Lihat Arsip</h1>
       <div class="page-header-actions">
-        <form action="<?php echo base_url();?>/index.php/arsip/search" method="post">
+        <form action="<?php echo base_url();?>index.php/arsip/search" method="post">
           <div class="input-search input-search-dark">
             <i class="input-search-icon wb-search" aria-hidden="true"></i>
             <input type="text" class="form-control" name="search_input" placeholder="Search...">
@@ -55,7 +56,7 @@
             </li>
             <li class="col-sm-2 col-xs-5">
               <div class="col-md-9">
-                  <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>/index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
+                  <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
               </div>
             </li>
           </ul>
@@ -112,11 +113,6 @@
       </div>             
   </div>     
 </div>
-
-down vote
-  
-
-Another great solution!! All credit goes to Codescratcher
 
 <script type="text/javascript">
 function ImagetoPrint(source) {
