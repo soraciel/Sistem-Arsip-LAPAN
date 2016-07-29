@@ -26,7 +26,6 @@ class arsip extends CI_Controller {
        }
 
 	public function view()
-
 	{		
 		$this->load->view('header');	
 		$data['h'] = $this->arsip_model->view_arsip();
@@ -34,24 +33,20 @@ class arsip extends CI_Controller {
 		// print_r($data['h']);
 		$this->load->view('view_arsip', $data);
 		// $this->load->view('view_arsip_admin');
-
-	{
-		 if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
-     //$this->load->view('home_view', $data);
-     $this->load->view('header',$data);	
-	 $this->load->view('view_arsip');
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
 	
-		
-
+		 // if($this->session->userdata('logged_in'))
+	  //  {
+	  //    $session_data = $this->session->userdata('logged_in');
+	  //    $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+	  //    //$this->load->view('home_view', $data);
+	  //    $this->load->view('header',$data);	
+		 // $this->load->view('view_arsip');
+	  //  }
+	  //  else
+	  //  {
+	  //    //If no session, redirect to login page
+	  //    redirect('login', 'refresh');
+	  //  }
 	}
 
 	public function plain()
@@ -90,12 +85,12 @@ class arsip extends CI_Controller {
 	}
 
 
- function logout()
- {
-   $this->session->unset_userdata('logged_in');
-   session_destroy();
-   redirect('login', 'refresh');
- }
+	 public function logout()
+	 {
+	   $this->session->unset_userdata('logged_in');
+	   session_destroy();
+	   redirect('login', 'refresh');
+	 }
 
 	public function insert_arsip(){
 		$NO_SURAT=$this->input->post('NO_SURAT');
