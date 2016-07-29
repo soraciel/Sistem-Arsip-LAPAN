@@ -79,7 +79,7 @@ class arsip_model extends CI_Model
         $this->db->where("ID_JENIS_ARSIP",$jenis_arsip);
         $query = $this->db->get('arsip');
         return $query->result();
- }
+}
     function search($search_input)
     {
         // $this->db->where("JUDUL",$search_input);
@@ -105,5 +105,5 @@ class arsip_model extends CI_Model
 
     }
 
-
- ?>    
+ }
+  
