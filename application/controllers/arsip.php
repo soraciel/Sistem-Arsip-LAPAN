@@ -283,7 +283,6 @@ class arsip extends CI_Controller {
 		$data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		// print_r($data['h']);
-		$this->load->view('header', $data);
          	$this->load->view('header', $data);
 		$this->load->view('view_arsip', $data);
 
