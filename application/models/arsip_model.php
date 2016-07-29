@@ -68,6 +68,12 @@ class arsip_model extends CI_Model
         get()->row_array();
     }
 
+
+    function filter_arsip($jenis_arsip){
+        $this->db->where("ID_JENIS_ARSIP",$jenis_arsip);
+        $query = $this->db->get('arsip');
+        return $query->result();
+}
     function search($search_input)
     {
         // $this->db->where("JUDUL",$search_input);
@@ -76,8 +82,8 @@ class arsip_model extends CI_Model
         $this->db->like("JUDUL",$search_input);
         $this->db->or_like("no_surat",$search_input);
         $query = $this->db->get('arsip');
-        return $query->result();        
-    }            
+        return $query->result();                             
+    }        
 
  }
- ?>    
+  

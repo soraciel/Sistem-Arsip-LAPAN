@@ -13,6 +13,9 @@
       </div>
     </div>
 <div class="page-content">
+  <script type="text/javascript">
+
+  </script>
   <div class="panel-body" style="padding:0px 30px; background-color:white">    
       <div class="panel-heading" style="padding:10px;">                                        
         <!-- Example Quick Menu Small -->
@@ -26,14 +29,14 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
                         role="menu">
-                          <li class="active" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
+                          <li  name="surat-baru" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
 
-                        <li role="presentation"><a href="javascript:void(0)" role="menuitem">Dokumen Abadi</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat Perjanjian/keuangan</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat kantor/dinas/sk</a></li>
+                        <li name="dokumen-abadi" class="active" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/2" role="menuitem">Surat Perjanjian/keuangan</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/3" role="menuitem">Surat kantor/dinas/sk</a></li>
                           
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">undangan rapat</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">koran</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/4" role="menuitem">undangan rapat</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">koran</a></li>
                         <!--<li role="presentation"><a href="<?php echo base_url();?>index.php/arsip/jenis_detail" role="menuitem">Filter by jenis</a></li>-->
                        <!--   <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by date</a></li>-->
                 

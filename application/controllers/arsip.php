@@ -58,7 +58,6 @@ class arsip extends CI_Controller {
 	
 }		
 
-
 	public function plain()
 	{
 		$this->load->view('view_plain');
@@ -213,7 +212,13 @@ class arsip extends CI_Controller {
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
         
         $ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
-        
+        if(!empty($ISI))
+        {
+        	$this->load->helper("file");
+			$data['h']=$this->arsip_model->download_arsip($ID_ARSIP);
+			$filename=$data['h']['ISI'];            
+        	unlink(realpath("uploads").DIRECTORY_SEPARATOR.$filename);
+        }
         //mencari tipe file
         $type=explode('.', $_FILES["ISI"]["name"]);
         $type=$type[count($type)-1];
@@ -249,7 +254,7 @@ class arsip extends CI_Controller {
 		$this->load->helper("file");
 		$data['h']=$this->arsip_model->download_arsip($ID_ARSIP);
 		$filename=$data['h']['ISI'];            
-        unlink(realpath("uploads").DIRECTORY_SEPARATOR.$filename);                                
+        unlink(realpath("uploads").DIRECTORY_SEPARATOR.$filename);
             // echo realpath("uploads").DIRECTORY_SEPARATOR.$filename;
 		$this->arsip_model->delete_arsip($ID_ARSIP);
 		redirect(base_url()."index.php/arsip/view"); 
