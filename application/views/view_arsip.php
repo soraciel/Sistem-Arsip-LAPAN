@@ -100,7 +100,9 @@
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Download"><a href="<?php echo base_url(); ?>index.php/arsip/download/<?php echo $row->ID_ARSIP;?>">
                             <i class="icon wb-download" aria-hidden="true"></i>
-                          </button>                         
+                          </button>    
+                      
+                             <button type="button" class="btn btn-pure btn-primary icon wb-print" onclick="PrintImage('<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>'); return false;"></button>       
                         </td>                      
                         </tr>
                       <?php }?>                        
@@ -110,6 +112,28 @@
       </div>             
   </div>     
 </div>
+
+down vote
+  
+
+Another great solution!! All credit goes to Codescratcher
+
+<script type="text/javascript">
+function ImagetoPrint(source) {
+    return "<html><head><script>function step1(){\n" +
+            "setTimeout('step2()', 10);}\n" +
+            "function step2(){window.print();window.close()}\n" +
+            "</scri" + "pt></head><body onload='step1()'>\n" +
+            "<img src='" + source + "' /></body></html>";
+}
+function PrintImage(source) {
+    Pagelink = "about:blank";
+    var pwa = window.open(Pagelink, "_new");
+    pwa.document.open();
+    pwa.document.write(ImagetoPrint(source));
+    pwa.document.close();
+}
+</script
            
   <!-- End Page -->
 

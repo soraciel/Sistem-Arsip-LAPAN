@@ -25,19 +25,8 @@ class arsip extends CI_Controller {
          
        }
 
-	public function view()
-
-	{		
-		$this->load->view('header');	
-		$data['h'] = $this->arsip_model->view_arsip();
-		$data['i'] = $this->arsip_model->jenis_arsip();
-		// print_r($data['h']);
-		$this->load->view('view_arsip', $data);
-		// $this->load->view('view_arsip_admin');
-
-	{
+	public function view(){		
 	
-
 	if($this->session->userdata('logged_in'))
    {
 
@@ -50,7 +39,13 @@ class arsip extends CI_Controller {
      $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
      //$this->load->view('home_view', $data);
      $this->load->view('header',$data);	
-	 $this->load->view('view_arsip');
+	 
+	 	$data['h'] = $this->arsip_model->view_arsip();
+		$data['i'] = $this->arsip_model->jenis_arsip();
+		// print_r($data['h']);
+		$this->load->view('view_arsip', $data);
+		// $this->load->view('view_arsip_admin');
+
 	 }
 	 else{
 	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
@@ -62,9 +57,8 @@ class arsip extends CI_Controller {
      redirect('login', 'refresh');
    }
 	
-		
+}		
 
-	}
 
 	public function plain()
 	{
