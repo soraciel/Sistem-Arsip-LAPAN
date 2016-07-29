@@ -82,7 +82,7 @@
           </li>
                 </ul>
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                  <li><p>welcome, <?php echo $NAMA_PEG ?></p></li>
+                  <!-- <li><p>welcome, <?php echo $NAMA_PEG; ?></p></li> -->
                   <li role="presentation">
                     <a href="<?= base_url() ?>index.php/arsip/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
                   </li>    

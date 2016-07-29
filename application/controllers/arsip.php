@@ -248,6 +248,15 @@ class arsip extends CI_Controller {
 		$this->arsip_model->delete_arsip($ID_ARSIP);
 		redirect(base_url()."index.php/arsip/view"); 
 	}
+
+	public function search()
+	{
+		$search_input=$this->input->post('search_input');
+		$this->load->view('header');	
+		$data['h']=$this->arsip_model->search($search_input);
+		$data['i'] = $this->arsip_model->jenis_arsip();
+		$this->load->view('view_arsip',$data);		
+	}
 	
 
 

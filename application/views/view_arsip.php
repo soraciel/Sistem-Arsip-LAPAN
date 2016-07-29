@@ -3,10 +3,10 @@
 <div class="page-header">
       <h1 class="page-title">Lihat Arsip</h1>
       <div class="page-header-actions">
-        <form>
+        <form action="<?php echo base_url();?>/index.php/arsip/search" method="post">
           <div class="input-search input-search-dark">
             <i class="input-search-icon wb-search" aria-hidden="true"></i>
-            <input type="text" class="form-control" name="" placeholder="Search...">
+            <input type="text" class="form-control" name="search_input" placeholder="Search...">
           </div>
         </form>
       </div>
