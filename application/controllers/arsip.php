@@ -38,6 +38,8 @@ class arsip extends CI_Controller {
     {
 	//kalau ini user
      $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+    $data['jenis_arsip'] = "";
+
      //$this->load->view('home_view', $data);
      $this->load->view('header',$data);	
 	 
@@ -261,7 +263,7 @@ class arsip extends CI_Controller {
 	public function filter_arsip($jenis_arsip){
 		      $session_data = $this->session->userdata('logged_in');
                 $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
-         
+         $data['jenis_arsip'] = $jenis_arsip;
 
 		$data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
 		$data['i'] = $this->arsip_model->jenis_arsip();

@@ -1,7 +1,13 @@
       <!-- End Site Navbar Seach -->
 <!-- <body class="warna"> -->
 <div class="page-header">
-      <h1 class="page-title">Lihat Arsip</h1>
+      <h1 class="page-title">Lihat Arsip
+                         <?php foreach ($i as $row1) {
+                           if($row1->id_jenis_arsip == $jenis_arsip){?>
+                           <td><?php echo $row1->jenis_arsip;?></td>
+                           <?php }}?>
+
+</h1>
       <div class="page-header-actions">
         <form action="<?php echo base_url();?>/index.php/arsip/search" method="post">
           <div class="input-search input-search-dark">
@@ -21,25 +27,34 @@
         <!-- <div class="example" > -->
           <ul class="nav-quick nav-quick-sm row">
             <li class="col-sm-2 col-xs-4">
-           <div class="dropdown" >
-                        <button type="button" class="btn btn-info dropdown-toggle" id="exampleColorDropdown4"
-                        data-toggle="dropdown" aria-expanded="false">Arsip terbaru
+
+          <div class="dropdown" >
+                      <button type="button" class="btn btn-info dropdown-toggle" id="exampleColorDropdown4"
+                        data-toggle="dropdown" aria-expanded="false">Saring Arsip
                           <span class="caret"></span>
                         </button>
+
+                 <!--   <select class="dropdown-menu dropdown-menu-info" name="KET" aria-labelledby="exampleColorDropdown4"
+                        role="menu">
+                    <option  role="presentation"><a href="javascript:void(0)" role="menuitem">Nuning</option>
+                    <option  role="presentation"><a href="javascript:void(0)" role="menuitem">User</option>
+                    <option  role="presentation"><a href="javascript:void(0)" role="menuitem">Administrator</option>
+                  </select>-->
+
+                        
                         <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
                         role="menu">
                           <li  name="surat-baru" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
 
-                        <li name="dokumen-abadi" class="active" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
-                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/2" role="menuitem">Surat Perjanjian/keuangan</a></li>
-                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/3" role="menuitem">Surat kantor/dinas/sk</a></li>
+                        <li name="dokumen-abadi"  value="1" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
+                          <li role="presentation" value="2" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/2" role="menuitem">Surat Perjanjian/keuangan</a></li>
+                          <li name="surat-keuangan" role="presentation"value="3" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/3" role="menuitem">Surat kantor/dinas/sk</a></li>
                           
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/4" role="menuitem">undangan rapat</a></li>
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">koran</a></li>
-                        <!--<li role="presentation"><a href="<?php echo base_url();?>index.php/arsip/jenis_detail" role="menuitem">Filter by jenis</a></li>-->
-                       <!--   <li role="presentation"><a href="javascript:void(0)" role="menuitem">Filter by date</a></li>-->
                 
                         </ul>
+
                       </div>
             </li>
             <li class="col-sm-2 col-xs-4" style="borde:none;">
