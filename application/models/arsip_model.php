@@ -76,5 +76,11 @@ class arsip_model extends CI_Model
         get()->row_array();
     }
 
+    function filter_arsip($jenis_arsip){
+        $this->db->where("ID_JENIS_ARSIP",$jenis_arsip);
+        $query = $this->db->get('arsip');
+        return $query->result();
+    }
+
  }
  ?>    

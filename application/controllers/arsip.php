@@ -22,7 +22,7 @@ class arsip extends CI_Controller {
 	function __construct() {
         parent::__construct();
         $this->load->model('arsip_model');    
-         
+
        }
 
 
@@ -249,6 +249,16 @@ class arsip extends CI_Controller {
 		redirect(base_url()."index.php/arsip/view"); 
 	}
 	
+	public function filter_arsip($jenis_arsip){
+		      $session_data = $this->session->userdata('logged_in');
+                $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+         
 
+		$data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
+		$data['i'] = $this->arsip_model->jenis_arsip();
+		// print_r($data['h']);
+		$this->load->view('header', $data);
+		$this->load->view('view_arsip', $data);
+	}
 
 }
