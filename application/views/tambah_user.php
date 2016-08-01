@@ -10,25 +10,25 @@
                 <div >
                   <br>
                   <h4 class="example-title">NIP</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Nomor Induk Pegawai" name="ID_PEG">
+                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Nomor Induk Pegawai" name="ID_PEG" required="required">
                   <br>
                 </div>
 
                 <div>
                   <h4 class="example-title">Nama</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Nama Pegawai" name="NAMA_PEG">
+                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Nama Pegawai" name="NAMA_PEG" required="required">
                   <br>
                 </div>
            
                 <div>
                   <h4 class="example-title">Password</h4>
-                  <input type="password" class="form-control" id="inputPlaceholder" placeholder="Password" name="PASSWORD">
+                  <input type="password" class="form-control" id="inputPlaceholder" placeholder="Password" name="PASSWORD" required="required">
                   <br>
                 </div>
                 
                 <div>
                   <h4 class="example-title">Status</h4>
-                  <select class="form-control" name="KET">
+                  <select class="form-control" name="KET" required="required">
                     <option>&nbsp;</option>
                     <option>User</option>
                     <option>Administrator</option>

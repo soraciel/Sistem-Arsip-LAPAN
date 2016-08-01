@@ -1,10 +1,10 @@
 
   <!-- Page -->
   
-  <div class="page">
     <div class="page-content">
       <!-- Judul -->
       <div class="page-header">
+        <h1 class="page-title">Lihat User</h1>
         <div class="page-header-actions">
           <form action="<?php echo base_url();?>index.php/user/search" method="post">
             <div class="input-search input-search-light">
@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
   <!-- End Page -->
 
 

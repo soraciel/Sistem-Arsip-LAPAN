@@ -1,6 +1,5 @@
 
   <!-- Page -->
-  <div class="page">
     <div class="page-content">
       <!-- Judul -->
       <div class="page-header">
@@ -168,7 +167,6 @@
         </div>
       </div>
     </div>
-  </div>
   <!-- End Page -->
 
 
