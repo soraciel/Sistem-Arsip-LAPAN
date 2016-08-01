@@ -45,12 +45,11 @@
                         
                         <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
                         role="menu">
-                          <li  name="surat-baru" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
+                          <li  name="surat-baru" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/view" role="menuitem">Arsip Terbaru</a></li>
 
-                        <li name="dokumen-abadi"  value="1" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
+                          <li name="dokumen-abadi"  value="1" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
                           <li role="presentation" value="2" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/2" role="menuitem">Surat Perjanjian/keuangan</a></li>
-                          <li name="surat-keuangan" role="presentation"value="3" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/3" role="menuitem">Surat kantor/dinas/sk</a></li>
-                          
+                          <li name="surat-keuangan" role="presentation"value="3" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/3" role="menuitem">Surat kantor/dinas/sk</a></li>                          
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/4" role="menuitem">undangan rapat</a></li>
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">koran</a></li>
                 
@@ -120,7 +119,7 @@
                           data-original-title="Download"><a href="<?php echo base_url(); ?>index.php/arsip/download/<?php echo $row->ID_ARSIP;?>">
                             <i class="icon wb-download" aria-hidden="true"></i>
                           </button>    
-                      
+                          
                              <button type="button" class="btn btn-pure btn-primary icon wb-print" onclick="PrintImage('<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>'); return false;"></button>       
                         </td>                      
                         </tr>

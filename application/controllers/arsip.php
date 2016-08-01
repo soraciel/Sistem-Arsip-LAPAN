@@ -166,7 +166,7 @@ class arsip extends CI_Controller {
 		}
 		else
 		{	
-			$this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI,$ISI_NAME);
+			$this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
         	redirect(base_url()."index.php/arsip/view"); 
     	}
 	}
@@ -246,7 +246,7 @@ class arsip extends CI_Controller {
 		}
 		else
 		{
-	        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI,$ISI_NAME);
+	        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
 	        redirect(base_url()."index.php/arsip/view"); 
     	}
 	}
@@ -266,6 +266,8 @@ class arsip extends CI_Controller {
 	{	
      	$session_data = $this->session->userdata('logged_in');
      	$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     	$data['jenis_arsip'] = null;
+
 
 		$search_input=$this->input->post('search_input');
 		$this->load->view('header',$data);	

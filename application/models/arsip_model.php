@@ -13,7 +13,7 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
-    function insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI,$ISI_NAME)
+    function insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME)
     {        
         $data = array(
             'NO_SURAT' => $NO_SURAT,
@@ -38,15 +38,15 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
-    function editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI,$ISI_NAME)
+    function editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME)
     {
         $data = array(
             'NO_SURAT' => $NO_SURAT,
             'JUDUL' => $JUDUL,
             'TANGGAL' => $TANGGAL,
             'ID_JENIS_ARSIP' => $JENIS_ARSIP,
-            'ISI' => $ISI
-            // 'ISI_NAME' => $ISI_NAME,            
+            // 'ISI' => $ISI
+            'ISI' => $ISI_NAME          
             );
 
         $this->db->where("ID_ARSIP",$ID_ARSIP);
@@ -68,12 +68,12 @@ class arsip_model extends CI_Model
         get()->row_array();
     }
 
-
     function filter_arsip($jenis_arsip){
         $this->db->where("ID_JENIS_ARSIP",$jenis_arsip);
         $query = $this->db->get('arsip');
         return $query->result();
-}
+    }
+
     function search($search_input)
     {
         // $this->db->where("JUDUL",$search_input);
