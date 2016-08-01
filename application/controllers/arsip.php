@@ -94,11 +94,12 @@ class arsip extends CI_Controller {
 	//kalau ini user
      $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
      //$this->load->view('home_view', $data);
+     $data['jenis_arsip'] = "";
 
      $data['h'] = $this->arsip_model->view_arsip();
 	 $data['i'] = $this->arsip_model->jenis_arsip();
      $this->load->view('header_admin',$data);	
-	 $this->load->view('view_arsip');
+	 $this->load->view('view_arsip',$data);
 	 }
 	 else{
 	 

@@ -62,4 +62,16 @@
         $this->db->where('ID_PEG', $id);
         $this->db->delete('user');
 	}
+
+	  function search($search_input)
+    {
+        // $this->db->where("JUDUL",$search_input);
+        // $query = $this->db->get('arsip');
+        // return $query->result();
+        $this->db->like("ID_PEG",$search_input);
+        $this->db->or_like("NAMA_PEG",$search_input);
+       return $this->db->get('user');
+      // return $query->result();                             
+    }        
+
 }

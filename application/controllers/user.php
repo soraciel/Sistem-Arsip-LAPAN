@@ -22,33 +22,6 @@ class user extends CI_Controller {
  function __construct(){
 		parent::__construct();
 		$this->load->model("model_user"); //constructor yang dipanggil ketika memanggil products.php untuk melakukan pemanggilan pada model : products_model.php yang ada di folder models
-		if($this->session->userdata('logged_in'))
-   {
-
-
-     $session_data = $this->session->userdata('logged_in');
-    
-    if($session_data['KET']=='Administrator')
-    {
-	//kalau ini user
-     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
-     //$this->load->view('home_view', $data);
-     $this->load->view('header',$data);	
-	 $this->load->view('view_arsip_admin');
-	 }
-	 else{
-	 
-	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
-	 	
-	 }
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
-
-
 
 	}
 
@@ -64,9 +37,33 @@ class user extends CI_Controller {
 	}
 
 	public function view(){
-		$this->load->view('header');
+		if($this->session->userdata('logged_in'))
+   {
+
+
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='Administrator')
+    {
+	//kalau ini user
+     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+   $this->load->view('header_admin',$data);
 		$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
 		$this->load->view('view_user',$data);
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+		
 	}
 	public function edit_user($nip)
 	{
@@ -118,6 +115,19 @@ class user extends CI_Controller {
 
 		redirect('user/view'); //redirect page ke halaman utama controller products
 	}
+
+		public function search()
+	{	
+     	$session_data = $this->session->userdata('logged_in');
+     	$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+
+		$search_input=$this->input->post('search_input');
+		$this->load->view('header_admin',$data);
+		$data['listUser'] = $this->model_user->search($search_input); //berisi dari return value pada function getAllProducts() di file models/products_model.php
+		$this->load->view('view_user',$data);		
+		//echo "berhasil";
+	}
+	
 
 
 }
