@@ -58,20 +58,18 @@
 
                       </div>
             </li>
-            <li class="col-sm-2 col-xs-4" style="borde:none;">
-         
-<form action="<?php echo base_url();?>index.php/arsip/filter_arsip/6">
-              <input type="date" name="date1">
-              <input type="date" name="date2">
-              <input type="submit">
-        </form>
+            <li class="col-sm-2 col-xs-4" style="borde:none;">         
+            <form action="<?php echo base_url();?>index.php/arsip/filter_arsip/6">
+              <input type="date" name="date1" class="form-control">              
+            </li>
 
-            </li>
             <li class="col-sm-2 col-xs-4">
-             
+              <input type="date" name="date2" class="form-control">               
             </li>
+
             <li class="col-sm-2 col-xs-4">
-            
+              <input type="submit"  class="btn btn-block btn-info">
+            </form>
             </li>
             <li class="col-sm-2 col-xs-4">
              
