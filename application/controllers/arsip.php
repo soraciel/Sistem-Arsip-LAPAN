@@ -126,12 +126,7 @@ class arsip extends CI_Controller {
 
 
 
-	 public function logout()
-	 {
-	   $this->session->unset_userdata('logged_in');
-	   session_destroy();
-	   redirect('login', 'refresh');
-	 }
+
 
 	public function insert_arsip(){
 		$NO_SURAT=$this->input->post('NO_SURAT');

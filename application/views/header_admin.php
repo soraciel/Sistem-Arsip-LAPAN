@@ -84,7 +84,7 @@
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
                   <li><p>welcome, <?php echo $NAMA_PEG; ?></p></li>
                   <li role="presentation">
-                    <a href="<?= base_url() ?>index.php/arsip/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
+                    <a href="<?= base_url() ?>index.php/login/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
                   </li>    
                 </ul>
                     </div>
@@ -132,7 +132,7 @@
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
                     <li><p>welcome, <?php echo $NAMA_PEG ?></p></li>
                   <li role="presentation">
-                    <a href="<?= base_url() ?>index.php/arsip/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
+                    <a href="<?= base_url() ?>index.php/login/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
                   </li>    
                 </ul>
                     </div>

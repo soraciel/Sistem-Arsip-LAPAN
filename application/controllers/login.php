@@ -50,6 +50,13 @@ $this->load->library('form_validation');
                 }*/
 	}
 
+		 public function logout()
+	 {
+	   $this->session->unset_userdata('logged_in');
+	   session_destroy();
+	   redirect('login', 'refresh');
+	 }
+
 	public function veriflogin(){
 		   
   $username = $this->input->post('NIP');
