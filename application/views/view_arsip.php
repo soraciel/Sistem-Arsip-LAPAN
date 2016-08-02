@@ -50,8 +50,9 @@
                           <li name="dokumen-abadi"  value="1" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
                           <li role="presentation" value="2" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/2" role="menuitem">Surat Perjanjian/keuangan</a></li>
                           <li name="surat-keuangan" role="presentation"value="3" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/3" role="menuitem">Surat kantor/dinas/sk</a></li>                          
-                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/4" role="menuitem">undangan rapat</a></li>
-                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">koran</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/4" role="menuitem">Undangan Rapat</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">Koran</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/6" role="menuitem">Laporan</a></li>
                 
                         </ul>
 
@@ -88,11 +89,11 @@
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>no. surat</th>
-                        <th>judul surat</th>
-                        <th>jenis surat</th>
-                        <th>tanggal surat</th>
-                        <th>isi surat</th>
+                        <th>No. Surat</th>
+                        <th>Judul/isi Surat</th>
+                        <th>Jenis Surat</th>
+                        <th>Tanggal Surat</th>
+                        <th>Dokumen</th>
                         <th class="text-nowrap">Action</th>
                       </tr>
                     </thead>
@@ -150,7 +151,7 @@ function PrintImage(source) {
     pwa.document.write(ImagetoPrint(source));
     pwa.document.close();
 }
-</script
+</script>
            
   <!-- End Page -->
 
