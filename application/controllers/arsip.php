@@ -25,6 +25,39 @@ class arsip extends CI_Controller {
        }
 
 
+public function cek_ket(){
+		if($this->session->userdata('logged_in'))
+   {
+
+
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='User')
+    {
+	//kalau ini user
+     /*$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+   $this->load->view('header_admin',$data);
+		$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
+		$this->load->view('view_user',$data);*/
+		return true;
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+	
+}
+
+
+
 	public function view(){		
 	
 	if($this->session->userdata('logged_in'))
@@ -260,21 +293,52 @@ class arsip extends CI_Controller {
 
 	public function search()
 	{	
-     	$session_data = $this->session->userdata('logged_in');
-     	$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
-     	$data['jenis_arsip'] = null;
 
+     	if($this->session->userdata('logged_in'))
+   {
+
+
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='User' or $session_data['KET']=='Administrator')
+    {
+    	     	$data['jenis_arsip'] = null;
+ $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
 
 		$search_input=$this->input->post('search_input');
 		$this->load->view('header',$data);	
 		$data['h']=$this->arsip_model->search($search_input);
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		$this->load->view('view_arsip',$data);		
+
+
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+	
+
 	}
 	
 
 	public function filter_arsip($jenis_arsip){
-		     $session_data = $this->session->userdata('logged_in');
+
+     	if($this->session->userdata('logged_in'))
+   {
+
+
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='User' or $session_data['KET']=='Administrator')
+    {
                 $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
          $data['jenis_arsip'] = $jenis_arsip;
 
@@ -283,6 +347,21 @@ class arsip extends CI_Controller {
 		// print_r($data['h']);
          	$this->load->view('header', $data);
 		$this->load->view('view_arsip', $data);
+
+
+
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
 
 }
 }
