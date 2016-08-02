@@ -83,6 +83,14 @@ class arsip_model extends CI_Model
         $this->db->or_like("no_surat",$search_input);
         $query = $this->db->get('arsip');
         return $query->result();                             
+    }
+
+    function filter_date($date1 , $date2){
+       // $this->db->where('sell_date BETWEEN "'. date('Y-m-d', strtotime($date1)). '" and "'. date('Y-m-d', strtotime($date2)).'"');
+        $this->db->where('TANGGAL >=', $date1);
+$this->db->where('TANGGAL <=', $date2);
+$query =  $this->db->get('arsip');
+return $query->result();   
     }        
 
  }

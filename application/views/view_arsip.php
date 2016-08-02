@@ -58,8 +58,12 @@
                       </div>
             </li>
             <li class="col-sm-2 col-xs-4" style="borde:none;">
-            <form>
-            </form>
+         
+<form action="<?php echo base_url();?>index.php/arsip/filter_arsip/6">
+              <input type="date" name="date1">
+              <input type="date" name="date2">
+              <input type="submit">
+        </form>
 
             </li>
             <li class="col-sm-2 col-xs-4">
@@ -164,6 +168,9 @@ function PrintImage(source) {
         </form>
       </div>
       <!-- End Site Navbar Seach -->
+
+
+
 
 
   <!-- Core  -->

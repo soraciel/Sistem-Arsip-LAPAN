@@ -291,6 +291,7 @@ public function cek_ket(){
 		redirect(base_url()."index.php/arsip/view"); 
 	}
 
+
 	public function search()
 	{	
 
@@ -341,8 +342,11 @@ public function cek_ket(){
     {
                 $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
          $data['jenis_arsip'] = $jenis_arsip;
-
-		$data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
+         if($jenis_arsip!= 6) $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
+         else {
+         	 $date1= $this->input->get('date1');
+         	 $date2= $this->input->get('date2');
+         	$data['h'] = $this->arsip_model->filter_date($date1,$date2);}
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		// print_r($data['h']);
          	$this->load->view('header', $data);
