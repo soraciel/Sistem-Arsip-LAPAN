@@ -76,7 +76,7 @@
             <a data-toggle="menubar" href="<?php echo base_url(); ?>arsip/view" role="button">
               <i class="icon fa-home">
                   <span class="sr-only">Beranda</span>
-                  <!-- <span class="hamburger-bar"></span> -->
+                  <span class="hamburger-bar"></span>
                 </i>
             </a>
           </li>
