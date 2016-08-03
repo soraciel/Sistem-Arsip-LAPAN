@@ -44,8 +44,8 @@
                         
                         <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
                         role="menu">
-                          <li  name="surat-baru" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/view" role="menuitem">Arsip Terbaru</a></li>                          
-                          <li><a href="#demo" data-toggle="collapse">Berdasarkan Tanggal</a></li>                          
+                          <li  name="surat-baru" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/view" role="menuitem">Arsip Terbaru</a></li>
+                          <li  name="surat-baru" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/view_by_date" role="menuitem">Berdasarkan Tanggal</a></li>
 
                           <li name="dokumen-abadi"  value="1" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
                           <li role="presentation" value="2" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/2" role="menuitem">Surat Perjanjian/keuangan</a></li>
@@ -58,13 +58,18 @@
 
                       </div>
             </li>
-            <li class="col-sm-2 col-xs-4" style="borde:none;">                     
+            <li class="col-sm-2 col-xs-4" style="borde:none;">         
+            <form id="hide_date" action="<?php echo base_url();?>index.php/arsip/filter_arsip/7">
+              <input type="date" name="date1" class="form-control">              
             </li>
 
-            <li class="col-sm-2 col-xs-4">              
+            <li class="col-sm-2 col-xs-4">
+              <input type="date" name="date2" class="form-control">               
             </li>
 
-            <li class="col-sm-2 col-xs-4">                      
+            <li class="col-sm-2 col-xs-4">
+              <input type="submit"  class="btn btn-block btn-info">
+            </form>
             </li>
             <li class="col-sm-2 col-xs-4">
              
@@ -76,27 +81,6 @@
             </li>
           </ul>
       </div>
-
-      <div id="demo" class="collapse">
-        <ul class="nav-quick nav-quick-sm row">
-            <li class="col-sm-3 col-xs-4"></li>
-            <li class="col-sm-2 col-xs-4"style="padding:0px 20px">
-          <form action="<?php echo base_url();?>index.php/arsip/filter_arsip/7"> 
-                <span>tanggal awal</span>         
-                <input width="15px" type="date" name="date1" class="form-control">
-            </li>
-            <li class="col-sm-2 col-xs-4" style="padding:0px 20px">
-                <span>tanggal akhir</span>
-                <input width="15px" type="date" name="date2" class="form-control">                
-            </li>
-            <li class="col-sm-2 col-xs-4" style="padding:0px 20px">
-              <span> <br></span>
-              <button type="submit" class="btn btn-block btn-info">Cari</button>              
-            </li>
-            <li class="col-sm-3 col-xs-4"></li>                
-          </form>
-      </div>
-
         <!-- End Example Quick Menu Small -->
       <div class="example-wrap"> <!-- ganti kolom searching                 -->
         <div class="example table-responsive" style="margin-top:5px;">

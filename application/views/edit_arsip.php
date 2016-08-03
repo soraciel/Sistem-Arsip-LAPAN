@@ -1,6 +1,6 @@
 <body>               
  <div class="page-content">
-      <div class="panel">      
+      <div class="panel" style="padding:15px;">      
         <h1 class="page-title" style="text-align: center">Edit Arsip</h1>
             <div class="panel-body container-fluid" style="padding: 0px 350px;">
               <?php foreach ($h as $row){?>    
@@ -48,7 +48,7 @@
                 </div>  
 
               <div style="text-align: center">
-                    <button type="submit" class="btn-primary btn">Edit</button>
+                    <button type="submit" class="btn-primary btn">Simpan</button>
               </div>
 
             </form>

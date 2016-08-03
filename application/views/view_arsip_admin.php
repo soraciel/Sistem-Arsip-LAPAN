@@ -1,182 +1,188 @@
+      <!-- End Site Navbar Seach -->
+<!-- <body class="warna"> -->
 
-  <!-- Page -->
-    <div class="page-content">
-      <!-- Judul -->
-      <div class="page-header">
-        <h1 class="page-title">Lihat Arsip</h1>
-        <div class="page-header-actions">
-          <form>
-            <div class="input-search input-search-light">
-              <i class="input-search-icon wb-search" aria-hidden="true"></i>
-              <input type="text" class="form-control" name="" placeholder="Search...">
-            </div>
-          </form>
-        </div>
-      </div>
-<!-- end judul -->
-      <div class="panel">
-        <div class="panel-heading">                    
-                      
-<!-- Example Quick Menu Small -->
-        
+<div class="page-header">
+      <h1 class="page-title">Lihat Arsip
+                         <?php foreach ($i as $row1) {
+                           if($row1->id_jenis_arsip == $jenis_arsip){?>
+                           <td><?php echo $row1->jenis_arsip;?></td>
+                           <?php }}?>
+
+</h1>
+      <div class="page-header-actions">
+        <form action="<?php echo base_url();?>index.php/arsip/search" method="post">
+          <div class="input-search input-search-dark">
+            <i class="input-search-icon wb-search" aria-hidden="true"></i>
+            <input type="text" class="form-control" name="search_input" placeholder="Search...">
+          </div>
+        </form>        
+      </div>            
+    </div>
+
+<div class="page-content">
+  <script type="text/javascript">
+
+  </script>
+  <div class="panel-body" style="padding:0px 30px; background-color:white">    
+      <div class="panel-heading" style="padding:10px;">                                        
+        <!-- Example Quick Menu Small -->
+        <!-- <div class="example" > -->
           <ul class="nav-quick nav-quick-sm row">
             <li class="col-sm-2 col-xs-4">
-           <div class="dropdown" >
-                        <button type="button" class="btn btn-info dropdown-toggle" id="exampleColorDropdown4"
-                        data-toggle="dropdown" aria-expanded="false">Arsip terbaru
+
+          <div class="dropdown" >
+                      <button type="button" class="btn btn-info dropdown-toggle" id="exampleColorDropdown4"
+                        data-toggle="dropdown" aria-expanded="false">Saring Arsip
                           <span class="caret"></span>
-                        </button>
+                      </button>                 
+                        
                         <ul class="dropdown-menu dropdown-menu-info" aria-labelledby="exampleColorDropdown4"
                         role="menu">
-                                                    <li class="active" role="presentation"><a href="javascript:void(0)" role="menuitem">Arsip Terbaru</a></li>
+                          <li  name="surat-baru" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/view_admin" role="menuitem">Arsip Terbaru</a></li>                          
+                          <li><a href="#demo" data-toggle="collapse">Berdasarkan Tanggal</a></li>                          
 
-                        <li role="presentation"><a href="javascript:void(0)" role="menuitem">Dokumen Abadi</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat Perjanjian/keuangan</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">Surat kantor/dinas/sk</a></li>
-                          
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">undangan rapat</a></li>
-                          <li role="presentation"><a href="javascript:void(0)" role="menuitem">koran</a></li>
+                          <li name="dokumen-abadi"  value="1" role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/1" role="menuitem">Dokumen Abadi</a></li>
+                          <li role="presentation" value="2" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/2" role="menuitem">Surat Perjanjian/keuangan</a></li>
+                          <li name="surat-keuangan" role="presentation"value="3" ><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/3" role="menuitem">Surat kantor/dinas/sk</a></li>                          
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/4" role="menuitem">Undangan Rapat</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">Koran</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/6" role="menuitem">Laporan</a></li>
+                
                         </ul>
+
                       </div>
             </li>
-            <li class="col-sm-2 col-xs-4">
-            <form>
-            </form>
+            <li class="col-sm-2 col-xs-4" style="borde:none;">         
+                          
+            </li>
 
+            <li class="col-sm-2 col-xs-4">
+                            
+            </li>
+
+            <li class="col-sm-2 col-xs-4">
+              
             </li>
             <li class="col-sm-2 col-xs-4">
              
             </li>
-            <li class="col-sm-2 col-xs-4">
-            
-            </li>
-            <li class="col-sm-2 col-xs-4">
-              
-            </li>
             <li class="col-sm-2 col-xs-5">
-             <div class="col-md-9">                
-                <button type="button" class="btn btn-block btn-info" onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'">Tambah Arsip</button>
-</div>
+              <div class="col-md-9">
+                  <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
+              </div>
             </li>
           </ul>
+      </div>
+      <div id="demo" class="collapse">
+        <ul class="nav-quick nav-quick-sm row">
+            <li class="col-sm-3 col-xs-4"></li>
+            <li class="col-sm-2 col-xs-4"style="padding:0px 20px">
+          <form action="<?php echo base_url();?>index.php/arsip/filter_arsip/7"> 
+                <span>tanggal awal</span>         
+                <input width="15px" type="date" name="date1" class="form-control">
+            </li>
+            <li class="col-sm-2 col-xs-4" style="padding:0px 20px">
+                <span>tanggal akhir</span>
+                <input width="15px" type="date" name="date2" class="form-control">                
+            </li>
+            <li class="col-sm-2 col-xs-4" style="padding:0px 20px">
+              <span> <br></span>
+              <button type="submit" class="btn btn-block btn-info">Cari</button>              
+            </li>
+            <li class="col-sm-3 col-xs-4"></li>                
+          </form>
+      </div>
+      
         <!-- End Example Quick Menu Small -->
-                    
-        </div>
-        <div class="panel-body">
-         <!-- Example Bordered Table -->
-              <div class="example-wrap"> <!--ganti kolom searching-->
-                
-                <div class="example table-responsive">
+      <div class="example-wrap"> <!-- ganti kolom searching                 -->
+        <div class="example table-responsive" style="margin-top:5px;">
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>no. surat</th>
-                        <th>judul surat</th>
-                        <th>jenis surat</th>
-                        <th>tanggal surat</th>
-                        <th>isi surat</th>
+                        <th>No. Surat</th>
+                        <th>Judul/isi Surat</th>
+                        <th>Jenis Surat</th>
+                        <th>Tanggal Surat</th>
+                        <th>Dokumen</th>
                         <th class="text-nowrap">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>A.001/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                          dokumen abadi
-                        </td>
-                        <td>May 15, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>A.002/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                          koran
-                          </div>
-                        </td>
-                        <td>July 1, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>A.003/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                         undangan rapat
-                          </div>
-                        </td>
-                        <td>Apr 12, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>A.004/Pan-Pel/AKB/I/2014 </td>
-                        <td> surat keputusan</td>
-                        <td>
-                         Surat Kantor
-                          </div>
-                        </td>
-                        <td>Aug 9, 2015</td>
-                        <td>file</td>
-                        <td class="text-nowrap">
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit">
-                            <i class="icon wb-wrench" aria-hidden="true"></i>
-                          </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Delete">
-                            <i class="icon wb-close" aria-hidden="true"></i>
-                          </button>
-                        </td>
-                      </tr>
                       
+                      <?php foreach ($h as $row){?>
+                        <tr>
+                         <td><?php echo $row->NO_SURAT;?></td>
+                         <td><?php echo $row->JUDUL;?></td>
+                         <?php foreach ($i as $row1) {
+                           if($row1->id_jenis_arsip == $row->ID_JENIS_ARSIP){?>
+                           <td><?php echo $row1->jenis_arsip;?></td>
+                           <?php }}?>
+                         
+                         <td><?php echo $row->TANGGAL;?></td>                         
+                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>">Lihat surat</a></td>
+
+                         <td class="text-nowrap">
+                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          data-original-title="Edit"><a href="<?php echo base_url(); ?>index.php/arsip/edit_arsip/<?php echo $row->ID_ARSIP;?>">
+                            <i class="icon wb-wrench" aria-hidden="true"></i>
+                          </button>
+                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          data-original-title="Delete"><a href="<?php echo base_url(); ?>index.php/arsip/delete_arsip/<?php echo $row->ID_ARSIP;?>">
+                            <i class="icon wb-close" aria-hidden="true"></i>
+                          </button>  
+                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          data-original-title="Download"><a href="<?php echo base_url(); ?>index.php/arsip/download/<?php echo $row->ID_ARSIP;?>">
+                            <i class="icon wb-download" aria-hidden="true"></i>
+                          </button>    
+                          
+                             <button type="button" class="btn btn-pure btn-primary icon wb-print" onclick="PrintImage('<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>'); return false;"></button>       
+                        </td>                      
+                        </tr>
+                      <?php }?>                        
                     </tbody>
                   </table>
-                </div>
-              </div>
-             
         </div>
-      </div>
-    </div>
+      </div>             
+  </div>     
+</div>
+
+<script type="text/javascript">
+function ImagetoPrint(source) {
+    return "<html><head><script>function step1(){\n" +
+            "setTimeout('step2()', 10);}\n" +
+            "function step2(){window.print();window.close()}\n" +
+            "</scri" + "pt></head><body onload='step1()'>\n" +
+            "<img src='" + source + "' /></body></html>";
+}
+function PrintImage(source) {
+    Pagelink = "about:blank";
+    var pwa = window.open(Pagelink, "_new");
+    pwa.document.open();
+    pwa.document.write(ImagetoPrint(source));
+    pwa.document.close();
+}
+</script>
+           
   <!-- End Page -->
 
+   <!-- Site Navbar Seach -->
+      <div class="collapse navbar-search-overlap" id="site-navbar-search">
+        <form role="search">
+          <div class="form-group">
+            <div class="input-search">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" name="site-search" placeholder="Search...">
+              <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
+              data-toggle="collapse" aria-label="Close"></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Site Navbar Seach -->
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <span class="site-footer-legal">© 2015 Remark</span>
-    <div class="site-footer-right">
-      Crafted with <i class="red-600 wb wb-heart"></i> by <a href="http://themeforest.net/user/amazingSurge">amazingSurge</a>
-    </div>
-  </footer>
+
+
+
 
   <!-- Core  -->
   <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.js"></script>
@@ -206,10 +212,10 @@
   <script src="<?php echo base_url();?>assets/js/configs/config-tour.js"></script>
 
   <script src="<?php echo base_url();?>assets/js/components/asscrollable.js"></script>
-  <script src="<?php echo base_url();?>assets/js/components/animsition.js"></script>
+<!--  <script src="<?php echo base_url();?>assets/js/components/animsition.js"></script>-->
   <script src="<?php echo base_url();?>assets/js/components/slidepanel.js"></script>
   <script src="<?php echo base_url();?>assets/js/components/switchery.js"></script>
-
+<!--
 
   <script>
     (function(document, window, $) {
@@ -220,8 +226,8 @@
         Site.run();
       });
     })(document, window, jQuery);
-  </script>
+  </script>-->
+
 
 </body>
-
 </html>

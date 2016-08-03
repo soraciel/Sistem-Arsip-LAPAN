@@ -1,7 +1,7 @@
 <body>
                 
  <div class="page-content">
-      <div class="panel">            
+      <div class="panel" style="padding:15px;">            
         <h1 class="page-title" style="text-align: center">Tambah User</h1>
             <div class="panel-body container-fluid" style="padding: 0px 350px">
 
@@ -29,7 +29,7 @@
                 <div>
                   <h4 class="example-title">Status</h4>
                   <select class="form-control" name="KET" required="required">
-                    <option>&nbsp;</option>
+                    <!-- <option>&nbsp;</option> -->
                     <option>User</option>
                     <option>Administrator</option>
                   </select>

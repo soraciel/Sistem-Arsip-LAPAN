@@ -1,3 +1,4 @@
+              <!-- <i class="icon hamburger hamburger-arrow-left"> -->
 <!DOCTYPE html>
 <html class="no-js before-run" lang="en">
 <head>
@@ -43,59 +44,20 @@
   <!-- Scripts -->
   <script src="<?php echo base_url();?>assets/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo base_url();?>assets/vendor/breakpoints/breakpoints.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $("toggle").click(function(){
+              $("hide_date").toggle();
+          });
+      });
+  </script>
+
   <script>
     Breakpoints();
   </script>
 </head>
 <body style="background-color:#e4eaec;">
-
-  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-    <div class="navbar-header">
-      <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="">
-        <img class="navbar-brand-logo" src="<?php echo base_url();?>assets/images/logolapan.png" width="50" length="50" alt="...">        
-        <span class="navbar-brand-text">LAPAN</span>
-      </div>
-    </div>
-
-    <!-- <div class="navbar-container container-fluid">
-      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">      
-        <div class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-          <li role="presentation">
-            <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>            
-          </li>    
-      </div>
-     </div>
-    </div> -->
-
-    <div class="navbar-container container-fluid">
-      <!-- Navbar Collapse -->
-      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
-        <!-- Navbar Toolbar -->
-        <ul class="nav navbar-toolbar">
-          <li class="hidden-float" id="toggleMenubar">
-            <a data-toggle="menubar" href="<?php echo base_url(); ?>arsip/view" role="button">
-              <i class="icon fa-home">
-                  <span class="sr-only">Beranda</span>
-                  <!-- <span class="hamburger-bar"></span> -->
-                </i>
-            </a>
-          </li>
-                </ul>
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                  <li><p>welcome, <?php echo $NAMA_PEG; ?></p></li>
-                  <li role="presentation">
-                    <a href="<?= base_url() ?>index.php/login/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
-                  </li>    
-                </ul>
-                    </div>
-                    
-    </div>
-
-  </nav>
-
-  <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
   <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
@@ -120,17 +82,12 @@
       <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
         <!-- Navbar Toolbar -->
         <ul class="nav navbar-toolbar">
-          <li class="hidden-float" id="toggleMenubar">
-            <a data-toggle="menubar" href="#" role="button">
-              <i class="icon hamburger hamburger-arrow-left">
-                  <span class="sr-only">Toggle menubar</span>
-                  <span class="hamburger-bar"></span>
-                </i>
+          <li>
+              <a>Selamat datang, <?php echo $NAMA_PEG ?>
             </a>
           </li>
                 </ul>
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li><p>welcome, <?php echo $NAMA_PEG ?></p></li>
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">                    
                   <li role="presentation">
                     <a href="<?= base_url() ?>index.php/login/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
                   </li>    

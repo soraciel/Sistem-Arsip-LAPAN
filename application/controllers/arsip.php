@@ -56,8 +56,6 @@ public function cek_ket(){
 	
 }
 
-
-
 	public function view(){		
 	
 	if($this->session->userdata('logged_in'))
@@ -93,33 +91,10 @@ public function cek_ket(){
 	
 }		
 
-	public function plain()
-	{
-		$this->load->view('view_plain');
-
-	}
-
-	public function tambah_arsip()
-	{		
-		$this->load->view('form_header');
-		$data['h'] = $this->arsip_model->jenis_arsip();
-		// print_r($data['h']);
-		// echo $data['h'][0]['id_jenis_arsip'];
-		$this->load->view('tambah_arsip', $data);
-		$this->load->view('form_footer');
-	}
-
-	public function jenis_detail(){
-		$this->load->view('header');	
-		$this->load->view('view_jenis_detail');
-	}
-
-	public function view_admin()
+public function view_admin()
 	{
 		if($this->session->userdata('logged_in'))
    {
-
-
      $session_data = $this->session->userdata('logged_in');
     
     if($session_data['KET']=='Administrator')
@@ -132,7 +107,7 @@ public function cek_ket(){
      $data['h'] = $this->arsip_model->view_arsip();
 	 $data['i'] = $this->arsip_model->jenis_arsip();
      $this->load->view('header_admin',$data);	
-	 $this->load->view('view_arsip',$data);
+	 $this->load->view('view_arsip_admin',$data);
 	 }
 	 else{
 	 
@@ -149,6 +124,113 @@ public function cek_ket(){
 
 	}
 
+	public function home()
+	{
+		if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='Administrator')
+    {
+	//kalau ini user
+     $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+     $data['jenis_arsip'] = "";
+
+     $data['h'] = $this->arsip_model->view_arsip();
+	 $data['i'] = $this->arsip_model->jenis_arsip();
+     $this->load->view('header_admin',$data);	
+	 $this->load->view('view_arsip_admin',$data);
+	 }
+
+	 else if($session_data['KET']=='User')
+	 {
+	 	$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+     //$this->load->view('home_view', $data);
+     $data['jenis_arsip'] = "";
+
+     $data['h'] = $this->arsip_model->view_arsip();
+	 $data['i'] = $this->arsip_model->jenis_arsip();
+     $this->load->view('header',$data);	
+	 $this->load->view('view_arsip',$data);
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+	}
+
+	public function view_by_date()
+	{
+		if($this->session->userdata('logged_in'))
+   {
+
+
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='User' )
+    {
+    	     	$data['jenis_arsip'] = null;
+ 				$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+
+		$this->load->view('header',$data);	
+	 
+	 	$data['h'] = $this->arsip_model->view_arsip();
+		$data['i'] = $this->arsip_model->jenis_arsip();
+		$this->load->view('arsip_by_date',$data);		
+
+
+	 }
+
+	 else if($session_data['KET']=='Administrator')
+	 {
+	 	$data['jenis_arsip'] = null;
+ 				$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+
+		$this->load->view('header',$data);	
+	 
+	 	$data['h'] = $this->arsip_model->view_arsip();
+		$data['i'] = $this->arsip_model->jenis_arsip();
+		$this->load->view('header_admin',$data);	
+	 	$this->load->view('arsip_by_date',$data);
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+
+	}
+
+	public function tambah_arsip()
+	{		
+		$this->load->view('form_header');
+		$data['h'] = $this->arsip_model->jenis_arsip();
+		$data['errormsg']="";
+		// print_r($data['h']);
+		// echo $data['h'][0]['id_jenis_arsip'];
+		$this->load->view('tambah_arsip', $data);
+		$this->load->view('form_footer');
+	}
+
+	public function jenis_detail(){
+		$this->load->view('header');	
+		$this->load->view('view_jenis_detail');
+	}	
+
 	public function edit_arsip($ID_ARSIP){
 		$this->load->view('form_header');
 		$data['h'] = $this->arsip_model->edit_arsip($ID_ARSIP);
@@ -156,10 +238,6 @@ public function cek_ket(){
 		$this->load->view('edit_arsip', $data);
 		$this->load->view('form_footer');
 	}
-
-
-
-
 
 	public function insert_arsip(){
 		$NO_SURAT=$this->input->post('NO_SURAT');
@@ -186,12 +264,16 @@ public function cek_ket(){
 		);
 
 		$this->load->library('upload', $config);
+		$data['errormsg']="";
 		
 		if(!$this->upload->do_upload('ISI')) //upload ke directory CI
 		{
-			// $errormessage = "file tidak sesuai format";
-			// $this->load->view('tambah_arsip', $errormessage);
-			redirect(base_url()."index.php/arsip/tambah_arsip"); 
+			$this->load->view('form_header');
+			$data['errormsg'] = "File tidak sesuai format";
+			$this->load->view('tambah_arsip',$data);
+			$this->load->view('form_footer');
+			// echo $data['errormsg'];
+			// redirect(base_url()."index.php/arsip/tambah_arsip"); 
 		}
 		else
 		{	
@@ -298,13 +380,12 @@ public function cek_ket(){
      	if($this->session->userdata('logged_in'))
    {
 
-
      $session_data = $this->session->userdata('logged_in');
     
-    if($session_data['KET']=='User' or $session_data['KET']=='Administrator')
+    if($session_data['KET']=='User')
     {
-    	     	$data['jenis_arsip'] = null;
- $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+    	    $data['jenis_arsip'] = null;
+ 			$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
 
 		$search_input=$this->input->post('search_input');
 		$this->load->view('header',$data);	
@@ -313,6 +394,18 @@ public function cek_ket(){
 		$this->load->view('view_arsip',$data);		
 
 
+	 }
+	 else if($session_data['KET']=='Administrator')
+	 {
+	 		$data['jenis_arsip'] = null;
+ 			$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+
+		$search_input=$this->input->post('search_input');
+		$this->load->view('header',$data);	
+		$data['h']=$this->arsip_model->search($search_input);
+		$data['i'] = $this->arsip_model->jenis_arsip();
+		$this->load->view('header_admin',$data);	
+	 	$this->load->view('view_arsip_admin',$data);
 	 }
 	 else{
 	 
@@ -338,11 +431,11 @@ public function cek_ket(){
 
      $session_data = $this->session->userdata('logged_in');
     
-    if($session_data['KET']=='User' or $session_data['KET']=='Administrator')
+    if($session_data['KET']=='User')
     {
                 $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
          $data['jenis_arsip'] = $jenis_arsip;
-         if($jenis_arsip!= 6) $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
+         if($jenis_arsip!= 7) $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
          else {
          	 $date1= $this->input->get('date1');
          	 $date2= $this->input->get('date2');
@@ -351,9 +444,21 @@ public function cek_ket(){
 		// print_r($data['h']);
          	$this->load->view('header', $data);
 		$this->load->view('view_arsip', $data);
+	 }
 
-
-
+	 else if($session_data['KET']=='Administrator')
+	 {
+	 	$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
+         $data['jenis_arsip'] = $jenis_arsip;
+         if($jenis_arsip!= 7) $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
+         else {
+         	 $date1= $this->input->get('date1');
+         	 $date2= $this->input->get('date2');
+         	$data['h'] = $this->arsip_model->filter_date($date1,$date2);}
+		$data['i'] = $this->arsip_model->jenis_arsip();
+		// print_r($data['h']);
+         	$this->load->view('header_admin', $data);
+		$this->load->view('view_arsip_admin', $data);
 	 }
 	 else{
 	 
