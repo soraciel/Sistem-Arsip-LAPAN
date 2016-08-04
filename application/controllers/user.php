@@ -25,10 +25,6 @@ class user extends CI_Controller {
 
 	}
 
-	
-
-
-
 	public function tambah_user()
 	{
 		$this->load->view('form_header');

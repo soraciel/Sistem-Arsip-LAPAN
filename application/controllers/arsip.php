@@ -235,6 +235,9 @@ public function view_admin()
 		$this->load->view('form_header');
 		$data['h'] = $this->arsip_model->edit_arsip($ID_ARSIP);
 		$data['i'] = $this->arsip_model->jenis_arsip();
+		
+		$data['errormsg']="";
+
 		$this->load->view('edit_arsip', $data);
 		$this->load->view('form_footer');
 	}
@@ -351,9 +354,11 @@ public function view_admin()
 		
 		if(!$this->upload->do_upload('ISI')) //upload ke directory CI
 		{
-			// $errormessage = "file tidak sesuai format";
-			// $this->load->view('tambah_arsip', $errormessage);
-			redirect(base_url()."index.php/arsip/tambah_arsip"); 
+			$this->load->view('form_header');
+			$data['errormsg'] = "File tidak sesuai format";
+			$this->load->view('tambah_arsip',$data);
+			$this->load->view('form_footer');
+			// redirect(base_url()."index.php/arsip/tambah_arsip"); 
 		}
 		else
 		{

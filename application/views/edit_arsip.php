@@ -39,6 +39,10 @@
                   <br>
                 </div>                
 
+                <?php if(isset($errormsg))?> 
+               <p style="color:red;"> <?php echo $errormsg; ?> </p>
+                <?php echo validation_errors(); ?>
+
                <h4 class="example-title">Upload Arsip</h4>
                 <div class="form-group">
                   <div class="input-group input-group-file">                    
