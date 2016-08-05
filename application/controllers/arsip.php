@@ -363,7 +363,7 @@ public function view_admin()
 		else
 		{
 	        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
-	        redirect(base_url()."index.php/arsip/view"); 
+	        redirect(base_url()."index.php/arsip/view_admin"); 
     	}
 	}
 
@@ -375,7 +375,9 @@ public function view_admin()
         unlink(realpath("uploads").DIRECTORY_SEPARATOR.$filename);
             // echo realpath("uploads").DIRECTORY_SEPARATOR.$filename;
 		$this->arsip_model->delete_arsip($ID_ARSIP);
-		redirect(base_url()."index.php/arsip/view"); 
+
+		
+		redirect(base_url()."index.php/arsip/view_admin"); 
 	}
 
 

@@ -52,6 +52,12 @@
           });
       });
   </script>
+  <script type="text/javascript">
+$(document).ready(function(){
+    $(".datepicker").each(function() {
+        $(this).datepicker();
+    });
+});</script>
 
   <script>
     Breakpoints();
