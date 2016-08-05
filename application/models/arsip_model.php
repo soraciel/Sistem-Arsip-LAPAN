@@ -40,15 +40,14 @@ class arsip_model extends CI_Model
 
     function editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME)
     {   
-        if(isset($ISI_NAME))
+        if($ISI_NAME=="kosong")
         {
             $data = array(
                 'NO_SURAT' => $NO_SURAT,
                 'JUDUL' => $JUDUL,
                 'TANGGAL' => $TANGGAL,
                 'ID_JENIS_ARSIP' => $JENIS_ARSIP,
-                // 'ISI' => $ISI
-                'ISI' => $ISI_NAME          
+                // 'ISI' => $ISI                        
                 );
         }
         else
@@ -57,9 +56,19 @@ class arsip_model extends CI_Model
                 'NO_SURAT' => $NO_SURAT,
                 'JUDUL' => $JUDUL,
                 'TANGGAL' => $TANGGAL,
-                'ID_JENIS_ARSIP' => $JENIS_ARSIP                                    
+                'ID_JENIS_ARSIP' => $JENIS_ARSIP,
+                'ISI' => $ISI_NAME                               
                 );
         }
+
+        // $data = array(
+        //         'NO_SURAT' => $NO_SURAT,
+        //         'JUDUL' => $JUDUL,
+        //         'TANGGAL' => $TANGGAL,
+        //         'ID_JENIS_ARSIP' => $JENIS_ARSIP,
+        //         'ISI' => $ISI_NAME                               
+        //         );
+        
         $this->db->where("ID_ARSIP",$ID_ARSIP);
         $this->db->update('arsip', $data);
     }    

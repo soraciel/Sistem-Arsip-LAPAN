@@ -281,7 +281,15 @@ public function view_admin()
 		else
 		{	
 			$this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
-        	redirect(base_url()."index.php/arsip/view"); 
+			if($this->session->userdata('logged_in'))
+		   {
+		     $session_data = $this->session->userdata('logged_in');
+
+				if($session_data['KET']=='User')
+	        		redirect(base_url()."index.php/arsip/view"); 
+	        	elseif($session_data['KET']=='Administrator')
+	        		redirect(base_url()."index.php/arsip/view_admin");
+	        } 
     	}
 	}
 
@@ -326,9 +334,10 @@ public function view_admin()
         $JUDUL= $this->input->post('JUDUL');
         $TANGGAL= $this->input->post('TANGGAL');
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
-                
+		$ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
+
         if(!empty($ISI))
-        {	$ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
+        {	        	
         	$this->load->helper("file");
 			$data['h']=$this->arsip_model->download_arsip($ID_ARSIP);
 			$filename=$data['h']['ISI'];            
@@ -337,7 +346,10 @@ public function view_admin()
 	        //mencari tipe file
 	        $type=explode('.', $_FILES["ISI"]["name"]);
 	        $type=$type[count($type)-1];
-	        $ISI_NAME=uniqid(rand()).'.'.$type; //nama file random dimasukkan ke DB
+	       	$ISI_NAME=uniqid(rand()).'.'.$type; //nama file random dimasukkan ke DB
+
+	        while($ISI_NAME=="kosong")
+	        {$ISI_NAME=uniqid(rand()).'.'.$type;} //nama file random dimasukkan ke DB
 
 	        $config = array(
 				'upload_path' => "./uploads/",
@@ -357,7 +369,7 @@ public function view_admin()
 				$data['errormsg'] = "File tidak sesuai format";
 				$this->load->view('tambah_arsip',$data);
 				$this->load->view('form_footer');
-				// redirect(base_url()."index.php/arsip/tambah_arsip"); 
+				redirect(base_url()."index.php/arsip/tambah_arsip"); 
 			}
 			else
 			{
@@ -366,8 +378,10 @@ public function view_admin()
 	    	}
     	}
     	else
-    	{
-    		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP);
+    	{	
+    		$ISI_NAME="kosong";
+    		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
+	        // echo "gambar gakebaca";
 	        redirect(base_url()."index.php/arsip/view_admin"); 
     	}
 	}
