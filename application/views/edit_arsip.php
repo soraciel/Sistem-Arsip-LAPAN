@@ -46,7 +46,7 @@
                <h4 class="example-title">Upload Arsip</h4>
                 <div class="form-group">
                   <div class="input-group input-group-file">                    
-                        <input id="inputUpload" type="file" name="ISI" value="<?php echo $row1->ISI; ?>">
+                        <input id="inputUpload" type="file" name="ISI">
                         <h5 style="color=light-grey;">max 10 MB (.gif/.jpg/.png/.jpeg/.pdf)</h5>                      
                   </div>
                 </div>  
