@@ -63,10 +63,10 @@
             <li class="col-sm-2 col-xs-4">
               
             </li>
-            <li class="col-sm-2 col-xs-4">
+            <li class="col-sm-1 col-xs-4">
              
             </li>
-            <li class="col-sm-2 col-xs-5">
+            <li class="col-sm-3 col-xs-5">
               <div class="col-md-9">
                   <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
               </div>
@@ -75,13 +75,13 @@
       </div>
       <div id="demo" class="collapse">
         <ul class="nav-quick nav-quick-sm row">
-            <li class="col-sm-3 col-xs-4"></li>
-            <li class="col-sm-2 col-xs-4"style="padding:0px 20px">
+            <li class="col-sm-2 col-xs-4"></li>
+            <li class="col-sm-3 col-xs-4"style="padding:0px 20px">
           <form action="<?php echo base_url();?>index.php/arsip/filter_arsip/7"> 
                 <span>tanggal awal</span>         
                 <input width="15px" type="date" name="date1" class="form-control">
             </li>
-            <li class="col-sm-2 col-xs-4" style="padding:0px 20px">
+            <li class="col-sm-3 col-xs-4" style="padding:0px 20px">
                 <span>tanggal akhir</span>
                 <input width="15px" type="date" name="date2" class="form-control">                
             </li>
@@ -89,7 +89,7 @@
               <span> <br></span>
               <button type="submit" class="btn btn-block btn-info">Cari</button>              
             </li>
-            <li class="col-sm-3 col-xs-4"></li>                
+            <li class="col-sm-2 col-xs-4"></li>                
           </form>
       </div>
       

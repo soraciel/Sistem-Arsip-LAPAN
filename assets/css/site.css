@@ -22,7 +22,7 @@ body {
 body {
   padding-top: 66px;
 }
-.site-menubar {
+.site-menubar {  
   position: fixed;
   top: 66px;
   z-index: 1400;

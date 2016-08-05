@@ -59,6 +59,12 @@ $(document).ready(function(){
     });
 });</script>
 
+<script type="text/javascript">
+function toggleZoomScreen() {
+document.body.style.zoom="80%"
+} 
+</script>
+
   <script>
     Breakpoints();
   </script>
@@ -67,7 +73,7 @@ $(document).ready(function(){
 
   <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
-    <div class="navbar-header">
+    <div class="navbar-header" style="width=200px;">
       <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
       data-toggle="menubar">
         <span class="sr-only">Toggle navigation</span>
@@ -115,7 +121,7 @@ $(document).ready(function(){
       
     </div>
   </nav>
-  <div class="site-menubar">
+  <div class="site-menubar" style="width=200px;">
     <div class="site-menubar-body">      
         <div>
           <ul class="site-menu">
