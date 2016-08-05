@@ -43,9 +43,11 @@
   <!-- Scripts -->
   <script src="<?php echo base_url();?>assets/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo base_url();?>assets/vendor/breakpoints/breakpoints.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script>
     Breakpoints();
   </script>
+
 </head>
 <body style="background-color:#e4eaec;">
 
@@ -73,16 +75,11 @@
         <!-- Navbar Toolbar -->
         <ul class="nav navbar-toolbar">
           <li class="hidden-float" id="toggleMenubar">
-            <a data-toggle="menubar" href="<?php echo base_url(); ?>arsip/view" role="button">
-              <i class="icon fa-home">
-                  <span class="sr-only">Beranda</span>
-                  <!-- <span class="hamburger-bar"></span> -->
-                </i>
+            <a><i></i>Selamat datang, <?php echo $NAMA_PEG; ?>
             </a>
           </li>
                 </ul>
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                  <li><p>welcome, <?php echo $NAMA_PEG; ?></p></li>
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">                  
                   <li role="presentation">
                     <a href="<?= base_url() ?>index.php/login/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Keluar</a>
                   </li>    

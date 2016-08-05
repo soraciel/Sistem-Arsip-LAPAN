@@ -1,6 +1,6 @@
 <body>               
  <div class="page-content">
-      <div class="panel">      
+      <div class="panel" style="padding:15px;">      
         <h1 class="page-title" style="text-align: center">Edit Arsip</h1>
             <div class="panel-body container-fluid" style="padding: 0px 350px;">
               <?php foreach ($h as $row){?>    
@@ -39,6 +39,10 @@
                   <br>
                 </div>                
 
+                <?php if(isset($errormsg))?> 
+               <p style="color:red;"> <?php echo $errormsg; ?> </p>
+                <?php echo validation_errors(); ?>
+
                <h4 class="example-title">Upload Arsip</h4>
                 <div class="form-group">
                   <div class="input-group input-group-file">                    
@@ -48,7 +52,7 @@
                 </div>  
 
               <div style="text-align: center">
-                    <button type="submit" class="btn-primary btn">Edit</button>
+                    <button type="submit" class="btn-primary btn">Simpan</button>
               </div>
 
             </form>
