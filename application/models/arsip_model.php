@@ -13,14 +13,15 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
-    function insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME)
+    function insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME,$Keterangan)
     {        
         $data = array(
             'NO_SURAT' => $NO_SURAT,
             'JUDUL' => $JUDUL,
             'TANGGAL' => $TANGGAL,
             'ID_JENIS_ARSIP' => $JENIS_ARSIP,
-            'ISI' => $ISI_NAME
+            'ISI' => $ISI_NAME,
+            'Keterangan' => $Keterangan
             );
         $this->db->insert('arsip', $data);
     }
@@ -39,7 +40,7 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
-    function editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME)
+    function editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME,$Keterangan)
     {   
         if($ISI_NAME=="kosong")
         {
@@ -48,6 +49,7 @@ class arsip_model extends CI_Model
                 'JUDUL' => $JUDUL,
                 'TANGGAL' => $TANGGAL,
                 'ID_JENIS_ARSIP' => $JENIS_ARSIP,
+                'Keterangan'=>$Keterangan
                 // 'ISI' => $ISI                        
                 );
         }
@@ -58,7 +60,8 @@ class arsip_model extends CI_Model
                 'JUDUL' => $JUDUL,
                 'TANGGAL' => $TANGGAL,
                 'ID_JENIS_ARSIP' => $JENIS_ARSIP,
-                'ISI' => $ISI_NAME                               
+                'ISI' => $ISI_NAME,
+                'Keterangan' => $Keterangan                           
                 );
         }
 
@@ -102,6 +105,7 @@ class arsip_model extends CI_Model
         // return $query->result();
         $this->db->like("JUDUL",$search_input);
         $this->db->or_like("no_surat",$search_input);
+        $this->db->or_like("Keterangan",$search_input);
         $query = $this->db->get('arsip');
         return $query->result();                             
     }

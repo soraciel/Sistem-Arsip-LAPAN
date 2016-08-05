@@ -51,6 +51,12 @@
                   </div>
                 </div>  
 
+                <div >                  
+                  <h4 class="example-title">Keterangan</h4>
+                  <input type="text" value="<?php echo $row->Keterangan;?>" class="form-control" id="inputPlaceholder" placeholder="Keterangan" name="Keterangan" required="required">
+                  <br>
+                </div>
+
               <div style="text-align: center">
                     <button type="submit" class="btn-primary btn">Simpan</button>
               </div>

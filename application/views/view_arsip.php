@@ -53,6 +53,7 @@
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/4" role="menuitem">Undangan Rapat</a></li>
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">Koran</a></li>
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/6" role="menuitem">Laporan</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/7" role="menuitem">Takah</a></li>
                 
                         </ul>
 
@@ -71,7 +72,7 @@
             </li>
             <li class="col-sm-2 col-xs-5">
               <div class="col-md-9">
-                  <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'" > Tambah Arsip</button>
+                  <!-- <button type="button" class="btn btn-block btn-info"  onclick="location.href='<?php echo base_url();?>index.php/arsip/tambah_arsip'" > Tambah Arsip</button> -->
               </div>
             </li>
           </ul>
@@ -81,7 +82,7 @@
         <ul class="nav-quick nav-quick-sm row">
             <li class="col-sm-3 col-xs-4"></li>
             <li class="col-sm-2 col-xs-4"style="padding:0px 20px">
-          <form action="<?php echo base_url();?>index.php/arsip/filter_arsip/7"> 
+          <form action="<?php echo base_url();?>index.php/arsip/filter_arsip/tanggal"> 
                 <span>tanggal awal</span>         
                 <input width="15px" type="date" name="date1" class="form-control">
             </li>
@@ -107,8 +108,10 @@
                         <th>Judul/isi Surat</th>
                         <th>Jenis Surat</th>
                         <th>Tanggal Surat</th>
-                        <th>Dokumen</th>
-                        <th class="text-nowrap">Action</th>
+                        <th>Dokumen</th>                        
+                        <th>Keterangan</th>
+                        <th class="text-nowrap">Aksi</th>
+
                       </tr>
                     </thead>
                     <tbody>
@@ -124,7 +127,7 @@
                          
                          <td><?php echo $row->TANGGAL;?></td>                         
                          <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>">Lihat surat</a></td>
-
+                         <td><?php echo $row->Keterangan;?></td>
                          <td class="text-nowrap">
                           <!--<button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit"><a href="<?php echo base_url(); ?>index.php/arsip/edit_arsip/<?php echo $row->ID_ARSIP;?>">
@@ -140,7 +143,8 @@
                           </button>   
                           
                              <button type="button" class="btn btn-pure btn-primary icon wb-print" onclick="PrintImage('<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>'); return false;"></button>       
-                        </td>                      
+                        </td>             
+                                      
                         </tr>
                       <?php }?>                        
                     </tbody>

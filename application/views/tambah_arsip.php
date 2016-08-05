@@ -46,9 +46,15 @@
                         <input id="inputUpload" type="file" name="ISI" required="required">
                         <h5 style="color=light-grey;">max 10 MB (.gif/.jpg/.png/.jpeg/.pdf)</h5>                      
                   </div>
-                </div>              
+                </div>  
+
+                <div >                  
+                  <h4 class="example-title">Keterangan</h4>
+                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Keterangan" name="Keterangan" required="required">                  
+                </div>            
 
               <div style="text-align: center">
+                    <br>
                     <button type="submit" class="btn-primary btn">Tambah</button>
               </div>
 

@@ -247,6 +247,7 @@ public function view_admin()
         $JUDUL= $this->input->post('JUDUL');
         $TANGGAL= $this->input->post('TANGGAL');
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
+        $Keterangan= $this->input->post('Keterangan');
 
       
         $ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));                      
@@ -280,7 +281,7 @@ public function view_admin()
 		}
 		else
 		{	
-			$this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
+			$this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan);
 			if($this->session->userdata('logged_in'))
 		   {
 		     $session_data = $this->session->userdata('logged_in');
@@ -334,8 +335,13 @@ public function view_admin()
         $JUDUL= $this->input->post('JUDUL');
         $TANGGAL= $this->input->post('TANGGAL');
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
+        $Keterangan= $this->input->post('Keterangan');
 		$ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
-
+		// echo $NO_SURAT." "; 
+		// echo $JUDUL." ";
+		// echo $TANGGAL." ";
+		// echo $ID_JENIS_ARSIP." ";
+		// echo $Keterangan." ";
         if(!empty($ISI))
         {	        	
         	$this->load->helper("file");
@@ -373,14 +379,14 @@ public function view_admin()
 			}
 			else
 			{
-		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
+		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan);
 		        redirect(base_url()."index.php/arsip/view_admin"); 
 	    	}
     	}
     	else
     	{	
     		$ISI_NAME="kosong";
-    		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
+    		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan);
 	        // echo "gambar gakebaca";
 	        redirect(base_url()."index.php/arsip/view_admin"); 
     	}
@@ -461,7 +467,7 @@ public function view_admin()
     {
                 $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
          $data['jenis_arsip'] = $jenis_arsip;
-         if($jenis_arsip!= 7) $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
+         if($jenis_arsip!= "tanggal") $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
          else {
          	 $date1= $this->input->get('date1');
          	 $date2= $this->input->get('date2');
@@ -476,7 +482,7 @@ public function view_admin()
 	 {
 	 	$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
          $data['jenis_arsip'] = $jenis_arsip;
-         if($jenis_arsip!= 7) $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
+         if($jenis_arsip!= "tanggal") $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
          else {
          	 $date1= $this->input->get('date1');
          	 $date2= $this->input->get('date2');
