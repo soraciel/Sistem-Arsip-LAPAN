@@ -35,8 +35,10 @@
                   <h4 class="example-title" >Status</h4>
                   <select class="form-control" name="KET">
                     <option selected="selected" value="<?php echo $detail->KET;?>"><?php echo $detail->KET;?></option>
-                    <option value="User">User</option>
+                    <option  value="User">User</option>
                     <option value="Administrator">Administrator</option>
+                    <!--<option  <?php if($detail->KET == 'User') echo selected;?> value="User">User</option>
+                    <option <?php if($detail->KET == 'Administrator') echo selected;?> value="Administrator">Administrator</option>-->
                   </select>
                 </div>
 
