@@ -130,14 +130,14 @@
                           data-original-title="Edit"><a href="<?php echo base_url(); ?>index.php/arsip/edit_arsip/<?php echo $row->ID_ARSIP;?>">
                             <i class="icon wb-wrench" aria-hidden="true"></i>
                           </button>
-                          <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+                          <!--<button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Delete"><a href="<?php echo base_url(); ?>index.php/arsip/delete_arsip/<?php echo $row->ID_ARSIP;?>">
                             <i class="icon wb-close" aria-hidden="true"></i>
                           </button>  
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Download"><a href="<?php echo base_url(); ?>index.php/arsip/download/<?php echo $row->ID_ARSIP;?>">
                             <i class="icon wb-download" aria-hidden="true"></i>
-                          </button>    
+                          </button>    -->
                           
                              <button type="button" class="btn btn-pure btn-primary icon wb-print" onclick="PrintImage('<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>'); return false;"></button>       
                         </td>                      
