@@ -362,13 +362,13 @@ public function view_admin()
 			else
 			{
 		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
-		        redirect(base_url()."index.php/arsip/view"); 
+		        redirect(base_url()."index.php/arsip/view_admin"); 
 	    	}
     	}
     	else
     	{
     		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP);
-	        redirect(base_url()."index.php/arsip/view"); 
+	        redirect(base_url()."index.php/arsip/view_admin"); 
     	}
 	}
 
