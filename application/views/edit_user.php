@@ -32,11 +32,11 @@
                 </div>
                 
                 <div>
-                  <h4 class="example-title">Status</h4>
-                  <select class="form-control">
-                    <option><?php echo $detail->KET;?></option>
-                    <option selected="selected">User</option>
-                    <option>Administrator</option>
+                  <h4 class="example-title" >Status</h4>
+                  <select class="form-control" name="KET">
+                    <option selected="selected" value="<?php echo $detail->KET;?>"><?php echo $detail->KET;?></option>
+                    <option value="User">User</option>
+                    <option value="Administrator">Administrator</option>
                   </select>
                 </div>
 

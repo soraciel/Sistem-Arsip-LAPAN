@@ -95,12 +95,16 @@ class user extends CI_Controller {
 	public function updateUserDb($id)
 	{
 		//Function yang dipanggil ketika ingin melakukan update terhadap produk yang ada di dalam database
-    $data = array(
+
+  
+                $data = array(
 				'ID_PEG' => $this->input->post('ID_PEG'),
 				'NAMA_PEG' => $this->input->post('NAMA_PEG'),
 				'PASSWORD' => $this->input->post('PASSWORD'),
 				'KET' => $this->input->post('KET'),
 				);
+      
+
       //  $id = $data->ID_PEG ; //Digunakan untuk melakukan validasi terhadap produk mana yang akan diupdate nantinya
        // print $data['ID_PEG'];
     //print "yhshhs";
