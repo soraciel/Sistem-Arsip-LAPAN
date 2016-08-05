@@ -326,43 +326,48 @@ public function view_admin()
         $JUDUL= $this->input->post('JUDUL');
         $TANGGAL= $this->input->post('TANGGAL');
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
-        
-        $ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
+                
         if(!empty($ISI))
-        {
+        {	$ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
         	$this->load->helper("file");
 			$data['h']=$this->arsip_model->download_arsip($ID_ARSIP);
 			$filename=$data['h']['ISI'];            
         	unlink(realpath("uploads").DIRECTORY_SEPARATOR.$filename);
-        }
-        //mencari tipe file
-        $type=explode('.', $_FILES["ISI"]["name"]);
-        $type=$type[count($type)-1];
-        $ISI_NAME=uniqid(rand()).'.'.$type; //nama file random dimasukkan ke DB
+        
+	        //mencari tipe file
+	        $type=explode('.', $_FILES["ISI"]["name"]);
+	        $type=$type[count($type)-1];
+	        $ISI_NAME=uniqid(rand()).'.'.$type; //nama file random dimasukkan ke DB
 
-        $config = array(
-			'upload_path' => "./uploads/",
-			'allowed_types' => "gif|jpg|png|jpeg|pdf",
-			'overwrite' => TRUE,
-			'file_name' => $ISI_NAME
-			// 'max_size' => "10048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
-			// 'max_height' => "768",
-			// 'max_width' => "1024"
-		);
+	        $config = array(
+				'upload_path' => "./uploads/",
+				'allowed_types' => "gif|jpg|png|jpeg|pdf",
+				'overwrite' => TRUE,
+				'file_name' => $ISI_NAME
+				// 'max_size' => "10048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+				// 'max_height' => "768",
+				// 'max_width' => "1024"
+			);
 
-		$this->load->library('upload', $config);
-		
-		if(!$this->upload->do_upload('ISI')) //upload ke directory CI
-		{
-			$this->load->view('form_header');
-			$data['errormsg'] = "File tidak sesuai format";
-			$this->load->view('tambah_arsip',$data);
-			$this->load->view('form_footer');
-			// redirect(base_url()."index.php/arsip/tambah_arsip"); 
-		}
-		else
-		{
-	        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
+			$this->load->library('upload', $config);
+			
+			if(!$this->upload->do_upload('ISI')) //upload ke directory CI
+			{
+				$this->load->view('form_header');
+				$data['errormsg'] = "File tidak sesuai format";
+				$this->load->view('tambah_arsip',$data);
+				$this->load->view('form_footer');
+				// redirect(base_url()."index.php/arsip/tambah_arsip"); 
+			}
+			else
+			{
+		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME);
+		        redirect(base_url()."index.php/arsip/view"); 
+	    	}
+    	}
+    	else
+    	{
+    		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP);
 	        redirect(base_url()."index.php/arsip/view"); 
     	}
 	}
