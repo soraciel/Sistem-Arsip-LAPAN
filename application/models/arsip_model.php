@@ -27,6 +27,7 @@ class arsip_model extends CI_Model
 
     function view_arsip()
     {
+        $this->db->order_by('ID_ARSIP', 'DESC');
         $query = $this->db->get('arsip');
         return $query->result();
     }
@@ -68,7 +69,7 @@ class arsip_model extends CI_Model
         //         'ID_JENIS_ARSIP' => $JENIS_ARSIP,
         //         'ISI' => $ISI_NAME                               
         //         );
-        
+
         $this->db->where("ID_ARSIP",$ID_ARSIP);
         $this->db->update('arsip', $data);
     }    
