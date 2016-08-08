@@ -35,10 +35,10 @@
             <li class="col-sm-2 col-xs-4">
             
             </li>
-            <li class="col-sm-2 col-xs-4">
+            <li class="col-sm-1 col-xs-4">
               
             </li>
-            <li class="col-sm-2 col-xs-5">
+            <li class="col-sm-3 col-xs-5">
              <div class="col-md-9">                
                 <button type="button" class="btn btn-block btn-info" onclick="location.href='<?php echo base_url();?>index.php/user/tambah_user'">Tambah User</button>
 </div>

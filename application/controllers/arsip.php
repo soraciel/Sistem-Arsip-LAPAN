@@ -25,7 +25,8 @@ class arsip extends CI_Controller {
        }
 
 
-public function cek_ket(){
+public function cek_ket()
+{
 		if($this->session->userdata('logged_in'))
    {
 
@@ -92,7 +93,7 @@ public function cek_ket(){
 }		
 
 public function view_admin()
-	{
+{
 		if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
@@ -120,12 +121,10 @@ public function view_admin()
      //If no session, redirect to login page
      redirect('login', 'refresh');
    }
-
-
-	}
+}
 
 	public function home()
-	{
+{
 		if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
@@ -165,7 +164,7 @@ public function view_admin()
      //If no session, redirect to login page
      redirect('login', 'refresh');
    }
-	}
+}
 
 	public function view_by_date()
 	{
@@ -185,8 +184,6 @@ public function view_admin()
 	 	$data['h'] = $this->arsip_model->view_arsip();
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		$this->load->view('arsip_by_date',$data);		
-
-
 	 }
 
 	 else if($session_data['KET']=='Administrator')

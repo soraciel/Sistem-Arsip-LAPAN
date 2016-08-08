@@ -124,6 +124,7 @@
                          <td><?php echo $row->TANGGAL;?></td>                         
                          <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>">Lihat surat</a></td>
                          <td><?php echo $row->Keterangan;?></td>
+                         
                          <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit"><a href="<?php echo base_url(); ?>index.php/arsip/edit_arsip/<?php echo $row->ID_ARSIP;?>">
