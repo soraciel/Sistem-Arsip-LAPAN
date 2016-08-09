@@ -60,7 +60,7 @@ class arsip extends CI_Controller {
 }		
 
 public function view_admin()
-	{
+{
 		if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
@@ -88,12 +88,10 @@ public function view_admin()
      //If no session, redirect to login page
      redirect('login', 'refresh');
    }
-
-
-	}
+}
 
 	public function home()
-	{
+{
 		if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
@@ -133,7 +131,7 @@ public function view_admin()
      //If no session, redirect to login page
      redirect('login', 'refresh');
    }
-	}
+}
 
 	public function view_by_date()
 	{
@@ -153,8 +151,6 @@ public function view_admin()
 	 	$data['h'] = $this->arsip_model->view_arsip();
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		$this->load->view('arsip_by_date',$data);		
-
-
 	 }
 
 	 else if($session_data['KET']=='Administrator')
@@ -274,27 +270,6 @@ public function view_admin()
 		$file=file_get_contents($path);
 
 		force_download($filename, $file);
-
-		 // make sure it's a file before doing anything!
-		  // if(is_file($path))
-		  // { 
-		  //   // get the file mime type using the file extension
-		  //   $this->load->helper('file');
-		  //   $mime = get_mime_by_extension($path);
-		  //   // Build the headers to push out the file properly.
-		  //   header('Pragma: public');     // required
-		  //   header('Expires: 0');         // no cache
-		  //   header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-		  //   header('Last-Modified: '.gmdate ('D, d M Y H:i:s', filemtime ($path)).' GMT');
-		  //   header('Cache-Control: private',false);
-		  //   header('Content-Type: '.$mime);  // Add the mime type from Code igniter.
-		  //   header('Content-Disposition: attachment; filename="'.basename($name).'"');  // Add the file name
-		  //   header('Content-Transfer-Encoding: binary');
-		  //   header('Content-Length: '.filesize($path)); // provide file size
-		  //   header('Connection: close');
-		  //   readfile($path); // push it out
-		  //   exit();
-		  //  }
 	}
 
 	public function editing_arsip($ID_ARSIP)

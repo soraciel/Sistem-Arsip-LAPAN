@@ -2,7 +2,7 @@
  <div class="page-content">
       <div class="panel" style="padding:15px;">      
         <h1 class="page-title" style="text-align: center">Edit Arsip</h1>
-            <div class="panel-body container-fluid" style="padding: 0px 350px;">
+            <div class="panel-body container-fluid" style="width:55%;">
               <?php foreach ($h as $row){?>    
               <form action="<?php echo base_url();?>/index.php/arsip/editing_arsip/<?php echo $row->ID_ARSIP;?>" method="post" enctype="multipart/form-data">
                                                                                      

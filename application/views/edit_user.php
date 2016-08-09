@@ -8,7 +8,7 @@
             //Kita akan melakukan looping terhadap variable $product yang telah dikirimkan melalui controller
             foreach($user->result() as $detail){
         ?>
-            <div class="panel-body container-fluid" style="padding: 0px 350px">
+            <div class="panel-body container-fluid" style="width:55%;">
 
               <form autocomplete="off" method="post" action="<?= base_url() ?>index.php/user/updateUserDb/<?= $detail->ID_PEG ?>">
                 

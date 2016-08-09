@@ -3,7 +3,7 @@
  <div class="page-content">
       <div class="panel" style="padding:15px;">      
         <h1 class="page-title" style="text-align: center">Tambah Arsip</h1>
-            <div class="panel-body container-fluid" style="padding: 0px 350px;">
+            <div class="panel-body container-fluid" style=" width: 55%; ">
               <form action="<?php echo base_url();?>/index.php/arsip/insert_arsip" method="post" enctype="multipart/form-data">
                 
                 <div >
