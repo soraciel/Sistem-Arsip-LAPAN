@@ -24,38 +24,6 @@ class arsip extends CI_Controller {
         $this->load->model('arsip_model');            
        }
 
-
-public function cek_ket(){
-		if($this->session->userdata('logged_in'))
-   {
-
-
-     $session_data = $this->session->userdata('logged_in');
-    
-    if($session_data['KET']=='User')
-    {
-	//kalau ini user
-     /*$data['NAMA_PEG'] = $session_data['NAMA_PEG'];
-     //$this->load->view('home_view', $data);
-   $this->load->view('header_admin',$data);
-		$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
-		$this->load->view('view_user',$data);*/
-		return true;
-	 }
-	 else{
-	 
-	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
-	 	
-	 }
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
-	
-}
-
 	public function view(){		
 	
 	if($this->session->userdata('logged_in'))

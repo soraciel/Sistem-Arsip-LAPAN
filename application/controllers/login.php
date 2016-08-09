@@ -39,18 +39,9 @@ $this->load->library('form_validation');
 		if(isset($data)){ $this->load->view('view_login',$data); }
 		else
 		$this->load->view('view_login');
-
-	/*	if ($this->form_validation->run() == FALSE)
-                {
-                        $this->load->view('view_login');
-                }
-                else
-                {
-                        $this->load->view('formsuccess');
-                }*/
 	}
 
-		 public function logout()
+	public function logout()
 	 {
 	   $this->session->unset_userdata('logged_in');
 	   session_destroy();
