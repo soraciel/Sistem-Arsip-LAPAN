@@ -137,6 +137,7 @@ class arsip_model extends CI_Model
         $this->db->where('TANGGAL <=', $date2);
         $query =  $this->db->get('arsip');
         return $query->result();   
+
     }  
 
     function filter_date_user($date1 , $date2){

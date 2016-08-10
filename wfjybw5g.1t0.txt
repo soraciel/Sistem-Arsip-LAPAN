@@ -1,0 +1,46 @@
+﻿Merge branch 'master' of https://github.com/soraciel/Sistem-Arsip-LAPAN
+
+# Conflicts:
+#	application/models/arsip_model.php
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   application/controllers/arsip.php
+#	modified:   application/controllers/login.php
+#	modified:   application/controllers/user.php
+#	modified:   application/models/arsip_model.php
+#	deleted:    uploads/118857a41dec82214.jpg
+#	deleted:    uploads/1281357a43ae534270.png
+#	deleted:    uploads/1337757a433ec8b066.jpg
+#	deleted:    uploads/1466757a41b6665018.jpg
+#	deleted:    uploads/1524257a44ced10e72.jpg
+#	deleted:    uploads/184757a41b19abcb5.jpg
+#	deleted:    uploads/2166857a4188358236.jpg
+#	deleted:    uploads/2167557a4315142c73.jpg
+#	deleted:    uploads/22211579ea12caac3e.jpg
+#	deleted:    uploads/2270157a44d8f827fe.jpg
+#	deleted:    uploads/249557a9d6d936c47.PNG
+#	deleted:    uploads/2523757a41aacde46e.jpg
+#	deleted:    uploads/2990557a40c6659870.jpg
+#	deleted:    uploads/3014657a43b04e71ab.png
+#
+# Changes not staged for commit:
+#	deleted:    uploads/32219579ad656a87a9.jpg
+#	deleted:    uploads/871757a41e97c8e19.jpg
+#	deleted:    uploads/966657a44c4716274.jpg
+#
+
