@@ -33,6 +33,14 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
+    function view_arsip_user()
+    {   
+        $this->db->where('ID_JENIS_ARSIP !=', '8');
+        $this->db->order_by('ID_ARSIP', 'DESC');
+        $query = $this->db->get('arsip');
+        return $query->result();
+    }
+
     function edit_arsip($ID_ARSIP)
     {
         $this->db->where("id_arsip",$ID_ARSIP);
@@ -110,13 +118,35 @@ class arsip_model extends CI_Model
         return $query->result();                             
     }
 
+    function search_user($search_input)
+    {
+        // $this->db->where("JUDUL",$search_input);
+        // $query = $this->db->get('arsip');
+        // return $query->result();
+        $this->db->like("JUDUL",$search_input);
+        $this->db->or_like("no_surat",$search_input);
+        $this->db->or_like("Keterangan",$search_input);
+        $this->db->where('ID_JENIS_ARSIP !=', '8');
+        $query = $this->db->get('arsip');
+        return $query->result();                             
+    }
+
     function filter_date($date1 , $date2){
        // $this->db->where('sell_date BETWEEN "'. date('Y-m-d', strtotime($date1)). '" and "'. date('Y-m-d', strtotime($date2)).'"');
         $this->db->where('TANGGAL >=', $date1);
-$this->db->where('TANGGAL <=', $date2);
-$query =  $this->db->get('arsip');
-return $query->result();   
-    }        
+        $this->db->where('TANGGAL <=', $date2);
+        $query =  $this->db->get('arsip');
+        return $query->result();   
+    }  
+
+    function filter_date_user($date1 , $date2){
+       // $this->db->where('sell_date BETWEEN "'. date('Y-m-d', strtotime($date1)). '" and "'. date('Y-m-d', strtotime($date2)).'"');
+        $this->db->where('TANGGAL >=', $date1);
+        $this->db->where('TANGGAL <=', $date2);
+        $this->db->where('ID_JENIS_ARSIP !=', '8');
+        $query =  $this->db->get('arsip');
+        return $query->result();   
+    }      
 
  }
   

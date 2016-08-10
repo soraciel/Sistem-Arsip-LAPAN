@@ -48,6 +48,7 @@
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/5" role="menuitem">Koran</a></li>
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/6" role="menuitem">Laporan</a></li>
                           <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/7" role="menuitem">Takah</a></li>
+                          <li role="presentation"><a href="<?php echo base_url(); ?>index.php/arsip/filter_arsip/8" role="menuitem">Rahasia</a></li>
                 
                         </ul>
 

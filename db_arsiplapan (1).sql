@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Agu 2016 pada 04.43
+-- Generation Time: 09 Agu 2016 pada 15.15
 -- Versi Server: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -51,7 +51,8 @@ INSERT INTO `arsip` (`ID_ARSIP`, `NO_SURAT`, `JUDUL`, `ID_JENIS_ARSIP`, `TANGGAL
 (45, '138/11/2012/PTP', 'Penilaian Karya Tulis', 7, '2012-09-29', '2462257a81fa878b36.jpg', 'kepada kepala sub bag TU. Minjabfung'),
 (46, '138/11/2012/PTP', 'Penilaian Karya Tulis', 7, '2012-09-29', '2100157a81fa8ea3b9.jpg', 'kepada kepala sub bag TU. Minjabfung'),
 (47, '207/11/2012/PTP', 'Permohonan Menduduki Jabatan Fungsional Teknisi Li', 7, '2012-12-09', '2356657a81ff0397e6.jpg', 'Kepada kepala biro umum LAPAN'),
-(48, '223/12/2012/PTP', 'Permohonan Menduduki Jabatan Fungsional Teknisi Li', 7, '2012-12-26', '977557a8202ab6d28.jpg', 'Kepada kepala biro umum LAPAN');
+(48, '223/12/2012/PTP', 'Permohonan Menduduki Jabatan Fungsional Teknisi Li', 7, '2012-12-26', '977557a8202ab6d28.jpg', 'Kepada kepala biro umum LAPAN'),
+(50, 'aeda', 'qweqw', 8, '2016-08-09', '249557a9d6d936c47.PNG', 'jh');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,8 @@ INSERT INTO `jenis_arsip` (`id_jenis_arsip`, `jenis_arsip`) VALUES
 (4, 'Undangan Rapat'),
 (5, 'Koran'),
 (6, 'Laporan'),
-(7, 'Takah');
+(7, 'Takah'),
+(8, 'Rahasia');
 
 -- --------------------------------------------------------
 
@@ -128,12 +130,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `arsip`
 --
 ALTER TABLE `arsip`
-  MODIFY `ID_ARSIP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `ID_ARSIP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `jenis_arsip`
 --
 ALTER TABLE `jenis_arsip`
-  MODIFY `id_jenis_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_jenis_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

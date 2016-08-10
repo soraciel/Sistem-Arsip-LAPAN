@@ -73,7 +73,7 @@ public function cek_ket()
      //$this->load->view('home_view', $data);
      $this->load->view('header',$data);	
 	 
-	 	$data['h'] = $this->arsip_model->view_arsip();
+	 	$data['h'] = $this->arsip_model->view_arsip_user();
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		// print_r($data['h']);
 		$this->load->view('view_arsip', $data);
@@ -148,7 +148,7 @@ public function view_admin()
      //$this->load->view('home_view', $data);
      $data['jenis_arsip'] = "";
 
-     $data['h'] = $this->arsip_model->view_arsip();
+     $data['h'] = $this->arsip_model->view_arsip_user();
 	 $data['i'] = $this->arsip_model->jenis_arsip();
      $this->load->view('header',$data);	
 	 $this->load->view('view_arsip',$data);
@@ -181,7 +181,7 @@ public function view_admin()
 
 		$this->load->view('header',$data);	
 	 
-	 	$data['h'] = $this->arsip_model->view_arsip();
+	 	$data['h'] = $this->arsip_model->view_arsip_user();
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		$this->load->view('arsip_by_date',$data);		
 	 }
@@ -418,7 +418,7 @@ public function view_admin()
 
 		$search_input=$this->input->post('search_input');
 		$this->load->view('header',$data);	
-		$data['h']=$this->arsip_model->search($search_input);
+		$data['h']=$this->arsip_model->search_user($search_input);
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		$this->load->view('view_arsip',$data);		
 
@@ -468,7 +468,7 @@ public function view_admin()
          else {
          	 $date1= $this->input->get('date1');
          	 $date2= $this->input->get('date2');
-         	$data['h'] = $this->arsip_model->filter_date($date1,$date2);}
+         	$data['h'] = $this->arsip_model->filter_date_user($date1,$date2);}
 		$data['i'] = $this->arsip_model->jenis_arsip();
 		// print_r($data['h']);
          	$this->load->view('header', $data);
