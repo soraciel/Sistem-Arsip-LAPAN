@@ -137,6 +137,7 @@ class arsip_model extends CI_Model
         $this->db->where('TANGGAL <=', $date2);
         $query =  $this->db->get('arsip');
         return $query->result();   
+<<<<<<< HEAD
 
     }  
 
@@ -148,6 +149,9 @@ class arsip_model extends CI_Model
         $query =  $this->db->get('arsip');
         return $query->result();   
     }      
+=======
+    }        
+>>>>>>> origin/master
 
  }
   
