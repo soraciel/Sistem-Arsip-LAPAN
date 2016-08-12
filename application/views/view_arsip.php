@@ -117,12 +117,7 @@
                     </thead>
                     <tbody>
                       
-                      <?php if(empty($h))
-                            { echo "Arsip Tidak ada";
-                              ?> <h4>Arsip Tidak Ada</h4>
-                      <?php }
-                      else{
-                      foreach ($h as $row){?>
+                      <?php foreach ($h as $row){?>
                         <tr>
                          <td><?php echo $row->NO_SURAT;?></td>
                          <td><?php echo $row->JUDUL;?></td>
@@ -153,9 +148,9 @@
                         </td>             
                                       
                         </tr>
-                      <?php }}?>                        
+                      <?php }?>                        
                     </tbody>
-                  </table>
+                  </table> <?php if(empty($h)){?> <h4 style="text-align:center;"> Arsip Tidak Ada</h4><?php }?>
         </div>
       </div>             
   </div>     

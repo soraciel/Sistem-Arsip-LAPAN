@@ -148,7 +148,7 @@
                         </tr>
                       <?php }?>                        
                     </tbody>
-                  </table>
+                  </table><?php if(empty($h)){?> <h4 style="text-align:center;"> Arsip Tidak Ada</h4><?php }?>
         </div>
       </div>             
   </div>     
