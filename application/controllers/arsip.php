@@ -212,7 +212,7 @@ public function view_admin()
         $TANGGAL= $this->input->post('TANGGAL');
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
         $Keterangan= $this->input->post('Keterangan');
-
+        $Loker= $this->input->post('Loker');
       
         $ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));                      
 
@@ -245,7 +245,7 @@ public function view_admin()
 		}
 		else
 		{	
-			$this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan);
+			$this->arsip_model->insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan,$Loker);
 			if($this->session->userdata('logged_in'))
 		   {
 		     $session_data = $this->session->userdata('logged_in');
@@ -279,6 +279,8 @@ public function view_admin()
         $TANGGAL= $this->input->post('TANGGAL');
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
         $Keterangan= $this->input->post('Keterangan');
+        $Loker= $this->input->post('Loker');
+
 		$ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
 		// echo $NO_SURAT." "; 
 		// echo $JUDUL." ";
@@ -322,14 +324,14 @@ public function view_admin()
 			}
 			else
 			{
-		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan);
+		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan,$Loker);
 		        redirect(base_url()."index.php/arsip/view_admin"); 
 	    	}
     	}
     	else
     	{	
     		$ISI_NAME="kosong";
-    		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan);
+    		$this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan,$Loker);
 	        // echo "gambar gakebaca";
 	        redirect(base_url()."index.php/arsip/view_admin"); 
     	}
