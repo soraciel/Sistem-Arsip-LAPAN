@@ -229,7 +229,7 @@ public function view_admin()
 
         $config = array(
 			'upload_path' => "./uploads/",
-			'allowed_types' => "gif|jpg|png|jpeg|pdf|docx|doc",
+			'allowed_types' => "gif|jpg|png|jpeg|pdf",
 			'overwrite' => TRUE,
 			'file_name' => $ISI_NAME
 			// 'max_size' => "10048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
