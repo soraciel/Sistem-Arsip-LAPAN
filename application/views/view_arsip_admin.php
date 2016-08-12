@@ -223,7 +223,7 @@ function PrintImage(source) {
 <!--  <script src="<?php echo base_url();?>assets/js/components/animsition.js"></script>-->
   <script src="<?php echo base_url();?>assets/js/components/slidepanel.js"></script>
   <script src="<?php echo base_url();?>assets/js/components/switchery.js"></script>
-<!--
+
 
   <script>
     (function(document, window, $) {
@@ -234,8 +234,7 @@ function PrintImage(source) {
         Site.run();
       });
     })(document, window, jQuery);
-  </script>-->
-
+  </script>
 
 </body>
 </html>

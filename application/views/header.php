@@ -80,6 +80,7 @@ $(document).ready(function(){
       <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
         <!-- Navbar Toolbar -->
         <ul class="nav navbar-toolbar">
+          
           <li class="hidden-float" id="toggleMenubar">
             <a><i></i>Selamat datang, <?php echo $NAMA_PEG; ?>
             </a>

@@ -64,7 +64,8 @@ function toggleZoomScreen() {
 document.body.style.zoom="80%"
 } 
 </script>
-
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script>
     Breakpoints();
   </script>
@@ -94,6 +95,14 @@ document.body.style.zoom="80%"
       <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
         <!-- Navbar Toolbar -->
         <ul class="nav navbar-toolbar">
+          <li class="hidden-float" id="toggleMenubar">
+            <a data-toggle="menubar" href="#" role="button">
+              <i class="icon hamburger hamburger-arrow-left">
+                  <span class="sr-only">Toggle menubar</span>
+                  <span class="hamburger-bar"></span>
+                </i>
+            </a>
+          </li>
           <li>
               <a>Selamat datang, <?php echo $NAMA_PEG ?>
             </a>
