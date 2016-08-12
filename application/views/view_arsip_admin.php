@@ -107,6 +107,7 @@
                         <th>Tanggal Surat</th>
                         <th>Dokumen</th>                        
                         <th>Keterangan</th>
+                        <th>Tanggal Input</th>
                         <th class="text-nowrap">Aksi</th>
                         
                       </tr>
@@ -125,7 +126,7 @@
                          <td><?php echo $row->TANGGAL;?></td>                         
                          <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>">Lihat surat</a></td>
                          <td><?php echo $row->Keterangan;?></td>
-                         
+                         <td><?php echo $row->TANGGAL_INPUT;?></td>
                          <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit"><a href="<?php echo base_url(); ?>index.php/arsip/edit_arsip/<?php echo $row->ID_ARSIP;?>">

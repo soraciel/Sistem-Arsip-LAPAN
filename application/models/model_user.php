@@ -44,7 +44,13 @@
 	function addUser($data)
 	{
 		//untuk insert data ke table 
-		$this->db->insert('user', $data);
+		if(!$this->db->insert('user', $data))
+      {return $error="error";}
+    //else
+   // return $this->db->insert('user', $data);
+
+
+
 	}
 
 	function updateUser($data,$id)

@@ -79,9 +79,17 @@ class user extends CI_Controller {
 			'PASSWORD' => $this->input->post('PASSWORD'),
 			'KET' => $this->input->post('KET'),
 			);
-		$this->model_user->addUser($data); //passing variable $data ke products_model
+		$err=$this->model_user->addUser($data);
 
-		redirect('user/view'); //redirect page ke halaman utama controller products
+		echo $err;
+
+	//if(	$this->model_user->addUser($data)) redirect('user/view');
+	//else echo "Error";
+	 //passing variable $data ke products_model
+		
+		// //redirect page ke halaman utama controller products
+
+		
 	}
 
 	public function deleteUserDb($nip)
