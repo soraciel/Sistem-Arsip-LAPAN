@@ -85,7 +85,9 @@ class arsip_model extends CI_Model
         //         );
 
         $this->db->where("ID_ARSIP",$ID_ARSIP);
+        $this->db->set('TANGGAL_INPUT','NOW()',FALSE);
         $this->db->update('arsip', $data);
+        
     }    
 
     function delete_arsip($ID_ARSIP)
