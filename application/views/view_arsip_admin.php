@@ -124,8 +124,13 @@
                            <td><?php echo $row1->jenis_arsip;?></td>
                            <?php }}?>
                          
-                         <td><?php echo $row->TANGGAL;?></td>                         
-                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI; ?>">Lihat surat</a></td>
+                         <td><?php echo $row->TANGGAL;?></td>         
+                         <?php 
+                          $ext = pathinfo($row->ISI, PATHINFO_EXTENSION);
+                          if($ext=="pdf") {
+                         ?>                    
+                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI;?>">Lihat surat</a></td><?php } else{ ?>               
+                         <td><a href="<?php echo base_url();?>index.php/arsip/liat_file/<?php echo $row->ID_ARSIP;?>">Lihat surat</a></td> <?php }?>
                          <td><?php echo $row->Keterangan;?></td>
                          <td><?php echo $row->TANGGAL_INPUT;?></td>
                          <td><?php echo $row->Loker;?></td>

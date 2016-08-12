@@ -133,6 +133,12 @@ public function view_admin()
    }
 }
 
+	public function liat_file($ID_ARSIP)
+	{
+		$data['h'] = $this->arsip_model->edit_arsip($ID_ARSIP);
+		$this->load->view('lihat_file', $data);
+	}
+
 	public function view_by_date()
 	{
 		if($this->session->userdata('logged_in'))
@@ -223,7 +229,7 @@ public function view_admin()
 
         $config = array(
 			'upload_path' => "./uploads/",
-			'allowed_types' => "gif|jpg|png|jpeg|pdf",
+			'allowed_types' => "gif|jpg|png|jpeg|pdf|docx|doc",
 			'overwrite' => TRUE,
 			'file_name' => $ISI_NAME
 			// 'max_size' => "10048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
