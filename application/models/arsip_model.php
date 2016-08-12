@@ -49,7 +49,7 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
-    function editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME,$Keterangan)
+    function editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME,$Keterangan,$Loker)
     {   
         if($ISI_NAME=="kosong")
         {

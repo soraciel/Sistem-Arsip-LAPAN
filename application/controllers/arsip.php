@@ -280,18 +280,18 @@ public function view_admin()
         $ID_JENIS_ARSIP= $this->input->post('JENIS_ARSIP');
         $Keterangan= $this->input->post('Keterangan');
         $Loker= $this->input->post('Loker');
-
-		$ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));
+		$ISI = addslashes(file_get_contents($_FILES['ISI']['tmp_name']));	
 		// echo $NO_SURAT." "; 
 		// echo $JUDUL." ";
 		// echo $TANGGAL." ";
 		// echo $ID_JENIS_ARSIP." ";
 		// echo $Keterangan." ";
         if(!empty($ISI))
-        {	        	
+        {	        
         	$this->load->helper("file");
 			$data['h']=$this->arsip_model->download_arsip($ID_ARSIP);
-			$filename=$data['h']['ISI'];            
+			$filename=$data['h']['ISI'];           
+			//hapus gambar yang lama 
         	unlink(realpath("uploads").DIRECTORY_SEPARATOR.$filename);
         
 	        //mencari tipe file
@@ -324,7 +324,7 @@ public function view_admin()
 			}
 			else
 			{
-		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan,$Loker);
+		        $this->arsip_model->editing_arsip($ID_ARSIP,$NO_SURAT,$JUDUL,$TANGGAL,$ID_JENIS_ARSIP,$ISI_NAME,$Keterangan,$Loker);		        
 		        redirect(base_url()."index.php/arsip/view_admin"); 
 	    	}
     	}

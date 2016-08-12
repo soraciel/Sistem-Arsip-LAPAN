@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/slidepanel/slidePanel.css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/flag-icon-css/flag-icon.css">
 
+  <!-- page -->
+  <link rel="stylesheet" href="../../assets/css/../fonts/glyphicons/glyphicons.css">
 
   <!-- Fonts -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/web-icons/web-icons.min.css">
@@ -93,7 +95,7 @@ $(document).ready(function(){
           </li> -->
           <li class="hidden-float">
               <a href="<?= base_url() ?>index.php/arsip/home" role="menuitem">
-                <i class="icon wb-arrow-left" aria-hidden="true"></i></a>
+                <i class="icon glyphicon glyphicon-home" aria-hidden="true"></i></a>
           </li>
         </ul>
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">                  
