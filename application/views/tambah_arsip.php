@@ -51,7 +51,11 @@
                 <div >                  
                   <h4 class="example-title">Keterangan</h4>
                   <input type="text" class="form-control" id="inputPlaceholder" placeholder="Keterangan" name="Keterangan" required="required">                  
-                </div>            
+                </div>
+                <div >                  
+                  <h4 class="example-title">Loker</h4>
+                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Loker" name="Loker" required="required">                  
+                </div>                    
 
               <div style="text-align: center">
                     <br>

@@ -13,7 +13,7 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
-    function insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME,$Keterangan)
+    function insert_arsip($NO_SURAT,$JUDUL,$TANGGAL,$JENIS_ARSIP,$ISI_NAME,$Keterangan,$Loker)
     {        
         $data = array(
             'NO_SURAT' => $NO_SURAT,
@@ -21,7 +21,8 @@ class arsip_model extends CI_Model
             'TANGGAL' => $TANGGAL,
             'ID_JENIS_ARSIP' => $JENIS_ARSIP,
             'ISI' => $ISI_NAME,
-            'Keterangan' => $Keterangan
+            'Keterangan' => $Keterangan,
+            'Loker' => $Loker
             );
         $this->db->insert('arsip', $data);
     }
@@ -57,7 +58,8 @@ class arsip_model extends CI_Model
                 'JUDUL' => $JUDUL,
                 'TANGGAL' => $TANGGAL,
                 'ID_JENIS_ARSIP' => $JENIS_ARSIP,
-                'Keterangan'=>$Keterangan
+                'Keterangan'=>$Keterangan,
+                'Loker' => $Loker
                 // 'ISI' => $ISI                        
                 );
         }
@@ -69,7 +71,8 @@ class arsip_model extends CI_Model
                 'TANGGAL' => $TANGGAL,
                 'ID_JENIS_ARSIP' => $JENIS_ARSIP,
                 'ISI' => $ISI_NAME,
-                'Keterangan' => $Keterangan                           
+                'Keterangan' => $Keterangan,
+                'Loker' => $Loker
                 );
         }
 

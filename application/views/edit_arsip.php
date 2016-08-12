@@ -57,6 +57,11 @@
                   <br>
                 </div>
 
+                <div >                  
+                  <h4 class="example-title">Loker</h4>
+                  <input type="text" value="<?php echo $row->Loker;?>" class="form-control" id="inputPlaceholder" placeholder="Loker" name="Loker" required="required">                  
+                </div> 
+
               <div style="text-align: center">
                     <button type="submit" class="btn-primary btn">Simpan</button>
               </div>
