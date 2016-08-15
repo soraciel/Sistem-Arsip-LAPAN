@@ -158,9 +158,9 @@ $no = $this->uri->segment('3') + 1;
                       <?php }?>                        
                     </tbody>
                   </table><?php if(empty($h)){?> <h4 style="text-align:center;"> Arsip Tidak Ada</h4><?php }?>
-                            <?php 
+                            <h4 style="text-align:center;"><?php 
   echo $this->pagination->create_links();
-  ?>
+  ?></h4>
         </div>
       </div>             
   </div>     
