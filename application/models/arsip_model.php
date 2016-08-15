@@ -6,6 +6,15 @@ class arsip_model extends CI_Model
         parent::__construct();
         $this->load->database('default','true');
     }
+
+      function jumlah_arsip(){
+    return $this->db->get("arsip")->num_rows();
+  }
+
+    function data_arsip($number,$offset){
+        $this->db->order_by('ID_ARSIP', 'DESC');
+    return $query = $this->db->get('arsip',$number,$offset)->result();   
+  }
       
       function jenis_arsip()
     {        

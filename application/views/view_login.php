@@ -103,8 +103,8 @@ echo "</div>";
 
       <form method="post" < action="<?= base_url() ?>index.php/login/veriflogin">
         <div class="form-group">
-          <label class="sr-only" for="inputName">NIP</label>
-          <input type="text" class="form-control" id="inputName" placeholder="NIP" name="NIP">
+          <label class="sr-only" for="inputName">Email</label>
+          <input type="text" class="form-control" id="inputName" placeholder="Email" name="NIP">
         </div>
    
         <div class="form-group">

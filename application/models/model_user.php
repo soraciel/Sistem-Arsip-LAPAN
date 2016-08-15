@@ -8,7 +8,7 @@
    $this -> db -> select( 'ID_PEG, NAMA_PEG, password, KET');
    $this -> db -> from('user');
    $this -> db -> where('ID_PEG', $nip);
-   $this -> db -> where('PASSWORD', $password);
+   $this -> db -> where('PASSWORD', md5($password));
    $this -> db -> limit(1);
  
    $query = $this -> db -> get();
@@ -30,6 +30,15 @@
 		return $this->db->get();
 	}
 
+  function jumlah_user(){
+    return $this->db->get("user")->num_rows();
+  }
+
+    function data_user($number,$offset){
+    return $query = $this->db->get('user',$number,$offset)->result();   
+  }
+ 
+
 	function getUser($id)
 	{
 		//select produk berdasarkan id yang dimiliki
@@ -44,8 +53,10 @@
 	function addUser($data)
 	{
 		//untuk insert data ke table 
-		if(!$this->db->insert('user', $data))
-      {return $error="error";}
+		//if(!$this->db->insert('user', $data))
+      //{return $error="error";}
+
+    return $this->db->insert('user', $data);
     //else
    // return $this->db->insert('user', $data);
 

@@ -72,8 +72,18 @@ public function view_admin()
      //$this->load->view('home_view', $data);
      $data['jenis_arsip'] = "";
 
-     $data['h'] = $this->arsip_model->view_arsip();
+    // $data['h'] = $this->arsip_model->view_arsip();
 	 $data['i'] = $this->arsip_model->jenis_arsip();
+
+	 	$jumlah_data = $this->arsip_model->jumlah_arsip();
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'index.php/arsip/view_admin';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 10;
+		$from = $this->uri->segment(3);
+		$this->pagination->initialize($config);		
+		$data['h'] = $this->arsip_model->data_arsip($config['per_page'],$from);
+
      $this->load->view('header_admin',$data);	
 	 $this->load->view('view_arsip_admin',$data);
 	 }

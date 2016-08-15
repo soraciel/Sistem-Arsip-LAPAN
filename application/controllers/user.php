@@ -45,7 +45,20 @@ class user extends CI_Controller {
      $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
      //$this->load->view('home_view', $data);
    $this->load->view('header_admin',$data);
-		$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
+		
+		$jumlah_data = $this->model_user->jumlah_user();
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'index.php/user/view';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 10;
+		$from = $this->uri->segment(3);
+		$this->pagination->initialize($config);		
+		$data['listUser'] = $this->model_user->data_user($config['per_page'],$from);
+		//$this->load->view('v_data',$data);
+
+		//$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
+		
+
 		$this->load->view('view_user',$data);
 	 }
 	 else{
@@ -76,13 +89,11 @@ class user extends CI_Controller {
 		$data = array(
 			'ID_PEG' => $this->input->post('ID_PEG'),
 			'NAMA_PEG' => $this->input->post('NAMA_PEG'),
-			'PASSWORD' => $this->input->post('PASSWORD'),
+			'PASSWORD' => md5($this->input->post('PASSWORD')),
 			'KET' => $this->input->post('KET'),
 			);
-		$err=$this->model_user->addUser($data);
-
-		echo $err;
-
+		$this->model_user->addUser($data);
+		redirect('user/view');
 	//if(	$this->model_user->addUser($data)) redirect('user/view');
 	//else echo "Error";
 	 //passing variable $data ke products_model
@@ -106,7 +117,7 @@ class user extends CI_Controller {
 		$data = array(
 			'ID_PEG' => $this->input->post('ID_PEG'),
 			'NAMA_PEG' => $this->input->post('NAMA_PEG'),
-			'PASSWORD' => $this->input->post('PASSWORD'),
+			'PASSWORD' => md5($this->input->post('PASSWORD')),
 			'KET' => $this->input->post('KET'),
 		);
       

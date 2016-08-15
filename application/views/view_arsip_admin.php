@@ -3,7 +3,9 @@
 
 <div class="page-header">
       <h1 class="page-title">Lihat Arsip
-                         <?php foreach ($i as $row1) {
+                         <?php 
+
+                         foreach ($i as $row1) {
                            if($row1->id_jenis_arsip == $jenis_arsip){?>
                            <td><?php echo $row1->jenis_arsip;?></td>
                            <?php }}?>
@@ -115,7 +117,9 @@
                     </thead>
                     <tbody>
                       
-                      <?php foreach ($h as $row){?>
+                      <?php 
+$no = $this->uri->segment('3') + 1;
+                      foreach ($h as $row){?>
                         <tr>
                          <td><?php echo $row->NO_SURAT;?></td>
                          <td><?php echo $row->JUDUL;?></td>
@@ -154,6 +158,9 @@
                       <?php }?>                        
                     </tbody>
                   </table><?php if(empty($h)){?> <h4 style="text-align:center;"> Arsip Tidak Ada</h4><?php }?>
+                            <?php 
+  echo $this->pagination->create_links();
+  ?>
         </div>
       </div>             
   </div>     

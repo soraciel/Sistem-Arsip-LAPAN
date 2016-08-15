@@ -57,21 +57,21 @@
                       <tr>
                         <th>NIP</th>
                         <th>Nama</th>
-                      <!--  <th>Status</th>-->
+                       <th>Status</th>
                         <th class="text-nowrap">Action</th>
                       </tr>
                     </thead>
                     <tbody>
 
                       <?php
-            //Kita akan melakukan looping sesuai dengan data yang dimiliki
-            //$i = 0; //nantinya akan digunakan untuk pengisian Nomor
-            foreach ($listUser->result() as $row) {
+              $no = $this->uri->segment('3') + 1;
+
+            foreach ($listUser as $row) {
           ?>
                      <tr>
                         <td> <?= $row->ID_PEG ?> </td>
                       <td> <?=  $row->NAMA_PEG ?> </td>
-                    <!--<td><?=  $row->KET ?></td>-->
+                    <td><?=  $row->KET ?></td>
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                           data-original-title="Edit" onclick="location.href='<?php echo base_url();?>index.php/user/edit_user/<?= $row->ID_PEG ?>'">
@@ -89,6 +89,9 @@
 
                     </tbody>
                   </table>
+                  <?php 
+  echo $this->pagination->create_links();
+  ?>
                 </div>
               </div>
              
