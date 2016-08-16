@@ -66,7 +66,7 @@
                       <?php
   //            $no = $this->uri->segment('3') + 1;
 
-            foreach ($listUser as $row) {
+            foreach ($listUser->result() as $row) {
           ?>
                      <tr>
                         <td> <?= $row->ID_PEG ?> </td>

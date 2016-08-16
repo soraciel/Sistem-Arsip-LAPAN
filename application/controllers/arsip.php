@@ -22,7 +22,7 @@ class arsip extends CI_Controller {
 	function __construct() {
         parent::__construct();
         $this->load->model('arsip_model');            
-        $this->load->library('pagination');
+       // $this->load->library('pagination');
        }
 
 	public function view(){		

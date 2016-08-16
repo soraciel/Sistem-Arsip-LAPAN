@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://10.10.9.213:80/Sistem-Arsip-LAPAN/';
-//$config['base_url'] = 'http://localhost/Sistem-Arsip-LAPAN/';
+//$config['base_url'] = 'http://10.10.9.213:80/Sistem-Arsip-LAPAN/';
+$config['base_url'] = 'http://localhost/Sistem-Arsip-LAPAN/';
 
 
 /*
