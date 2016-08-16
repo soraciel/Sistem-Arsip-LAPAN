@@ -27,9 +27,30 @@ class user extends CI_Controller {
 
 	public function tambah_user()
 	{
-		$this->load->view('form_header');
+
+		if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='Administrator')
+    {
+    		$this->load->view('form_header');
 		$this->load->view('tambah_user');
 		$this->load->view('form_footer');
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+	}
+
+  else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+
 	}
 
 	public function view(){
@@ -63,10 +84,32 @@ class user extends CI_Controller {
 	}
 	public function edit_user($nip)
 	{		
-		$this->load->view('form_header');
+
+			if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+    
+    if($session_data['KET']=='Administrator')
+    {
+    			$this->load->view('form_header');
 		$data['user'] = $this->model_user->getUser($nip); //Melakukan pemanggilan fungsi getProduct yang ada di dalam products_model untuk mendapatkan informasi / data mengenai produk berdasarkan productId yang dikirimkan
 		$this->load->view('edit_user',$data);
 		$this->load->view('form_footer');
+	 }
+	 else{
+	 
+	 	 show_error("Directory access is forbidden", 403, $heading = '403 Forbidden');
+	 	
+	 }
+	}
+
+  else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+
+	
 	}
 
 	public function addUserDb()
@@ -106,7 +149,7 @@ class user extends CI_Controller {
 		$data = array(
 			'ID_PEG' => $this->input->post('ID_PEG'),
 			'NAMA_PEG' => $this->input->post('NAMA_PEG'),
-			'PASSWORD' => $this->input->post('PASSWORD'),
+			'PASSWORD' => md5($this->input->post('PASSWORD')),
 			'KET' => $this->input->post('KET'),
 		);
       
