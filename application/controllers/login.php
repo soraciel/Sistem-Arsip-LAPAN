@@ -84,7 +84,7 @@ else{
 
 else{
 	//echo "0";
-	$data['pesan'] = "NIP dan Password salah." ;
+	$data['pesan'] = "Email dan Password salah." ;
 	//redirect('login',$pesan);
 
 	$this->load->view('view_login',$data);

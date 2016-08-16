@@ -30,20 +30,11 @@
 		return $this->db->get();
 	}
 
-  function jumlah_user(){
-    return $this->db->get("user")->num_rows();
-  }
-
-    function data_user($number,$offset){
-    return $query = $this->db->get('user',$number,$offset)->result();   
-  }
- 
-
 	function getUser($id)
 	{
 		//select produk berdasarkan id yang dimiliki
 
-        $this->db->where('ID_PEG', $id); //Akan melakukan select terhadap row yang memiliki productId sesuai dengan productId yang telah dipilih
+        $this->db->where('ID', $id); //Akan melakukan select terhadap row yang memiliki productId sesuai dengan productId yang telah dipilih
         $this->db->select("*");
         $this->db->from("user");
         
@@ -53,10 +44,8 @@
 	function addUser($data)
 	{
 		//untuk insert data ke table 
-		//if(!$this->db->insert('user', $data))
-      //{return $error="error";}
-
-    return $this->db->insert('user', $data);
+		if(!$this->db->insert('user', $data))
+      {return $error="error";}
     //else
    // return $this->db->insert('user', $data);
 
@@ -68,7 +57,7 @@
 	{
 		//update produk berdasarkan id
 		//update produk
-        $this->db->where('ID_PEG',$id); //Hanya akan melakukan update sesuai dengan condition yang sudah ditentukan
+        $this->db->where('ID',$id); //Hanya akan melakukan update sesuai dengan condition yang sudah ditentukan
         $this->db->update('user', $data); //Melakukan update terhadap table msProduct sesuai dengan data yang telah diterima dari controller
 	}
 
@@ -76,7 +65,7 @@
 	{
 		//delete produk berdasarkan id
 
-        $this->db->where('ID_PEG', $id);
+        $this->db->where('ID', $id);
         $this->db->delete('user');
 	}
 

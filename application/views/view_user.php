@@ -55,7 +55,7 @@
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>NIP</th>
+                        <th>Email</th>
                         <th>Nama</th>
                        <th>Status</th>
                         <th class="text-nowrap">Action</th>
@@ -64,8 +64,8 @@
                     <tbody>
 
                       <?php
-              $no = $this->uri->segment('3') + 1;
-
+            //Kita akan melakukan looping sesuai dengan data yang dimiliki
+            //$i = 0; //nantinya akan digunakan untuk pengisian Nomor
             foreach ($listUser->result() as $row) {
           ?>
                      <tr>
@@ -74,11 +74,11 @@
                     <td><?=  $row->KET ?></td>
                         <td class="text-nowrap">
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
-                          data-original-title="Edit" onclick="location.href='<?php echo base_url();?>index.php/user/edit_user/<?= $row->ID_PEG ?>'">
+                          data-original-title="Edit" onclick="location.href='<?php echo base_url();?>index.php/user/edit_user/<?= $row->ID ?>'">
                             <i class="icon wb-wrench" aria-hidden="true"></i>
                           </button>
                           <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"  
-                          data-original-title="Delete" onclick="location.href='<?php echo base_url();?>index.php/user/deleteUserdb/<?= $row->ID_PEG ?>'">
+                          data-original-title="Delete" onclick="location.href='<?php echo base_url();?>index.php/user/deleteUserdb/<?= $row->ID ?>'">
                             <i class="icon wb-close" aria-hidden="true"></i>
                           </button>
                         </td>
@@ -89,9 +89,6 @@
 
                     </tbody>
                   </table>
-                  <?php 
-  echo $this->pagination->create_links();
-  ?>
                 </div>
               </div>
              

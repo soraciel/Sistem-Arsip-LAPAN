@@ -3,9 +3,7 @@
 
 <div class="page-header">
       <h1 class="page-title">Lihat Arsip
-                         <?php 
-
-                         foreach ($i as $row1) {
+                         <?php foreach ($i as $row1) {
                            if($row1->id_jenis_arsip == $jenis_arsip){?>
                            <td><?php echo $row1->jenis_arsip;?></td>
                            <?php }}?>
@@ -117,9 +115,7 @@
                     </thead>
                     <tbody>
                       
-                      <?php 
-$no = $this->uri->segment('3') + 1;
-                      foreach ($h as $row){?>
+                      <?php foreach ($h as $row){?>
                         <tr>
                          <td><?php echo $row->NO_SURAT;?></td>
                          <td><?php echo $row->JUDUL;?></td>
@@ -131,10 +127,10 @@ $no = $this->uri->segment('3') + 1;
                          <td><?php echo $row->TANGGAL;?></td>         
                          <?php 
                           $ext = pathinfo($row->ISI, PATHINFO_EXTENSION);
-                          if($ext=="pdf") {
-                         ?>                    
-                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI;?>">Lihat surat</a></td><?php } else{ ?>               
-                         <td><a href="<?php echo base_url();?>index.php/arsip/liat_file/<?php echo $row->ID_ARSIP;?>">Lihat surat</a></td> <?php }?>
+                          if($ext=="gif" || $ext=="jpg" || $ext=="png" || $ext=="jpeg") {
+                         ?>                                          
+                         <td><a href="<?php echo base_url();?>index.php/arsip/liat_file/<?php echo $row->ID_ARSIP;?>">Lihat surat</a><?php } else{ ?>             
+                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI;?>">Lihat surat</a></td></td> <?php }?>
                          <td><?php echo $row->Keterangan;?></td>
                          <td><?php echo $row->TANGGAL_INPUT;?></td>
                          <td><?php echo $row->Loker;?></td>
@@ -158,9 +154,6 @@ $no = $this->uri->segment('3') + 1;
                       <?php }?>                        
                     </tbody>
                   </table><?php if(empty($h)){?> <h4 style="text-align:center;"> Arsip Tidak Ada</h4><?php }?>
-                            <h4 style="text-align:center;"><?php 
-  echo $this->pagination->create_links();
-  ?></h4>
         </div>
       </div>             
   </div>     

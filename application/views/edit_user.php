@@ -1,21 +1,20 @@
+<link rel="stylesheet" href="../../assets/css/../fonts/glyphicons/glyphicons.css">
 <body>
                 
  <div class="page-content">
       <div class="panel">            
-        <h1 class="page-title" style="text-align: center">Edit User</h1>
-
-               <?php
+        <h1 class="page-title" style="text-align: center">Edit User</h1>               
+            <div class="panel-body container-fluid" style="width:55%;">
+                <?php
             //Kita akan melakukan looping terhadap variable $product yang telah dikirimkan melalui controller
             foreach($user->result() as $detail){
         ?>
-            <div class="panel-body container-fluid" style="width:55%;">
-
-              <form autocomplete="off" method="post" action="<?= base_url() ?>index.php/user/updateUserDb/<?= $detail->ID_PEG ?>">
+              <form autocomplete="off" method="post" action="<?= base_url() ?>index.php/user/updateUserDb/<?= $detail->ID ?>">
                 
                 <div >
                   <br>
-                  <h4 class="example-title">NIP</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Nomor Induk Pegawai" value="<?php echo $detail->ID_PEG; ?>" name="ID_PEG">
+                  <h4 class="example-title">Email</h4>
+                  <input type="email" class="form-control" id="inputPlaceholder" placeholder="Nomor Induk Pegawai" value="<?php echo $detail->ID_PEG; ?>" name="ID_PEG">
                   <br>
                 </div>
 

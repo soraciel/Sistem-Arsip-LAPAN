@@ -45,20 +45,7 @@ class user extends CI_Controller {
      $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
      //$this->load->view('home_view', $data);
    $this->load->view('header_admin',$data);
-		
-		$jumlah_data = $this->model_user->jumlah_user();
-		$this->load->library('pagination');
-		$config['base_url'] = base_url().'index.php/user/view';
-		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 10;
-		$from = $this->uri->segment(3);
-		$this->pagination->initialize($config);		
-		$data['listUser'] = $this->model_user->data_user($config['per_page'],$from);
-		//$this->load->view('v_data',$data);
-
-		//$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
-		
-
+		$data['listUser'] = $this->model_user->getAllUser(); //berisi dari return value pada function getAllProducts() di file models/products_model.php
 		$this->load->view('view_user',$data);
 	 }
 	 else{
@@ -75,10 +62,9 @@ class user extends CI_Controller {
 		
 	}
 	public function edit_user($nip)
-	{
-		$data['user'] = $this->model_user->getUser($nip); //Melakukan pemanggilan fungsi getProduct yang ada di dalam products_model untuk mendapatkan informasi / data mengenai produk berdasarkan productId yang dikirimkan
-
+	{		
 		$this->load->view('form_header');
+		$data['user'] = $this->model_user->getUser($nip); //Melakukan pemanggilan fungsi getProduct yang ada di dalam products_model untuk mendapatkan informasi / data mengenai produk berdasarkan productId yang dikirimkan
 		$this->load->view('edit_user',$data);
 		$this->load->view('form_footer');
 	}
@@ -92,13 +78,15 @@ class user extends CI_Controller {
 			'PASSWORD' => md5($this->input->post('PASSWORD')),
 			'KET' => $this->input->post('KET'),
 			);
-		$this->model_user->addUser($data);
-		redirect('user/view');
-	//if(	$this->model_user->addUser($data)) redirect('user/view');
+		//$err=$this->model_user->addUser($data);
+
+		//echo $err;
+
+		$this->model_user->addUser($data); redirect('user/view');
 	//else echo "Error";
-	 //passing variable $data ke products_model
+	 // passing variable $data ke products_model
 		
-		// //redirect page ke halaman utama controller products
+		//redirect page ke halaman utama controller products
 
 		
 	}
@@ -113,17 +101,18 @@ class user extends CI_Controller {
 
 	public function updateUserDb($id)
 	{
+	//	echo $id;
 
 		$data = array(
 			'ID_PEG' => $this->input->post('ID_PEG'),
 			'NAMA_PEG' => $this->input->post('NAMA_PEG'),
-			'PASSWORD' => md5($this->input->post('PASSWORD')),
+			'PASSWORD' => $this->input->post('PASSWORD'),
 			'KET' => $this->input->post('KET'),
 		);
       
 		$this->model_user->updateUser($data, $id); //passing variable $data ke products_model
 
-		redirect('user/view'); //redirect page ke halaman utama controller products
+		redirect('user/view'); //redirect page ke halaman utama controller products*/
 	}
 
 	public function search()
