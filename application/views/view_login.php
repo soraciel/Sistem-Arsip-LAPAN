@@ -113,11 +113,11 @@ echo "</div>";
           placeholder="Password">
         </div>
         <div class="form-group clearfix">
-          <div class="checkbox-custom checkbox-inline pull-left">
+         <!-- <div class="checkbox-custom checkbox-inline pull-left">
             <input type="checkbox" id="inputCheckbox" name="checkbox">
             <label for="inputCheckbox">Remember me</label>
-          </div>
-          <a class="pull-right" href="forgot-password.html">Forgot password?</a>
+          </div>-->
+         <!-- <a class="pull-right" href="forgot-password.html">Forgot password?</a>-->
         </div>
         <button type="submit" class="btn btn-primary btn-block"  value="Login" >Sign in</button>
       </form>

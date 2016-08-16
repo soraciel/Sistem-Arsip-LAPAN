@@ -9,8 +9,8 @@
                 
                 <div >
                   <br>
-                  <h4 class="example-title">NIP</h4>
-                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Nomor Induk Pegawai" name="ID_PEG" required="required">
+                  <h4 class="example-title">Email</h4>
+                  <input type="text" class="form-control" id="inputPlaceholder" placeholder="Email" name="ID_PEG" required="required">
                   <br>
                 </div>
 
