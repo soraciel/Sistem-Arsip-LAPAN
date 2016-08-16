@@ -131,10 +131,10 @@
                          <td><?php echo $row->TANGGAL;?></td>         
                          <?php 
                           $ext = pathinfo($row->ISI, PATHINFO_EXTENSION);
-                          if($ext=="gif" || $ext=="jpg" || $ext=="png" || $ext=="jpeg") {
-                         ?>                                          
-                         <td><a href="<?php echo base_url();?>index.php/arsip/liat_file/<?php echo $row->ID_ARSIP;?>">Lihat surat</a><?php } else{ ?>             
-                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI;?>">Lihat surat</a></td></td> <?php }?>
+                          if($ext=="pdf") {
+                         ?>                    
+                         <td><a href="<?php echo base_url();?>uploads/<?php echo $row->ISI;?>">Lihat surat</a></td><?php } else{ ?>               
+                         <td><a href="<?php echo base_url();?>index.php/arsip/liat_file/<?php echo $row->ID_ARSIP;?>">Lihat surat</a></td> <?php }?>
                          <td><?php echo $row->Keterangan;?></td>
                          <td><?php echo $row->TANGGAL_INPUT;?></td>
                          <td><?php echo $row->Loker;?></td>
