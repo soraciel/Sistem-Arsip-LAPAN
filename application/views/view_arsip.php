@@ -116,10 +116,8 @@
                       </tr>
                     </thead>
                     <tbody>
-
                       
-                      <?php //$no = $this->uri->segment('3') + 1;
-                      foreach ($h as $row){?>
+                      <?php foreach ($h as $row){?>
                         <tr>
                          <td><?php echo $row->NO_SURAT;?></td>
                          <td><?php echo $row->JUDUL;?></td>
@@ -158,9 +156,6 @@
                       <?php }?>                        
                     </tbody>
                   </table> <?php if(empty($h)){?> <h4 style="text-align:center;"> Arsip Tidak Ada</h4><?php }?>
-                  <!--   <h4 style="text-align:center;"><?php 
-  echo $this->pagination->create_links();
-  ?></h4>-->
         </div>
       </div>             
   </div>     

@@ -55,7 +55,7 @@
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Email</th>
+                        <th>NIP</th>
                         <th>Nama</th>
                        <th>Status</th>
                         <th class="text-nowrap">Action</th>
@@ -64,7 +64,7 @@
                     <tbody>
 
                       <?php
-  //            $no = $this->uri->segment('3') + 1;
+              $no = $this->uri->segment('3') + 1;
 
             foreach ($listUser->result() as $row) {
           ?>
@@ -89,9 +89,9 @@
 
                     </tbody>
                   </table>
-    <!--             <?php 
+                  <?php 
   echo $this->pagination->create_links();
-  ?>-->
+  ?>
                 </div>
               </div>
              

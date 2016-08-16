@@ -22,7 +22,6 @@ class arsip extends CI_Controller {
 	function __construct() {
         parent::__construct();
         $this->load->model('arsip_model');            
-       // $this->load->library('pagination');
        }
 
 	public function view(){		
@@ -43,15 +42,6 @@ class arsip extends CI_Controller {
 	 
 	 	$data['h'] = $this->arsip_model->view_arsip_user();
 		$data['i'] = $this->arsip_model->jenis_arsip();
-
-		/*$jumlah_data = $this->arsip_model->jumlah_arsip();
-		$config['base_url'] = base_url().'index.php/arsip/view';
-		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 10;
-		$from = $this->uri->segment(3);
-		$this->pagination->initialize($config);		
-		$data['h'] = $this->arsip_model->view_arsip_user($config['per_page'],$from);*/
-
 		// print_r($data['h']);
 		$this->load->view('view_arsip', $data);
 		// $this->load->view('view_arsip_admin');
@@ -82,16 +72,17 @@ public function view_admin()
      //$this->load->view('home_view', $data);
      $data['jenis_arsip'] = "";
 
-     $data['h'] = $this->arsip_model->view_arsip();
+    // $data['h'] = $this->arsip_model->view_arsip();
 	 $data['i'] = $this->arsip_model->jenis_arsip();
 
-	 /*	$jumlah_data = $this->arsip_model->jumlah_arsip();
+	 	$jumlah_data = $this->arsip_model->jumlah_arsip();
+		$this->load->library('pagination');
 		$config['base_url'] = base_url().'index.php/arsip/view_admin';
 		$config['total_rows'] = $jumlah_data;
 		$config['per_page'] = 10;
 		$from = $this->uri->segment(3);
 		$this->pagination->initialize($config);		
-		$data['h'] = $this->arsip_model->data_arsip($config['per_page'],$from);*/
+		$data['h'] = $this->arsip_model->data_arsip($config['per_page'],$from);
 
      $this->load->view('header_admin',$data);	
 	 $this->load->view('view_arsip_admin',$data);
@@ -430,38 +421,22 @@ public function view_admin()
      	if($this->session->userdata('logged_in'))
    {
 
-   	
+
      $session_data = $this->session->userdata('logged_in');
     
     if($session_data['KET']=='User')
     {
                 $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
          $data['jenis_arsip'] = $jenis_arsip;
-         if($jenis_arsip!= "tanggal")
-         	{ 
-/*$config['base_url'] = base_url().'index.php/arsip/filter_arsip/'. $jenis_arsip;
-        
-		
-
-		$jumlah_data = $this->arsip_model->jumlah_arsip_filter($jenis_arsip);
-		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 10;
-		$from = $this->uri->segment(3);
-		$this->pagination->initialize($config);		
-		$data['h'] = $this->arsip_model->filter_arsip($jenis_arsip,$config['per_page'],$from);*/
-         		$data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
-         	}
+         if($jenis_arsip!= "tanggal") $data['h'] = $this->arsip_model->filter_arsip($jenis_arsip);
          else {
          	 $date1= $this->input->get('date1');
          	 $date2= $this->input->get('date2');
-         $data['h'] = $this->arsip_model->filter_date_user($date1,$date2);
-     }
-
+         	$data['h'] = $this->arsip_model->filter_date_user($date1,$date2);}
 		$data['i'] = $this->arsip_model->jenis_arsip();
-//		print_r($data['h']);
-//echo $jumlah_data;
+		// print_r($data['h']);
          	$this->load->view('header', $data);
-	$this->load->view('view_arsip', $data);
+		$this->load->view('view_arsip', $data);
 	 }
 
 	 else if($session_data['KET']=='Administrator')

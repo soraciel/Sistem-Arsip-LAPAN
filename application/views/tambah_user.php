@@ -9,6 +9,7 @@
                 
                 <div >
                   <br>
+
                   <h4 class="example-title">Email</h4>
                   <input type="email" class="form-control" id="inputPlaceholder" placeholder="Email" name="ID_PEG" required="required">
                   <br>

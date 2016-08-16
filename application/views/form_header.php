@@ -94,7 +94,7 @@ $(document).ready(function(){
             </a>
           </li> -->
           <li class="hidden-float">
-              <a href="<?= base_url() ?>index.php/arsip/view_admin" role="menuitem">
+              <a href="<?= base_url() ?>index.php/arsip/home" role="menuitem">
                 <i class="icon glyphicon glyphicon-home" aria-hidden="true"></i></a>
           </li>
         </ul>

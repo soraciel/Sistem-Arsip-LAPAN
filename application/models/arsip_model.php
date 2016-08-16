@@ -47,8 +47,8 @@ class arsip_model extends CI_Model
     {   
         $this->db->where('ID_JENIS_ARSIP !=', '8');
         $this->db->order_by('ID_ARSIP', 'DESC');
-        return $query = $this->db->get('arsip')->result();   
-        
+        $query = $this->db->get('arsip');
+        return $query->result();
     }
 
     function edit_arsip($ID_ARSIP)
@@ -114,20 +114,11 @@ class arsip_model extends CI_Model
         get()->row_array();
     }
 
-    /*function filter_arsip($jenis_arsip,$number,$offset){*/
-        function filter_arsip($jenis_arsip){
+    function filter_arsip($jenis_arsip){
         $this->db->where("ID_JENIS_ARSIP",$jenis_arsip);
-       // $query = $this->db->get('arsip');
-    
-    //return $query = $this->db->get('arsip',$number,$offset)->result();   
-        return $query = $this->db->get('arsip')->result();   
-
+        $query = $this->db->get('arsip');
+        return $query->result();
     }
-
-          function jumlah_arsip_filter($jenis_arsip){
-            $this->db->where("ID_JENIS_ARSIP",$jenis_arsip);
-    return $this->db->get("arsip")->num_rows();
-  }
 
     function search($search_input)
     {
