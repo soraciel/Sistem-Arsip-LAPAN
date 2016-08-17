@@ -36,7 +36,7 @@ echo "</div>";
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
 
-  <title>Login | Sistem Arsip Lapan</title>
+  <title>Login | Sistem Arsip Pustekbang</title>
 
   <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/images/apple-touch-icon.png">
   <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/favicon.ico">
@@ -91,7 +91,7 @@ echo "</div>";
     <div class="page-content vertical-align-middle">
       <div class="brand">
        <img class="brand-img" src="<?php echo base_url();?>assets/images/logolapan.png" width="100" length="100" alt="...">
-        <h2 class="brand-text">Sistem Arsip LAPAN</h2>
+        <h2 class="brand-text">Sistem Arsip Pustekbang</h2>
       </div>
       <p>Sign into your pages account</p>
       <br>
@@ -126,7 +126,7 @@ echo "</div>";
       <footer class="page-copyright">
         
         <p>© 2016. All RIGHT RESERVED.</p>
-        <div class="social">
+      <!--  <div class="social">
           <a href="javascript:void(0)">
             <i class="icon bd-twitter" aria-hidden="true"></i>
           </a>
@@ -136,7 +136,7 @@ echo "</div>";
           <a href="javascript:void(0)">
             <i class="icon bd-dribbble" aria-hidden="true"></i>
           </a>
-        </div>
+        </div>-->
       </footer>
     </div>
   </div>

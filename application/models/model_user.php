@@ -15,6 +15,8 @@
  
    if($query -> num_rows() == 1)
    {
+      $this->db->set('email', $nip);
+      $this->db->insert('log_user');
      return $query->result();
    }
    else

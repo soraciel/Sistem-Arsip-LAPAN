@@ -7,7 +7,7 @@
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
 
-  <title>Arsip LAPAN</title>
+  <title>Arsip Pustekbang</title>
 
   <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/images/apple-touch-icon.png">
   <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/favicon.ico">
@@ -61,7 +61,7 @@ $(document).ready(function(){
     <div class="navbar-header">
       <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="">
         <img class="navbar-brand-logo" src="<?php echo base_url();?>assets/images/logolapan.png" width="50" length="50" alt="...">        
-        <span class="navbar-brand-text">LAPAN</span>
+        <span class="navbar-brand-text">Pustekbang</span>
       </div>
     </div>
 

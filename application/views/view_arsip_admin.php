@@ -94,6 +94,8 @@
             <li class="col-sm-2 col-xs-4"></li>                
           </form>
       </div>
+
+       <h4> Total Arsip: <?php echo $total_row; ?> </h4>
       
         <!-- End Example Quick Menu Small -->
       <div class="example-wrap"> <!-- ganti kolom searching                 -->

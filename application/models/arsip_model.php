@@ -34,6 +34,12 @@ class arsip_model extends CI_Model
         return $query->result();
     }
 
+    function total_arsip()
+    {
+        $query = $this->db->get('arsip');
+        return $query->num_rows();
+    }
+
     function view_arsip_user()
     {   
         $this->db->where('ID_JENIS_ARSIP !=', '8');

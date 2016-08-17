@@ -9,6 +9,7 @@
                            <?php }}?>
 
 </h1>
+
       <div class="page-header-actions">
         <form action="<?php echo base_url();?>index.php/arsip/search" method="post">
           <div class="input-search input-search-dark">
@@ -18,6 +19,8 @@
         </form>
       </div>
     </div>
+
+
 <div class="page-content">
   <script type="text/javascript">
 
@@ -26,6 +29,8 @@
       <div class="panel-heading" style="padding:10px;">                                        
         <!-- Example Quick Menu Small -->
         <!-- <div class="example" > -->
+
+
           <ul class="nav-quick nav-quick-sm row">
             <li class="col-sm-2 col-xs-4">
 
@@ -97,6 +102,7 @@
             <li class="col-sm-3 col-xs-4"></li>                
           </form>
       </div>
+      <h4> Total Arsip: <?php echo $total_row; ?> </h4>
 
         <!-- End Example Quick Menu Small -->
       <div class="example-wrap"> <!-- ganti kolom searching                 -->

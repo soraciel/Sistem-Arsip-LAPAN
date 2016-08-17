@@ -39,10 +39,12 @@ class arsip extends CI_Controller {
 
      //$this->load->view('home_view', $data);
      $this->load->view('header',$data);	
-	 
+
+	 	$data['total_row'] = $this->arsip_model->total_arsip();
 	 	$data['h'] = $this->arsip_model->view_arsip_user();
 		$data['i'] = $this->arsip_model->jenis_arsip();
-		// print_r($data['h']);
+		 //print_r($data['total_row']);
+		//echo $data['total_row'] ;
 		$this->load->view('view_arsip', $data);
 		// $this->load->view('view_arsip_admin');
 
@@ -71,6 +73,7 @@ public function view_admin()
      $data['NAMA_PEG'] = $session_data['NAMA_PEG'];
      //$this->load->view('home_view', $data);
      $data['jenis_arsip'] = "";
+     $data['total_row'] = $this->arsip_model->total_arsip();
 
      $data['h'] = $this->arsip_model->view_arsip();
 	 $data['i'] = $this->arsip_model->jenis_arsip();
